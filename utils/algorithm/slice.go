@@ -56,10 +56,3 @@ func DescSort[T any](params []T) {
 func Sort[T any](params []T, comparator lancetconstraints.Comparator) {
 	QuickSort(params, comparator)
 }
-
-// Search 目标查找
-// 存在：返回所以
-// 不存在：返回-1
-func Search[T any](numbers []T, target T) int {
-	return BinarySearch(numbers, target, 0, len(numbers)-1, new(AscComparator))
-}
