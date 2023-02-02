@@ -40,8 +40,13 @@ func main() {
     fmt.Println(rs) //olleh
 }
 ```
+## 模块文档
+### 1. driver 实现各种服务的驱动
+#### Function list:
+- **<big>InitializeDB</big>** :  mysql数据库驱动
+- **<big>InitializeRedis</big>** :  Redis数据库驱动
 
-## 文档
+## 工具包文档
 
 ### 1. algorithm 包实现一些基本查找和排序算法。
 

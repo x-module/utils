@@ -434,7 +434,7 @@ func ExampleInterfaceSlice() {
 }
 
 func ExampleStringSlice() {
-	strs := []interface{}{"a", "b", "c"}
+	strs := []any{"a", "b", "c"}
 
 	result := StringSlice(strs) //[]string{"a", "b", "c"}
 	fmt.Println(result)
@@ -444,7 +444,7 @@ func ExampleStringSlice() {
 }
 
 func ExampleIntSlice() {
-	nums := []interface{}{1, 2, 3}
+	nums := []any{1, 2, 3}
 
 	result := IntSlice(nums) //[]int{1, 2, 3}
 	fmt.Println(result)

@@ -353,7 +353,7 @@ func Flatten(slice any) any {
 
 	var result reflect.Value
 	if sv.Type().Elem().Kind() == reflect.Interface {
-		result = reflect.MakeSlice(reflect.TypeOf([]interface{}{}), 0, sv.Len())
+		result = reflect.MakeSlice(reflect.TypeOf([]any{}), 0, sv.Len())
 	} else if sv.Type().Elem().Kind() == reflect.Slice {
 		result = reflect.MakeSlice(sv.Type().Elem(), 0, sv.Len())
 	} else {

@@ -292,10 +292,10 @@ func TestIsZeroValue(t *testing.T) {
 		zeroSlice []int
 		zeroFunc  func() string
 		zeroMap   map[string]string
-		nilIface  interface{}
+		nilIface  any
 		zeroIface fmt.Formatter
 	)
-	zeroValues := []interface{}{
+	zeroValues := []any{
 		nil,
 		false,
 		0,
@@ -342,7 +342,7 @@ func TestIsZeroValue(t *testing.T) {
 
 	var nonZeroIface fmt.Stringer = time.Now()
 
-	nonZeroValues := []interface{}{
+	nonZeroValues := []any{
 		// bool
 		true,
 

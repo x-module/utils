@@ -104,7 +104,7 @@ func TestOr(t *testing.T) {
 	assert := internal.NewAssert(t, "TestOr")
 
 	sig := func(after time.Duration) <-chan any {
-		c := make(chan interface{})
+		c := make(chan any)
 		go func() {
 			defer close(c)
 			time.Sleep(after)
