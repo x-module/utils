@@ -11,12 +11,12 @@
 ### Note:
 
 ```go
-go get github.com/go-utils-module/utils //安装v2最新版本v2.x.x
+go get github.com/go-utils-module/utils  
 ```
 
 ## 用法
 
-lancet 是以包的结构组织代码的，使用时需要导入相应的包名。例如：如果使用字符串相关函数，需要导入 strutil 包:
+以包的结构组织代码的，使用时需要导入相应的包名。例如：如果使用字符串相关函数，需要导入 strutil 包:
 
 ```go
 import "github.com/go-utils-module/utils/strutil"
