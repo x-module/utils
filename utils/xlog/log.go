@@ -21,10 +21,6 @@ import (
 	"time"
 )
 
-type Log struct {
-	logrus.Logger
-}
-
 const (
 	// DebugMode indicates gin mode is debug.
 	DebugMode = "debug"
@@ -38,7 +34,7 @@ const (
 var Logger *logrus.Logger
 
 // InitLogger 日志模块初始化
-func (*Log) InitLogger(logFilePath, logFileName string, model string) *logrus.Logger {
+func InitLogger(logFilePath, logFileName string, model string) *logrus.Logger {
 	if !fileutil.IsExist(logFilePath) {
 		err := os.MkdirAll(logFilePath, os.ModePerm)
 		xerror.PanicErr(err, "init system error. make log data err.path:"+logFilePath)

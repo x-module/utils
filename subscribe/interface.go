@@ -15,7 +15,7 @@ const (
 // SubscribeCallback 订阅回调
 type SubscribeCallback func(message string)
 
-var Message SubPub
+var SubscribeHandler SubPub
 
 // SubPub 消息发布定义
 type SubPub interface {

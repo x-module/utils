@@ -15,6 +15,7 @@ import (
 	"github.com/go-utils-module/utils/dirver"
 	"github.com/go-utils-module/utils/global"
 	"github.com/go-utils-module/utils/utils/xerror"
+	"github.com/go-utils-module/utils/utils/xlog"
 	"github.com/jinzhu/gorm"
 	"math"
 	"time"
@@ -74,8 +75,8 @@ func (d *Database) SetResult(resultModel any) *Database {
 // DeleteByWhere 删除数据
 func (d *Database) DeleteByWhere(where any) error {
 	err := d.db.Where(where).Delete(d.Result).Error
-	if xerror.HasErr(err, global.DataDeleteErr) {
-		return err
+	if err != nil {
+		xlog.Logger.WithField("err", err).Error(global.DataDeleteErr.String())
 	}
 	return nil
 }
@@ -97,8 +98,8 @@ func (d *Database) Begin() *gorm.DB {
 func (d *Database) Exist(where Where) (bool, error) {
 	var count int
 	err := d.db.Model(d.Result).Where(where).Count(&count).Error
-	if xerror.HasErr(err, global.DbErr) {
-		return false, err
+	if err != nil {
+		xlog.Logger.WithField("err", err).Error(global.DbErr.String())
 	}
 	return count > 0, nil
 }

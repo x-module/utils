@@ -18,8 +18,8 @@ import (
 type RedisSubscribe struct {
 }
 
-func NewRedisSubscribe() *RedisSubscribe {
-	return new(RedisSubscribe)
+func NewRedisSubscribe() {
+	SubscribeHandler = new(RedisSubscribe)
 }
 
 // Subscribe 订阅消息
