@@ -13,8 +13,12 @@ import (
 	"fmt"
 	"github.com/go-utils-module/utils/global"
 	"github.com/go-utils-module/utils/utils/xerror"
-	"github.com/jinzhu/gorm"
-	_ "github.com/jinzhu/gorm/dialects/mysql"
+	"gorm.io/driver/mysql"
+	"gorm.io/gorm"
+	"gorm.io/gorm/logger"
+	"log"
+	"os"
+	"time"
 )
 
 const (
@@ -39,13 +43,25 @@ type LinkParams struct {
 // InitializeDB 初始化管理后台数据库
 func InitializeDB(params LinkParams) (*gorm.DB, error) {
 	linkParams := "%s:%s@tcp(%s:%d)/%s?charset=utf8mb4&parseTime=True&loc=Local"
-	linkAddress := fmt.Sprintf(linkParams, params.UserName, params.Password, params.Host, params.Port, params.DbName)
-	db, err := gorm.Open(DbType, linkAddress)
+	dsn := fmt.Sprintf(linkParams, params.UserName, params.Password, params.Host, params.Port, params.DbName)
+	newLogger := logger.New(
+		log.New(os.Stdout, "\r\n", log.LstdFlags), // io writer
+		logger.Config{
+			SlowThreshold:             time.Second, // Slow SQL threshold
+			LogLevel:                  logger.Info, // Log level
+			IgnoreRecordNotFoundError: true,        // Ignore ErrRecordNotFound error for logger
+			Colorful:                  false,       // Disable color
+		},
+	)
+	db, err := gorm.Open(mysql.Open(dsn), &gorm.Config{
+		Logger: newLogger,
+	})
+
 	xerror.PanicErr(err, global.ConnectMysqlErr.String())
 	// 链接池设置
-	db.DB().SetMaxOpenConns(params.MaxOpenConn)
-	db.DB().SetMaxIdleConns(params.MaxIdleConn)
-	db.LogMode(params.Mode == DebugMode)
+	// db.DB().SetMaxOpenConns(params.MaxOpenConn)
+	// db.DB().SetMaxIdleConns(params.MaxIdleConn)
+	// db.LogMode(params.Mode == DebugMode)
 	// db.LogMode(false)
 	return db, nil
 }

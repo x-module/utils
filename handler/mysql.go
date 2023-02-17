@@ -16,7 +16,7 @@ import (
 	"github.com/go-utils-module/utils/global"
 	"github.com/go-utils-module/utils/utils/xerror"
 	"github.com/go-utils-module/utils/utils/xlog"
-	"github.com/jinzhu/gorm"
+	"gorm.io/gorm"
 	"math"
 	"time"
 )
@@ -96,7 +96,7 @@ func (d *Database) Begin() *gorm.DB {
 
 // Exist 检查数据是否存在
 func (d *Database) Exist(where Where) (bool, error) {
-	var count int
+	var count int64
 	err := d.db.Model(d.Result).Where(where).Count(&count).Error
 	if err != nil {
 		xlog.Logger.WithField("err", err).Error(global.DbErr.String())
@@ -106,11 +106,7 @@ func (d *Database) Exist(where Where) (bool, error) {
 
 // ExecuteSql 执行sql
 func (d *Database) ExecuteSql(sql string, logMod ...bool) error {
-	debug := true
-	if len(logMod) > 0 {
-		debug = logMod[0]
-	}
-	return d.db.LogMode(debug).Raw(sql).Scan(d.Result).Error
+	return d.db.Raw(sql).Scan(d.Result).Error
 }
 
 // Find 根据id获取一条数据
@@ -173,7 +169,7 @@ type PageData struct {
 
 // GetByPage 分页查询数据
 func (d *Database) GetByPage(pagination PaginationQuery, where any) PageData {
-	var count int
+	var count int64
 	d.db.Model(d.Result).Where(where).Count(&count)
 	offset := pagination.PageSize * (pagination.PageNum - 1)
 	d.db.Where(where).Order(fmt.Sprintf("%s %s ", pagination.OrderBy, pagination.Order)).Offset(offset).Limit(pagination.PageSize).Find(d.Result)

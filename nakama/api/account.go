@@ -16,7 +16,6 @@ import (
 	"github.com/go-utils-module/utils/nakama/common"
 	"github.com/go-utils-module/utils/utils"
 	"github.com/go-utils-module/utils/utils/request"
-	"github.com/go-utils-module/utils/utils/xerror"
 	"github.com/go-utils-module/utils/utils/xlog"
 	"net/url"
 	"time"
@@ -143,7 +142,7 @@ func (a *Account) GetAccountList(apiUrl string, filter string, cursor string, mo
 	}
 	xlog.Logger.Info("当前运行模式为:", mode)
 	response, err := request.NewRequest().Debug(mode == gin.DebugMode).SetHeaders(a.GetNakamaHeader(a.Token)).SetTimeout(10).Get(apiUrl)
-	if xerror.HasErr(err, global.GetAccountListErr) {
+	if utils.HasErr(err, global.GetAccountListErr) {
 		xlog.Logger.Error("request api[accounts-list] error:", err)
 		return Accounts{}, err
 	}
@@ -155,7 +154,7 @@ func (a *Account) GetAccountList(apiUrl string, filter string, cursor string, mo
 	}
 	var accounts Accounts
 	err = response.Json(&accounts)
-	if xerror.HasErr(err, global.ParseJsonDataErr) {
+	if utils.HasErr(err, global.ParseJsonDataErr) {
 		return Accounts{}, err
 	}
 	return accounts, nil
@@ -173,7 +172,7 @@ func (a *Account) GetAccountBanList(apiUrl string, UserID string, UserName strin
 	response, err := new(request.Request).Debug(mode == gin.DebugMode).SetHeaders(map[string]string{
 		"Accept": "application/json",
 	}).SetTimeout(20).Post(apiUrl, params)
-	if xerror.HasErr(err, global.GetAccountBanListErr) {
+	if utils.HasErr(err, global.GetAccountBanListErr) {
 		return nil, err
 	}
 	defer response.Close()
@@ -187,7 +186,7 @@ func (a *Account) GetAccountBanList(apiUrl string, UserID string, UserName strin
 	// utils.JsonDisplay(c)
 	var accounts []BanPlayer
 	err = response.Json(&accounts)
-	if xerror.HasErr(err, global.ParseJsonDataErr) {
+	if utils.HasErr(err, global.ParseJsonDataErr) {
 		return nil, err
 	}
 	return accounts, nil
@@ -197,7 +196,7 @@ func (a *Account) GetAccountBanList(apiUrl string, UserID string, UserName strin
 func (a *Account) GetAccountDetail(id string, url string, mode string) (AccountInfo, error) {
 	xlog.Logger.Info("当前运行模式为:", mode)
 	response, err := new(request.Request).Debug(mode == gin.DebugMode).SetHeaders(a.GetNakamaHeader(a.Token)).SetTimeout(10).Get(url)
-	if xerror.HasErr(err, global.GetAccountDetailErr) {
+	if utils.HasErr(err, global.GetAccountDetailErr) {
 		return AccountInfo{}, err
 	}
 	defer response.Close()
@@ -207,7 +206,7 @@ func (a *Account) GetAccountDetail(id string, url string, mode string) (AccountI
 	}
 	var accountInfo AccountInfo
 	err = response.Json(&accountInfo)
-	if xerror.HasErr(err, global.ParseJsonDataErr) {
+	if utils.HasErr(err, global.ParseJsonDataErr) {
 		return AccountInfo{}, err
 	}
 	return accountInfo, nil
@@ -226,7 +225,7 @@ func (a *Account) UpdateAccount(id string, params []byte, url string, mode strin
 	_ = json.Unmarshal(params, &data)
 	xlog.Logger.Info("当前运行模式为:", mode)
 	response, err := new(request.Request).Debug(mode == gin.DebugMode).SetHeaders(a.GetNakamaHeader(a.Token)).SetTimeout(10).Post(url, data)
-	if xerror.HasErr(err, global.EditeAccountErr) {
+	if utils.HasErr(err, global.EditeAccountErr) {
 		return "", err
 	}
 	defer response.Close()
@@ -264,7 +263,7 @@ func (a *Account) Unlink(url string, mode string) error {
 	}
 	xlog.Logger.Info("当前运行模式为:", mode)
 	response, err := new(request.Request).Debug(mode == gin.DebugMode).SetHeaders(a.GetNakamaHeader(a.Token)).Json().SetTimeout(10).Post(url, data)
-	if xerror.HasErr(err, global.AccountUnlinkErr) {
+	if utils.HasErr(err, global.AccountUnlinkErr) {
 		return err
 	}
 	defer response.Close()
@@ -296,7 +295,7 @@ func (a *Account) ChangeAccount(email string, password string, url string, mode 
 
 	xlog.Logger.Info("当前运行模式为:", mode)
 	response, err := new(request.Request).Debug(mode == gin.DebugMode).SetHeaders(a.GetNakamaHeader(a.Token)).Json().SetTimeout(10).Post(url, data)
-	if xerror.HasErr(err, global.EditeAccountErr) {
+	if utils.HasErr(err, global.EditeAccountErr) {
 		return err
 	}
 	defer response.Close()
@@ -319,7 +318,7 @@ func (a *Account) ChangeAccount(email string, password string, url string, mode 
 func (a *Account) GetFriends(url string, mode string) (FriendResponse, error) {
 	xlog.Logger.Info("当前运行模式为:", mode)
 	response, err := new(request.Request).Debug(mode == gin.DebugMode).SetHeaders(a.GetNakamaHeader(a.Token)).SetTimeout(10).Get(url)
-	if xerror.HasErr(err, global.GetAccountFriendErr) {
+	if utils.HasErr(err, global.GetAccountFriendErr) {
 		return FriendResponse{}, err
 	}
 	defer response.Close()
@@ -330,7 +329,7 @@ func (a *Account) GetFriends(url string, mode string) (FriendResponse, error) {
 	}
 	var friendResponse FriendResponse
 	err = response.Json(&friendResponse)
-	if xerror.HasErr(err, global.ParseJsonDataErr) {
+	if utils.HasErr(err, global.ParseJsonDataErr) {
 		return FriendResponse{}, err
 	}
 	return friendResponse, nil
@@ -340,7 +339,7 @@ func (a *Account) GetFriends(url string, mode string) (FriendResponse, error) {
 func (a *Account) DeleteFriend(url string, mode string) error {
 	xlog.Logger.Info("当前运行模式为:", mode)
 	response, err := new(request.Request).Debug(mode == gin.DebugMode).SetHeaders(a.GetNakamaHeader(a.Token)).SetTimeout(10).Delete(url)
-	if xerror.HasErr(err, global.DeleteAccountFriendErr) {
+	if utils.HasErr(err, global.DeleteAccountFriendErr) {
 		return err
 	}
 	defer response.Close()
@@ -356,7 +355,7 @@ func (a *Account) DeleteFriend(url string, mode string) error {
 func (a *Account) DeleteAccount(url string, mode string) error {
 	xlog.Logger.Info("当前运行模式为:", mode)
 	response, err := new(request.Request).Debug(mode == gin.DebugMode).SetHeaders(a.GetNakamaHeader(a.Token)).SetTimeout(10).Delete(url)
-	if xerror.HasErr(err, global.DeleteAccountErr) {
+	if utils.HasErr(err, global.DeleteAccountErr) {
 		return err
 	}
 	defer response.Close()
@@ -386,7 +385,7 @@ func (a *Account) Enable(url string, mode string) error {
 	}
 	xlog.Logger.Info("当前运行模式为:", mode)
 	response, err := new(request.Request).Debug(mode == gin.DebugMode).SetHeaders(a.GetNakamaHeader(a.Token)).Json().SetTimeout(10).Post(url, data)
-	if xerror.HasErr(err, global.AccountEnableErr) {
+	if utils.HasErr(err, global.AccountEnableErr) {
 		return err
 	}
 	defer response.Close()
@@ -422,7 +421,7 @@ func (a *Account) Disable(url string, mode string) error {
 	}
 	xlog.Logger.Info("当前运行模式为:", mode)
 	response, err := new(request.Request).Debug(mode == gin.DebugMode).SetHeaders(a.GetNakamaHeader(a.Token)).Json().SetTimeout(10).Post(url, data)
-	if xerror.HasErr(err, global.AccountDisableErr) {
+	if utils.HasErr(err, global.AccountDisableErr) {
 		return err
 	}
 	defer response.Close()

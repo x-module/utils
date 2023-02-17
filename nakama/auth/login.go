@@ -16,7 +16,6 @@ import (
 	"github.com/go-utils-module/utils/nakama/common"
 	"github.com/go-utils-module/utils/utils"
 	"github.com/go-utils-module/utils/utils/request"
-	"github.com/go-utils-module/utils/utils/xerror"
 	"github.com/go-utils-module/utils/utils/xlog"
 	"github.com/golang-jwt/jwt/v4"
 	"time"
@@ -89,7 +88,7 @@ func (a *Auth) parseConsoleToken(hmacSecretByte []byte, tokenString string) (use
 		}
 		return hmacSecretByte, nil
 	})
-	if xerror.HasErr(err, global.GetTokenErr) {
+	if utils.HasErr(err, global.GetTokenErr) {
 		return
 	}
 	claims, ok := token.Claims.(*ConsoleTokenClaims)
@@ -107,7 +106,7 @@ func (a *Auth) testToken(loginToken LoginToken) (int, error) {
 		}
 		return []byte(a.signKey), nil
 	})
-	if xerror.HasErr(err, global.GetTokenErr) {
+	if utils.HasErr(err, global.GetTokenErr) {
 		xlog.Logger.Error("parse token error:", err, "  config:", a.signKey, ", token:", loginToken.Token)
 		return InvalidToken, err
 	}
@@ -130,14 +129,14 @@ func (a *Auth) testToken(loginToken LoginToken) (int, error) {
 func (a *Auth) GetToken(loginToken LoginToken) (LoginToken, error) {
 	if loginToken.Token == "" {
 		token, err := a.login()
-		if xerror.HasErr(err, global.AccountLoginErr) {
+		if utils.HasErr(err, global.AccountLoginErr) {
 			return LoginToken{}, err
 		} else {
 			return token, err
 		}
 	} else {
 		_, err := a.testToken(loginToken)
-		if xerror.HasErr(err, global.AccountTokenExpressErr) {
+		if utils.HasErr(err, global.AccountTokenExpressErr) {
 			// if checkResult == ExpireToken { // token过期
 			return a.GetToken(LoginToken{})
 			// }
@@ -160,7 +159,7 @@ func (a *Auth) login() (LoginToken, error) {
 
 	xlog.Logger.Info("当前运行模式为:", a.model)
 	response, err := request.NewRequest().Debug(a.model == xlog.DebugMode).Json().SetTimeout(10).Post(a.url, data)
-	if xerror.HasErr(err, global.AccountLoginErr) {
+	if utils.HasErr(err, global.AccountLoginErr) {
 		return LoginToken{}, err
 	}
 	defer response.Close()
@@ -170,7 +169,7 @@ func (a *Auth) login() (LoginToken, error) {
 	}
 	var loginToken LoginToken
 	err = response.Json(&loginToken)
-	if xerror.HasErr(err, global.ParseJsonDataErr) {
+	if utils.HasErr(err, global.ParseJsonDataErr) {
 		return LoginToken{}, err
 	}
 	xlog.Logger.Info("success login nakama console. token info: ", loginToken)

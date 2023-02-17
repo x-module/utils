@@ -14,7 +14,6 @@ import (
 	"github.com/go-utils-module/utils/nakama/common"
 	"github.com/go-utils-module/utils/utils"
 	"github.com/go-utils-module/utils/utils/request"
-	"github.com/go-utils-module/utils/utils/xerror"
 	"github.com/go-utils-module/utils/utils/xlog"
 	"time"
 
@@ -82,7 +81,7 @@ func NewLeaderboard(token string) *Leaderboard {
 func (a *Leaderboard) GetLeaderboardList(url string, mode string) (LeaderboardList, error) {
 	xlog.Logger.Info("当前运行模式为:", mode)
 	response, err := request.NewRequest().Debug(mode == gin.DebugMode).SetHeaders(a.GetNakamaHeader(a.Token)).SetTimeout(10).Get(url)
-	if xerror.HasErr(err, global.GetLeaderboardListErr) {
+	if utils.HasErr(err, global.GetLeaderboardListErr) {
 		return LeaderboardList{}, err
 	}
 	defer response.Close()
@@ -93,7 +92,7 @@ func (a *Leaderboard) GetLeaderboardList(url string, mode string) (LeaderboardLi
 	}
 	var leaderboardList LeaderboardList
 	err = response.Json(&leaderboardList)
-	if xerror.HasErr(err, global.ParseJsonDataErr) {
+	if utils.HasErr(err, global.ParseJsonDataErr) {
 		return LeaderboardList{}, err
 	}
 	return leaderboardList, nil
@@ -103,7 +102,7 @@ func (a *Leaderboard) GetLeaderboardList(url string, mode string) (LeaderboardLi
 func (a *Leaderboard) DeleteLeaderboard(url string, mode string) error {
 	xlog.Logger.Info("当前运行模式为:", mode)
 	response, err := new(request.Request).Debug(mode == gin.DebugMode).SetHeaders(a.GetNakamaHeader(a.Token)).SetTimeout(10).Delete(url)
-	if xerror.HasErr(err, global.DeleteLeaderboardErr) {
+	if utils.HasErr(err, global.DeleteLeaderboardErr) {
 		return err
 	}
 	defer response.Close()
@@ -119,7 +118,7 @@ func (a *Leaderboard) DeleteLeaderboard(url string, mode string) error {
 func (a *Leaderboard) GetLeaderboardDetail(url string, mode string) (LeaderboardInfo, error) {
 	xlog.Logger.Info("当前运行模式为:", mode)
 	response, err := new(request.Request).Debug(mode == gin.DebugMode).SetHeaders(a.GetNakamaHeader(a.Token)).SetTimeout(10).Get(url)
-	if xerror.HasErr(err, global.GetLeaderboardDetailErr) {
+	if utils.HasErr(err, global.GetLeaderboardDetailErr) {
 		return LeaderboardInfo{}, err
 	}
 	defer response.Close()
@@ -129,7 +128,7 @@ func (a *Leaderboard) GetLeaderboardDetail(url string, mode string) (Leaderboard
 	}
 	var leaderboardInfo LeaderboardInfo
 	err = response.Json(&leaderboardInfo)
-	if xerror.HasErr(err, global.ParseJsonDataErr) {
+	if utils.HasErr(err, global.ParseJsonDataErr) {
 		return LeaderboardInfo{}, err
 	}
 	return leaderboardInfo, nil
@@ -139,7 +138,7 @@ func (a *Leaderboard) GetLeaderboardDetail(url string, mode string) (Leaderboard
 func (a *Leaderboard) GetLeaderboardRecord(url string, mode string) (LeaderboardRecord, error) {
 	xlog.Logger.Info("当前运行模式为:", mode)
 	response, err := new(request.Request).Debug(mode == gin.DebugMode).SetHeaders(a.GetNakamaHeader(a.Token)).SetTimeout(10).Get(url)
-	if xerror.HasErr(err, global.GetAccountListErr) {
+	if utils.HasErr(err, global.GetAccountListErr) {
 		return LeaderboardRecord{}, err
 	}
 	defer response.Close()
@@ -150,7 +149,7 @@ func (a *Leaderboard) GetLeaderboardRecord(url string, mode string) (Leaderboard
 	}
 	var leaderboardRecord LeaderboardRecord
 	err = response.Json(&leaderboardRecord)
-	if xerror.HasErr(err, global.ParseJsonDataErr) {
+	if utils.HasErr(err, global.ParseJsonDataErr) {
 		return LeaderboardRecord{}, err
 	}
 	return leaderboardRecord, nil

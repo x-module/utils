@@ -14,7 +14,6 @@ import (
 	"github.com/go-utils-module/utils/nakama/common"
 	"github.com/go-utils-module/utils/utils"
 	"github.com/go-utils-module/utils/utils/request"
-	"github.com/go-utils-module/utils/utils/xerror"
 	"github.com/go-utils-module/utils/utils/xlog"
 	"time"
 )
@@ -48,7 +47,7 @@ func NewCount(token string) *Count {
 func (a *Count) GetGameServerInfo(apiUrl string, mode string) (CountResponse, error) {
 	xlog.Logger.Info("当前运行模式为:", mode)
 	response, err := request.NewRequest().Debug(mode == xlog.DebugMode).SetHeaders(a.GetNakamaHeader(a.Token)).SetTimeout(10).Get(apiUrl)
-	if xerror.HasErr(err, global.GetGameDataErr) {
+	if utils.HasErr(err, global.GetGameDataErr) {
 		return CountResponse{}, err
 	}
 	defer response.Close()
@@ -59,7 +58,7 @@ func (a *Count) GetGameServerInfo(apiUrl string, mode string) (CountResponse, er
 	}
 	var countResponse CountResponse
 	res, err := response.JsonReturn(&countResponse)
-	if xerror.HasErr(err, global.ParseJsonDataErr) {
+	if utils.HasErr(err, global.ParseJsonDataErr) {
 		xlog.Logger.Error("parse nakama count json data error", err, " response:", res)
 		return CountResponse{}, err
 	}

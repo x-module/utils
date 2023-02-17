@@ -14,7 +14,6 @@ import (
 	"github.com/go-utils-module/utils/nakama/common"
 	"github.com/go-utils-module/utils/utils"
 	"github.com/go-utils-module/utils/utils/request"
-	"github.com/go-utils-module/utils/utils/xerror"
 	"github.com/go-utils-module/utils/utils/xlog"
 
 	"github.com/gin-gonic/gin"
@@ -57,7 +56,7 @@ type Presences struct {
 func (a *Match) GetMatchList(url string, mode string) (MatchList, error) {
 	xlog.Logger.Info("当前运行模式为:", mode)
 	response, err := new(request.Request).Debug(mode == gin.DebugMode).SetHeaders(a.GetNakamaHeader(a.Token)).SetTimeout(10).Get(url)
-	if xerror.HasErr(err, global.GetMatchDataErr) {
+	if utils.HasErr(err, global.GetMatchDataErr) {
 		return MatchList{}, err
 	}
 	defer response.Close()
@@ -68,7 +67,7 @@ func (a *Match) GetMatchList(url string, mode string) (MatchList, error) {
 	}
 	var matchList MatchList
 	err = response.Json(&matchList)
-	if xerror.HasErr(err, global.ParseJsonDataErr) {
+	if utils.HasErr(err, global.ParseJsonDataErr) {
 		return MatchList{}, err
 	}
 	return matchList, nil
@@ -78,7 +77,7 @@ func (a *Match) GetMatchList(url string, mode string) (MatchList, error) {
 func (a *Match) GetState(url string, mode string) (MatchState, error) {
 	xlog.Logger.Info("当前运行模式为:", mode)
 	response, err := request.NewRequest().Debug(mode == gin.DebugMode).SetHeaders(a.GetNakamaHeader(a.Token)).SetTimeout(10).Get(url)
-	if xerror.HasErr(err, global.GetMatchStateErr) {
+	if utils.HasErr(err, global.GetMatchStateErr) {
 		return MatchState{}, err
 	}
 	defer response.Close()
@@ -89,7 +88,7 @@ func (a *Match) GetState(url string, mode string) (MatchState, error) {
 	}
 	var matchState MatchState
 	err = response.Json(&matchState)
-	if xerror.HasErr(err, global.ParseJsonDataErr) {
+	if utils.HasErr(err, global.ParseJsonDataErr) {
 		return MatchState{}, err
 	}
 	return matchState, nil

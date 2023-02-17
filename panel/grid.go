@@ -13,7 +13,7 @@ import (
 	"fmt"
 	"github.com/go-utils-module/utils/handler"
 	"github.com/go-utils-module/utils/utils/datetime"
-	"github.com/jinzhu/gorm"
+	"gorm.io/gorm"
 	"strconv"
 	"strings"
 	"time"
