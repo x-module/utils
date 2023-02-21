@@ -12,7 +12,7 @@ Package condition contains some functions for conditional judgment. eg. And, Or,
 ## Usage:
 ```go
 import (
-    "github.com/go-utils-module/utils/condition"
+    "github.com/go-xmodule/utils/condition"
 )
 ```
 
@@ -53,7 +53,7 @@ package main
 
 import (
     "fmt"
-    "github.com/go-utils-module/utils/condition"
+    "github.com/go-xmodule/utils/condition"
 )
 
 func main() {
@@ -107,7 +107,7 @@ package main
 
 import (
     "fmt"
-    "github.com/go-utils-module/utils/condition"
+    "github.com/go-xmodule/utils/condition"
 )
 
 func main() {
@@ -135,7 +135,7 @@ package main
 
 import (
     "fmt"
-    "github.com/go-utils-module/utils/condition"
+    "github.com/go-xmodule/utils/condition"
 )
 
 func main() {
@@ -163,7 +163,7 @@ package main
 
 import (
     "fmt"
-    "github.com/go-utils-module/utils/condition"
+    "github.com/go-xmodule/utils/condition"
 )
 
 func main() {
@@ -191,7 +191,7 @@ package main
 
 import (
     "fmt"
-    "github.com/go-utils-module/utils/condition"
+    "github.com/go-xmodule/utils/condition"
 )
 
 func main() {
@@ -218,7 +218,7 @@ package main
 
 import (
     "fmt"
-    "github.com/go-utils-module/utils/condition"
+    "github.com/go-xmodule/utils/condition"
 )
 
 func main() {
@@ -245,7 +245,7 @@ package main
 
 import (
     "fmt"
-    "github.com/go-utils-module/utils/condition"
+    "github.com/go-xmodule/utils/condition"
 )
 
 func main() {
@@ -273,7 +273,7 @@ package main
 
 import (
     "fmt"
-    "github.com/go-utils-module/utils/condition"
+    "github.com/go-xmodule/utils/condition"
 )
 
 func main() {

@@ -13,7 +13,7 @@ strutil包含处理字符串的相关函数。
 ## 用法:
 ```go
 import (
-    "github.com/go-utils-module/utils/strutil"
+    "github.com/go-xmodule/utils/strutil"
 )
 ```
 
@@ -61,7 +61,7 @@ func After(s, char string) string
 ```go
 import (
 	"fmt"
-	"github.com/go-utils-module/utils/strutil"
+	"github.com/go-xmodule/utils/strutil"
 )
 
 func main() {
@@ -91,7 +91,7 @@ func AfterLast(s, char string) string
 ```go
 import (
 	"fmt"
-	"github.com/go-utils-module/utils/strutil"
+	"github.com/go-xmodule/utils/strutil"
 )
 
 func main() {
@@ -122,7 +122,7 @@ func Before(s, char string) string
 ```go
 import (
 	"fmt"
-	"github.com/go-utils-module/utils/strutil"
+	"github.com/go-xmodule/utils/strutil"
 )
 
 func main() {
@@ -153,7 +153,7 @@ func BeforeLast(s, char string) string
 ```go
 import (
 	"fmt"
-	"github.com/go-utils-module/utils/strutil"
+	"github.com/go-xmodule/utils/strutil"
 )
 
 func main() {
@@ -184,7 +184,7 @@ func CamelCase(s string) string
 ```go
 import (
 	"fmt"
-	"github.com/go-utils-module/utils/strutil"
+	"github.com/go-xmodule/utils/strutil"
 )
 
 func main() {
@@ -221,7 +221,7 @@ func Capitalize(s string) string
 ```go
 import (
 	"fmt"
-	"github.com/go-utils-module/utils/strutil"
+	"github.com/go-xmodule/utils/strutil"
 )
 
 func main() {
@@ -251,7 +251,7 @@ func IsString(v any) bool
 ```go
 import (
 	"fmt"
-	"github.com/go-utils-module/utils/strutil"
+	"github.com/go-xmodule/utils/strutil"
 )
 
 func main() {
@@ -279,7 +279,7 @@ func KebabCase(s string) string
 ```go
 import (
 	"fmt"
-	"github.com/go-utils-module/utils/strutil"
+	"github.com/go-xmodule/utils/strutil"
 )
 
 func main() {
@@ -312,7 +312,7 @@ func KebabCase(s string) string
 ```go
 import (
 	"fmt"
-	"github.com/go-utils-module/utils/strutil"
+	"github.com/go-xmodule/utils/strutil"
 )
 
 func main() {
@@ -346,7 +346,7 @@ func LowerFirst(s string) string
 ```go
 import (
 	"fmt"
-	"github.com/go-utils-module/utils/strutil"
+	"github.com/go-xmodule/utils/strutil"
 )
 
 func main() {
@@ -380,7 +380,7 @@ func UpperFirst(s string) string
 ```go
 import (
 	"fmt"
-	"github.com/go-utils-module/utils/strutil"
+	"github.com/go-xmodule/utils/strutil"
 )
 
 func main() {
@@ -414,7 +414,7 @@ func PadEnd(source string, size int, padStr string) string
 ```go
 import (
 	"fmt"
-	"github.com/go-utils-module/utils/strutil"
+	"github.com/go-xmodule/utils/strutil"
 )
 
 func main() {
@@ -448,7 +448,7 @@ func PadStart(source string, size int, padStr string) string
 ```go
 import (
 	"fmt"
-	"github.com/go-utils-module/utils/strutil"
+	"github.com/go-xmodule/utils/strutil"
 )
 
 func main() {
@@ -482,7 +482,7 @@ func Reverse(s string) string
 ```go
 import (
 	"fmt"
-	"github.com/go-utils-module/utils/strutil"
+	"github.com/go-xmodule/utils/strutil"
 )
 
 func main() {
@@ -509,7 +509,7 @@ func SnakeCase(s string) string
 ```go
 import (
 	"fmt"
-	"github.com/go-utils-module/utils/strutil"
+	"github.com/go-xmodule/utils/strutil"
 )
 
 func main() {
@@ -544,7 +544,7 @@ func SnakeCase(s string) string
 ```go
 import (
 	"fmt"
-	"github.com/go-utils-module/utils/strutil"
+	"github.com/go-xmodule/utils/strutil"
 )
 
 func main() {
@@ -580,7 +580,7 @@ func SplitEx(s, sep string, removeEmptyString bool) []string
 ```go
 import (
 	"fmt"
-	"github.com/go-utils-module/utils/strutil"
+	"github.com/go-xmodule/utils/strutil"
 )
 
 func main() {
@@ -614,7 +614,7 @@ func Substring(s string, offset int, length uint) string
 ```go
 import (
 	"fmt"
-	"github.com/go-utils-module/utils/strutil"
+	"github.com/go-xmodule/utils/strutil"
 )
 
 func main() {
@@ -652,7 +652,7 @@ func Wrap(str string, wrapWith string) string
 ```go
 import (
 	"fmt"
-	"github.com/go-utils-module/utils/strutil"
+	"github.com/go-xmodule/utils/strutil"
 )
 
 func main() {
@@ -689,7 +689,7 @@ func Unwrap(str string, wrapToken string) string
 ```go
 import (
 	"fmt"
-	"github.com/go-utils-module/utils/strutil"
+	"github.com/go-xmodule/utils/strutil"
 )
 
 func main() {

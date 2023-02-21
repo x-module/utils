@@ -2,7 +2,7 @@ package grpc
 
 import (
 	"context"
-	"github.com/go-utils-module/utils/global"
+	"github.com/go-xmodule/utils/global"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/metadata"

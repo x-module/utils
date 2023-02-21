@@ -14,7 +14,7 @@ HashMap is a key value map data structure.
 
 ```go
 import (
-    hashmap "github.com/go-utils-module/utils/datastructure/hashmap"
+    hashmap "github.com/go-xmodule/utils/datastructure/hashmap"
 )
 ```
 
@@ -54,7 +54,7 @@ package main
 
 import (
     "fmt"
-    hashmap "github.com/go-utils-module/utils/datastructure/hashmap"
+    hashmap "github.com/go-xmodule/utils/datastructure/hashmap"
 )
 
 func main() {
@@ -80,7 +80,7 @@ package main
 
 import (
     "fmt"
-    hashmap "github.com/go-utils-module/utils/datastructure/hashmap"
+    hashmap "github.com/go-xmodule/utils/datastructure/hashmap"
 )
 
 func main() {
@@ -106,7 +106,7 @@ package main
 
 import (
     "fmt"
-    hashmap "github.com/go-utils-module/utils/datastructure/hashmap"
+    hashmap "github.com/go-xmodule/utils/datastructure/hashmap"
 )
 
 func main() {
@@ -134,7 +134,7 @@ package main
 
 import (
     "fmt"
-    hashmap "github.com/go-utils-module/utils/datastructure/hashmap"
+    hashmap "github.com/go-xmodule/utils/datastructure/hashmap"
 )
 
 func main() {
@@ -165,7 +165,7 @@ package main
 
 import (
     "fmt"
-    hashmap "github.com/go-utils-module/utils/datastructure/hashmap"
+    hashmap "github.com/go-xmodule/utils/datastructure/hashmap"
 )
 
 func main() {
@@ -199,7 +199,7 @@ package main
 
 import (
     "fmt"
-    hashmap "github.com/go-utils-module/utils/datastructure/hashmap"
+    hashmap "github.com/go-xmodule/utils/datastructure/hashmap"
 )
 
 func main() {
@@ -230,7 +230,7 @@ package main
 
 import (
     "fmt"
-    hashmap "github.com/go-utils-module/utils/datastructure/hashmap"
+    hashmap "github.com/go-xmodule/utils/datastructure/hashmap"
 )
 
 func main() {
@@ -265,7 +265,7 @@ package main
 
 import (
     "fmt"
-    hashmap "github.com/go-utils-module/utils/datastructure/hashmap"
+    hashmap "github.com/go-xmodule/utils/datastructure/hashmap"
 )
 
 func main() {
@@ -297,7 +297,7 @@ package main
 
 import (
     "fmt"
-    hashmap "github.com/go-utils-module/utils/datastructure/hashmap"
+    hashmap "github.com/go-xmodule/utils/datastructure/hashmap"
 )
 
 func main() {

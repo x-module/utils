@@ -12,7 +12,7 @@
 ## 用法:
 ```go
 import (
-    "github.com/go-utils-module/utils/concurrency"
+    "github.com/go-xmodule/utils/concurrency"
 )
 ```
 
@@ -53,7 +53,7 @@ package main
 
 import (
     "fmt"
-    "github.com/go-utils-module/utils/concurrency"
+    "github.com/go-xmodule/utils/concurrency"
 )
 
 func main() {
@@ -80,7 +80,7 @@ package main
 import (
     "context"
     "fmt"
-    "github.com/go-utils-module/utils/concurrency"
+    "github.com/go-xmodule/utils/concurrency"
 )
 
 func main() {
@@ -134,7 +134,7 @@ package main
 import (
     "context"
     "fmt"
-    "github.com/go-utils-module/utils/concurrency"
+    "github.com/go-xmodule/utils/concurrency"
 )
 
 func main() {
@@ -174,7 +174,7 @@ package main
 import (
     "context"
     "fmt"
-    "github.com/go-utils-module/utils/concurrency"
+    "github.com/go-xmodule/utils/concurrency"
 )
 
 func main() {
@@ -212,7 +212,7 @@ package main
 import (
     "context"
     "fmt"
-    "github.com/go-utils-module/utils/concurrency"
+    "github.com/go-xmodule/utils/concurrency"
 )
 
 func main() {
@@ -253,7 +253,7 @@ package main
 import (
     "context"
     "fmt"
-    "github.com/go-utils-module/utils/concurrency"
+    "github.com/go-xmodule/utils/concurrency"
 )
 
 func main() {
@@ -296,7 +296,7 @@ package main
 import (
     "context"
     "fmt"
-    "github.com/go-utils-module/utils/concurrency"
+    "github.com/go-xmodule/utils/concurrency"
 )
 
 func main() {
@@ -342,7 +342,7 @@ package main
 import (
     "context"
     "fmt"
-    "github.com/go-utils-module/utils/concurrency"
+    "github.com/go-xmodule/utils/concurrency"
 )
 
 func main() {
@@ -382,7 +382,7 @@ package main
 import (
     "context"
     "fmt"
-    "github.com/go-utils-module/utils/concurrency"
+    "github.com/go-xmodule/utils/concurrency"
 )
 
 func main() {
@@ -429,7 +429,7 @@ package main
 import (
     "context"
     "fmt"
-    "github.com/go-utils-module/utils/concurrency"
+    "github.com/go-xmodule/utils/concurrency"
 )
 
 func main() {

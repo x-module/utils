@@ -5,7 +5,7 @@ import (
 	"net/http"
 	"testing"
 
-	"github.com/go-utils-module/utils/utils/internal"
+	"github.com/go-xmodule/utils/utils/internal"
 )
 
 func TestGetInternalIp(t *testing.T) {

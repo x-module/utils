@@ -12,7 +12,7 @@ condition包含一些用于条件判断的函数。这个包的实现参考了ca
 ## 用法:
 ```go
 import (
-    "github.com/go-utils-module/utils/condition"
+    "github.com/go-xmodule/utils/condition"
 )
 ```
 
@@ -52,7 +52,7 @@ package main
 
 import (
     "fmt"
-    "github.com/go-utils-module/utils/condition"
+    "github.com/go-xmodule/utils/condition"
 )
 
 func main() {
@@ -106,7 +106,7 @@ package main
 
 import (
     "fmt"
-    "github.com/go-utils-module/utils/condition"
+    "github.com/go-xmodule/utils/condition"
 )
 
 func main() {
@@ -134,7 +134,7 @@ package main
 
 import (
     "fmt"
-    "github.com/go-utils-module/utils/condition"
+    "github.com/go-xmodule/utils/condition"
 )
 
 func main() {
@@ -162,7 +162,7 @@ package main
 
 import (
     "fmt"
-    "github.com/go-utils-module/utils/condition"
+    "github.com/go-xmodule/utils/condition"
 )
 
 func main() {
@@ -190,7 +190,7 @@ package main
 
 import (
     "fmt"
-    "github.com/go-utils-module/utils/condition"
+    "github.com/go-xmodule/utils/condition"
 )
 
 func main() {
@@ -218,7 +218,7 @@ package main
 
 import (
     "fmt"
-    "github.com/go-utils-module/utils/condition"
+    "github.com/go-xmodule/utils/condition"
 )
 
 func main() {
@@ -244,7 +244,7 @@ package main
 
 import (
     "fmt"
-    "github.com/go-utils-module/utils/condition"
+    "github.com/go-xmodule/utils/condition"
 )
 
 func main() {
@@ -272,7 +272,7 @@ package main
 
 import (
     "fmt"
-    "github.com/go-utils-module/utils/condition"
+    "github.com/go-xmodule/utils/condition"
 )
 
 func main() {

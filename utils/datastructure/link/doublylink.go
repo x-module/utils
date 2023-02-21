@@ -3,7 +3,7 @@ package datastructure
 import (
 	"fmt"
 
-	"github.com/go-utils-module/utils/utils/datastructure"
+	"github.com/go-xmodule/utils/utils/datastructure"
 )
 
 // DoublyLink is a linked list. Whose node has a generic Value, Pre pointer points to a previous node of the dl, Next pointer points to a next node of the dl.

@@ -10,7 +10,7 @@ package panel
 
 import (
 	"encoding/json"
-	"github.com/go-utils-module/utils/utils/datetime"
+	"github.com/go-xmodule/utils/utils/datetime"
 	"time"
 )
 

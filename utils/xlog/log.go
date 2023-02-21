@@ -11,8 +11,8 @@ package xlog
 import (
 	"github.com/druidcaesa/gotool"
 	"github.com/druidcaesa/gotool/openfile"
-	"github.com/go-utils-module/utils/utils/fileutil"
-	"github.com/go-utils-module/utils/utils/xerror"
+	"github.com/go-xmodule/utils/utils/fileutil"
+	"github.com/go-xmodule/utils/utils/xerror"
 	rotatelogs "github.com/lestrrat-go/file-rotatelogs"
 	"github.com/rifflock/lfshook"
 	"github.com/sirupsen/logrus"

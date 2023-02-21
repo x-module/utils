@@ -14,7 +14,7 @@
 ## 用法
 ```go
 import (
-    stack "github.com/go-utils-module/utils/datastructure/stack"
+    stack "github.com/go-xmodule/utils/datastructure/stack"
 )
 ```
 
@@ -71,7 +71,7 @@ package main
 
 import (
     "fmt"
-    stack "github.com/go-utils-module/utils/datastructure/stack"
+    stack "github.com/go-xmodule/utils/datastructure/stack"
 )
 
 func main() {
@@ -98,7 +98,7 @@ package main
 
 import (
     "fmt"
-    stack "github.com/go-utils-module/utils/datastructure/stack"
+    stack "github.com/go-xmodule/utils/datastructure/stack"
 )
 
 func main() {
@@ -129,7 +129,7 @@ package main
 
 import (
     "fmt"
-    stack "github.com/go-utils-module/utils/datastructure/stack"
+    stack "github.com/go-xmodule/utils/datastructure/stack"
 )
 
 func main() {
@@ -164,7 +164,7 @@ package main
 
 import (
     "fmt"
-    stack "github.com/go-utils-module/utils/datastructure/stack"
+    stack "github.com/go-xmodule/utils/datastructure/stack"
 )
 
 func main() {
@@ -199,7 +199,7 @@ package main
 
 import (
     "fmt"
-    stack "github.com/go-utils-module/utils/datastructure/stack"
+    stack "github.com/go-xmodule/utils/datastructure/stack"
 )
 
 func main() {
@@ -230,7 +230,7 @@ package main
 
 import (
     "fmt"
-    stack "github.com/go-utils-module/utils/datastructure/stack"
+    stack "github.com/go-xmodule/utils/datastructure/stack"
 )
 
 func main() {
@@ -261,7 +261,7 @@ package main
 
 import (
     "fmt"
-    stack "github.com/go-utils-module/utils/datastructure/stack"
+    stack "github.com/go-xmodule/utils/datastructure/stack"
 )
 
 func main() {
@@ -294,7 +294,7 @@ package main
 
 import (
     "fmt"
-    stack "github.com/go-utils-module/utils/datastructure/stack"
+    stack "github.com/go-xmodule/utils/datastructure/stack"
 )
 
 func main() {
@@ -338,7 +338,7 @@ package main
 
 import (
     "fmt"
-    stack "github.com/go-utils-module/utils/datastructure/stack"
+    stack "github.com/go-xmodule/utils/datastructure/stack"
 )
 
 func main() {
@@ -365,7 +365,7 @@ package main
 
 import (
     "fmt"
-    stack "github.com/go-utils-module/utils/datastructure/stack"
+    stack "github.com/go-xmodule/utils/datastructure/stack"
 )
 
 func main() {
@@ -396,7 +396,7 @@ package main
 
 import (
     "fmt"
-    stack "github.com/go-utils-module/utils/datastructure/stack"
+    stack "github.com/go-xmodule/utils/datastructure/stack"
 )
 
 func main() {
@@ -431,7 +431,7 @@ package main
 
 import (
     "fmt"
-    stack "github.com/go-utils-module/utils/datastructure/stack"
+    stack "github.com/go-xmodule/utils/datastructure/stack"
 )
 
 func main() {
@@ -466,7 +466,7 @@ package main
 
 import (
     "fmt"
-    stack "github.com/go-utils-module/utils/datastructure/stack"
+    stack "github.com/go-xmodule/utils/datastructure/stack"
 )
 
 func main() {
@@ -497,7 +497,7 @@ package main
 
 import (
     "fmt"
-    stack "github.com/go-utils-module/utils/datastructure/stack"
+    stack "github.com/go-xmodule/utils/datastructure/stack"
 )
 
 func main() {
@@ -528,7 +528,7 @@ package main
 
 import (
     "fmt"
-    stack "github.com/go-utils-module/utils/datastructure/stack"
+    stack "github.com/go-xmodule/utils/datastructure/stack"
 )
 
 func main() {
@@ -561,7 +561,7 @@ package main
 
 import (
     "fmt"
-    stack "github.com/go-utils-module/utils/datastructure/stack"
+    stack "github.com/go-xmodule/utils/datastructure/stack"
 )
 
 func main() {
@@ -595,7 +595,7 @@ package main
 
 import (
     "fmt"
-    stack "github.com/go-utils-module/utils/datastructure/stack"
+    stack "github.com/go-xmodule/utils/datastructure/stack"
 )
 
 func main() {

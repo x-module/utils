@@ -3,7 +3,7 @@ package datastructure
 import (
 	"testing"
 
-	"github.com/go-utils-module/utils/utils/internal"
+	"github.com/go-xmodule/utils/utils/internal"
 )
 
 func TestHashMap_PutAndGet(t *testing.T) {

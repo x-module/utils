@@ -4,7 +4,7 @@ import (
 	"errors"
 	"fmt"
 
-	"github.com/go-utils-module/utils/utils/datastructure"
+	"github.com/go-xmodule/utils/utils/datastructure"
 )
 
 // LinkedStack implements stack with link list

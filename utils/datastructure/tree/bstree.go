@@ -3,8 +3,8 @@ package datastructure
 import (
 	"math"
 
-	"github.com/go-utils-module/utils/utils/datastructure"
-	"github.com/go-utils-module/utils/utils/lancetconstraints"
+	"github.com/go-xmodule/utils/utils/datastructure"
+	"github.com/go-xmodule/utils/utils/lancetconstraints"
 )
 
 // BSTree is a binary search tree data structure in which each node has at most two children,

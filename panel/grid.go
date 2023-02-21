@@ -11,8 +11,8 @@ package panel
 
 import (
 	"fmt"
-	"github.com/go-utils-module/utils/handler"
-	"github.com/go-utils-module/utils/utils/datetime"
+	"github.com/go-xmodule/utils/handler"
+	"github.com/go-xmodule/utils/utils/datetime"
 	"gorm.io/gorm"
 	"strconv"
 	"strings"

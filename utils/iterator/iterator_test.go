@@ -8,7 +8,7 @@ import (
 	"context"
 	"testing"
 
-	"github.com/go-utils-module/utils/utils/internal"
+	"github.com/go-xmodule/utils/utils/internal"
 )
 
 func TestSliceIterator(t *testing.T) {

@@ -10,7 +10,7 @@ package request
 
 import (
 	"fmt"
-	"github.com/go-utils-module/utils/utils/cryptor"
+	"github.com/go-xmodule/utils/utils/cryptor"
 )
 
 func RequestSign(ts string, secret string) string {

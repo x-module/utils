@@ -10,11 +10,11 @@ package api
 
 import (
 	"errors"
-	"github.com/go-utils-module/utils/global"
-	"github.com/go-utils-module/utils/nakama/common"
-	"github.com/go-utils-module/utils/utils"
-	"github.com/go-utils-module/utils/utils/request"
-	"github.com/go-utils-module/utils/utils/xlog"
+	"github.com/go-xmodule/utils/global"
+	"github.com/go-xmodule/utils/nakama/common"
+	"github.com/go-xmodule/utils/utils"
+	"github.com/go-xmodule/utils/utils/request"
+	"github.com/go-xmodule/utils/utils/xlog"
 	"time"
 )
 

@@ -13,7 +13,7 @@ import (
 	"encoding/json"
 	"errors"
 	"fmt"
-	"github.com/go-utils-module/utils/global"
+	"github.com/go-xmodule/utils/global"
 	"io/ioutil"
 	"net/http"
 )

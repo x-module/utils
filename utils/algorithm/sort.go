@@ -3,7 +3,7 @@
 
 package algorithm
 
-import "github.com/go-utils-module/utils/utils/lancetconstraints"
+import "github.com/go-xmodule/utils/utils/lancetconstraints"
 
 // BubbleSort applys the bubble sort algorithm to sort the collection, will change the original collection data.
 // Play: https://go.dev/play/p/GNdv7Jg2Taj

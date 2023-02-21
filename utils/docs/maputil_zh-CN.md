@@ -13,7 +13,7 @@ maputil包包括一些操作map的函数。
 ## 用法:
 ```go
 import (
-    "github.com/go-utils-module/utils/maputil"
+    "github.com/go-xmodule/utils/maputil"
 )
 ```
 
@@ -50,7 +50,7 @@ package main
 
 import (
     "fmt"
-    "github.com/go-utils-module/utils/maputil"
+    "github.com/go-xmodule/utils/maputil"
 )
 
 func main() {
@@ -88,7 +88,7 @@ package main
 
 import (
     "fmt"
-    "github.com/go-utils-module/utils/maputil"
+    "github.com/go-xmodule/utils/maputil"
 )
 
 func main() {
@@ -129,7 +129,7 @@ package main
 
 import (
     "fmt"
-    "github.com/go-utils-module/utils/maputil"
+    "github.com/go-xmodule/utils/maputil"
 )
 
 func main() {
@@ -178,7 +178,7 @@ package main
 
 import (
     "fmt"
-    "github.com/go-utils-module/utils/maputil"
+    "github.com/go-xmodule/utils/maputil"
 )
 
 func main() {
@@ -214,7 +214,7 @@ package main
 
 import (
     "fmt"
-    "github.com/go-utils-module/utils/maputil"
+    "github.com/go-xmodule/utils/maputil"
 )
 
 func main() {
@@ -247,7 +247,7 @@ package main
 
 import (
     "fmt"
-    "github.com/go-utils-module/utils/maputil"
+    "github.com/go-xmodule/utils/maputil"
 )
 
 func main() {
@@ -284,7 +284,7 @@ package main
 
 import (
     "fmt"
-    "github.com/go-utils-module/utils/maputil"
+    "github.com/go-xmodule/utils/maputil"
 )
 
 func main() {
@@ -319,7 +319,7 @@ package main
 
 import (
     "fmt"
-    "github.com/go-utils-module/utils/maputil"
+    "github.com/go-xmodule/utils/maputil"
 )
 
 func main() {

@@ -7,7 +7,7 @@ package datastructure
 import (
 	"fmt"
 
-	"github.com/go-utils-module/utils/utils/lancetconstraints"
+	"github.com/go-xmodule/utils/utils/lancetconstraints"
 )
 
 // MaxHeap implements a binary max heap

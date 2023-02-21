@@ -5,7 +5,7 @@ import (
 	"math"
 	"testing"
 
-	"github.com/go-utils-module/utils/utils/internal"
+	"github.com/go-xmodule/utils/utils/internal"
 )
 
 func TestContain(t *testing.T) {

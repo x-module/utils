@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"testing"
 
-	"github.com/go-utils-module/utils/utils/internal"
+	"github.com/go-xmodule/utils/utils/internal"
 )
 
 // People test mock data
@@ -16,7 +16,7 @@ type people struct {
 // PeopleAageComparator sort people slice by age field
 type peopleAgeComparator struct{}
 
-// Compare implements github.com/go-utils-module/utils/lancetconstraints/constraints.go/Comparator
+// Compare implements github.com/go-xmodule/utils/lancetconstraints/constraints.go/Comparator
 func (pc *peopleAgeComparator) Compare(v1 any, v2 any) int {
 	p1, _ := v1.(people)
 	p2, _ := v2.(people)

@@ -13,7 +13,7 @@ Package function can control the flow of function execution and support part of 
 ## Usage:
 ```go
 import (
-    "github.com/go-utils-module/utils/function"
+    "github.com/go-xmodule/utils/function"
 )
 ```
 
@@ -50,7 +50,7 @@ package main
 
 import (
     "fmt"
-    "github.com/go-utils-module/utils/function"
+    "github.com/go-xmodule/utils/function"
 )
 
 func main() {
@@ -97,8 +97,8 @@ package main
 
 import (
     "fmt"
-    "github.com/go-utils-module/utils/function"
-    "github.com/go-utils-module/utils/internal"
+    "github.com/go-xmodule/utils/function"
+    "github.com/go-xmodule/utils/internal"
 )
 
 func main() {
@@ -142,7 +142,7 @@ package main
 
 import (
     "fmt"
-    "github.com/go-utils-module/utils/function"
+    "github.com/go-xmodule/utils/function"
 )
 
 func main() {
@@ -179,7 +179,7 @@ package main
 
 import (
     "fmt"
-    "github.com/go-utils-module/utils/function"
+    "github.com/go-xmodule/utils/function"
 )
 
 func main() {
@@ -215,7 +215,7 @@ package main
 
 import (
     "fmt"
-    "github.com/go-utils-module/utils/function"
+    "github.com/go-xmodule/utils/function"
 )
 
 func main() {
@@ -257,7 +257,7 @@ package main
 
 import (
     "fmt"
-    "github.com/go-utils-module/utils/function"
+    "github.com/go-xmodule/utils/function"
 )
 
 func main() {
@@ -286,7 +286,7 @@ package main
 
 import (
     "fmt"
-    "github.com/go-utils-module/utils/function"
+    "github.com/go-xmodule/utils/function"
 )
 
 func main() {
@@ -321,7 +321,7 @@ package main
 
 import (
     "fmt"
-    "github.com/go-utils-module/utils/function"
+    "github.com/go-xmodule/utils/function"
 )
 
 func main() {
@@ -367,7 +367,7 @@ package main
 
 import (
     "fmt"
-    "github.com/go-utils-module/utils/function"
+    "github.com/go-xmodule/utils/function"
 )
 
 func main() {

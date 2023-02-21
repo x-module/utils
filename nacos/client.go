@@ -9,7 +9,7 @@
 package nacos
 
 import (
-	"github.com/go-utils-module/utils/global"
+	"github.com/go-xmodule/utils/global"
 	"github.com/nacos-group/nacos-sdk-go/v2/clients/naming_client"
 	"github.com/nacos-group/nacos-sdk-go/v2/model"
 	"github.com/nacos-group/nacos-sdk-go/v2/vo"

@@ -13,7 +13,7 @@ Package mathutil implements some functions for math calculation.
 ## Example:
 ```go
 import (
-    "github.com/go-utils-module/utils/mathutil"
+    "github.com/go-xmodule/utils/mathutil"
 )
 ```
 
@@ -54,7 +54,7 @@ package main
 
 import (
     "fmt"
-    "github.com/go-utils-module/utils/mathutil"
+    "github.com/go-xmodule/utils/mathutil"
 )
 
 func main() {
@@ -82,7 +82,7 @@ package main
 
 import (
     "fmt"
-    "github.com/go-utils-module/utils/mathutil"
+    "github.com/go-xmodule/utils/mathutil"
 )
 
 func main() {
@@ -109,7 +109,7 @@ package main
 
 import (
     "fmt"
-    "github.com/go-utils-module/utils/mathutil"
+    "github.com/go-xmodule/utils/mathutil"
 )
 
 func main() {
@@ -138,7 +138,7 @@ package main
 
 import (
     "fmt"
-    "github.com/go-utils-module/utils/mathutil"
+    "github.com/go-xmodule/utils/mathutil"
 )
 
 func main() {
@@ -166,7 +166,7 @@ package main
 
 import (
     "fmt"
-    "github.com/go-utils-module/utils/mathutil"
+    "github.com/go-xmodule/utils/mathutil"
 )
 
 func main() {
@@ -194,7 +194,7 @@ package main
 
 import (
     "fmt"
-    "github.com/go-utils-module/utils/mathutil"
+    "github.com/go-xmodule/utils/mathutil"
 )
 
 func main() {
@@ -232,7 +232,7 @@ package main
 
 import (
     "fmt"
-    "github.com/go-utils-module/utils/mathutil"
+    "github.com/go-xmodule/utils/mathutil"
 )
 
 func main() {
@@ -259,7 +259,7 @@ package main
 
 import (
     "fmt"
-    "github.com/go-utils-module/utils/mathutil"
+    "github.com/go-xmodule/utils/mathutil"
 )
 
 func main() {
@@ -298,7 +298,7 @@ package main
 
 import (
     "fmt"
-    "github.com/go-utils-module/utils/mathutil"
+    "github.com/go-xmodule/utils/mathutil"
 )
 
 func main() {
@@ -324,7 +324,7 @@ package main
 
 import (
     "fmt"
-    "github.com/go-utils-module/utils/mathutil"
+    "github.com/go-xmodule/utils/mathutil"
 )
 
 func main() {
@@ -354,7 +354,7 @@ package main
 
 import (
     "fmt"
-    "github.com/go-utils-module/utils/mathutil"
+    "github.com/go-xmodule/utils/mathutil"
 )
 
 func main() {
@@ -383,7 +383,7 @@ package main
 
 import (
     "fmt"
-    "github.com/go-utils-module/utils/mathutil"
+    "github.com/go-xmodule/utils/mathutil"
 )
 
 func main() {

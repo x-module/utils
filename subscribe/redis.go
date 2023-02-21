@@ -9,10 +9,10 @@
 package subscribe
 
 import (
-	"github.com/go-utils-module/utils/handler"
-	"github.com/go-utils-module/utils/utils"
-	"github.com/go-utils-module/utils/utils/convertor"
-	"github.com/go-utils-module/utils/utils/xlog"
+	"github.com/go-xmodule/utils/handler"
+	"github.com/go-xmodule/utils/utils"
+	"github.com/go-xmodule/utils/utils/convertor"
+	"github.com/go-xmodule/utils/utils/xlog"
 )
 
 type RedisSubscribe struct {

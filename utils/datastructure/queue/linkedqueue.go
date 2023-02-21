@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"reflect"
 
-	"github.com/go-utils-module/utils/utils/datastructure"
+	"github.com/go-xmodule/utils/utils/datastructure"
 )
 
 // LinkedQueue implements queue with link list
