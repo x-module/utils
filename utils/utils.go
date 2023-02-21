@@ -9,12 +9,14 @@
 package utils
 
 import (
+	"bytes"
 	"encoding/json"
 	"errors"
 	"fmt"
 	"github.com/go-xmodule/utils/global"
 	"github.com/go-xmodule/utils/utils/xlog"
 	"net"
+	"os"
 )
 
 func Success(status int) bool {
@@ -60,4 +62,14 @@ func OpenFreeUDPPort(portBase int, num int) (net.PacketConn, int, error) {
 		return conn, port, nil
 	}
 	return nil, 0, errors.New("failed to open free port")
+}
+
+func JsonDisplay(obj any) {
+	b, _ := json.Marshal(obj)
+	fmt.Println("---------------------------------json obj-------------------------------------")
+	var out bytes.Buffer
+	_ = json.Indent(&out, b, "", "\t")
+	_, _ = out.WriteTo(os.Stdout)
+	fmt.Printf("\n")
+	fmt.Println("---------------------------------json obj-------------------------------------")
 }
