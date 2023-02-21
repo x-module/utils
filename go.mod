@@ -9,7 +9,7 @@ require (
 	github.com/go-admin-team/go-admin-core v1.5.1
 	github.com/go-admin-team/go-admin-core/sdk v1.5.1
 	github.com/go-redis/redis/v8 v8.11.5
-	github.com/go-xmodule/module v1.0.1
+	github.com/go-xmodule/module v1.0.2
 	github.com/jordan-wright/email v4.0.1-0.20210109023952-943e75fe5223+incompatible
 	github.com/json-iterator/go v1.1.12
 	github.com/lestrrat-go/file-rotatelogs v2.4.0+incompatible
