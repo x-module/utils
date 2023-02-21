@@ -140,8 +140,8 @@ github.com/go-sql-driver/mysql v1.7.0 h1:ueSltNNllEqE3qcWBTD0iQd3IpL/6U+mJxLkazJ
 github.com/go-sql-driver/mysql v1.7.0/go.mod h1:OXbVy3sEdcQ2Doequ6Z5BW6fXNQTmx+9S1MCJN5yJMI=
 github.com/go-stack/stack v1.8.0/go.mod h1:v0f6uXyyMGvRgIKkXu+yp6POWl0qKG85gN/melR3HDY=
 github.com/go-task/slim-sprig v0.0.0-20210107165309-348f09dbbbc0/go.mod h1:fyg7847qk6SyHyPtNmDHnmrv/HOrqktSC+C9fM+CJOE=
-github.com/go-xmodule/module v1.0.1 h1:ky5EYTX9GmZLpK02ZUTP8fx+fkPfzR5ErYixLBHeHQ8=
-github.com/go-xmodule/module v1.0.1/go.mod h1:0jjcuIFwsJn7iwYhg6JhC5J0ozOSWs/gLJGlSqS3YaQ=
+github.com/go-xmodule/module v1.0.2 h1:0I6Sjf55VBxgaLsep3m9cstRs2xjDI6lW7B5iKZA8fk=
+github.com/go-xmodule/module v1.0.2/go.mod h1:q0h9gFX1m7Wzkl91GmH8HR357m7SerSdlUn8z9vSjCw=
 github.com/goccy/go-json v0.9.11 h1:/pAaQDLHEoCq/5FFmSKBswWmK6H0e8g4159Kc/X/nqk=
 github.com/goccy/go-json v0.9.11/go.mod h1:6MelG93GURQebXPDq3khkgXZkazVtN9CRI+MGFi0w8I=
 github.com/gogo/protobuf v1.1.1/go.mod h1:r8qH/GZQm5c6nD/R0oafs1akxWv10x8SbQlK7atdtwQ=

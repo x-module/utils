@@ -10,6 +10,7 @@ package handler
 
 import (
 	"context"
+	"github.com/go-redis/redis/v8"
 	"github.com/go-xmodule/utils/dirver"
 	"github.com/go-xmodule/utils/global"
 	"github.com/go-xmodule/utils/utils/xerror"
