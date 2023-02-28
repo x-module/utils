@@ -10,6 +10,9 @@ require (
 	github.com/go-admin-team/go-admin-core/sdk v1.5.1
 	github.com/go-redis/redis/v8 v8.11.5
 	github.com/go-xmodule/module v1.0.2
+	github.com/golang/protobuf v1.5.2
+	github.com/gorilla/mux v1.8.0
+	github.com/gorilla/websocket v1.4.2
 	github.com/jordan-wright/email v4.0.1-0.20210109023952-943e75fe5223+incompatible
 	github.com/json-iterator/go v1.1.12
 	github.com/lestrrat-go/file-rotatelogs v2.4.0+incompatible
@@ -17,6 +20,7 @@ require (
 	github.com/rifflock/lfshook v0.0.0-20180920164130-b9218ef580f5
 	github.com/sirupsen/logrus v1.8.1
 	golang.org/x/exp v0.0.0-20221208152030-732eee02a75a
+	golang.org/x/net v0.4.0
 	golang.org/x/text v0.5.0
 	google.golang.org/grpc v1.52.3
 	gopkg.in/yaml.v2 v2.4.0
@@ -49,7 +53,6 @@ require (
 	github.com/goccy/go-json v0.9.11 // indirect
 	github.com/golang/freetype v0.0.0-20170609003504-e2365dfdc4a0 // indirect
 	github.com/golang/mock v1.6.0 // indirect
-	github.com/golang/protobuf v1.5.2 // indirect
 	github.com/golang/snappy v0.0.1 // indirect
 	github.com/google/uuid v1.3.0 // indirect
 	github.com/henrylee2cn/ameda v1.5.1 // indirect
@@ -84,7 +87,6 @@ require (
 	go.uber.org/zap v1.21.0 // indirect
 	golang.org/x/crypto v0.0.0-20221005025214-4161e89ecf1b // indirect
 	golang.org/x/image v0.0.0-20220413100746-70e8d0d3baa9 // indirect
-	golang.org/x/net v0.4.0 // indirect
 	golang.org/x/sync v0.0.0-20220722155255-886fb9371eb4 // indirect
 	golang.org/x/sys v0.3.0 // indirect
 	golang.org/x/time v0.0.0-20220722155302-e5dcc9cfc0b9 // indirect
