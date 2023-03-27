@@ -11,7 +11,6 @@ require (
 	github.com/go-redis/redis/v8 v8.11.5
 	github.com/go-xmodule/module v1.0.2
 	github.com/golang/protobuf v1.5.2
-	github.com/gorilla/mux v1.8.0
 	github.com/gorilla/websocket v1.4.2
 	github.com/jordan-wright/email v4.0.1-0.20210109023952-943e75fe5223+incompatible
 	github.com/json-iterator/go v1.1.12

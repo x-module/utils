@@ -46,6 +46,7 @@ type CommonModel struct {
 
 // InitializeMysql 初始化数据库连接
 func InitializeMysql(config dirver.LinkParams) *gorm.DB {
+	fmt.Println("=============------===============")
 	db, err := dirver.InitializeDB(config)
 	xerror.PanicErr(err, global.InitMysqlErr.String())
 	DBHandler = NewDatabase(db)
