@@ -107,7 +107,7 @@ func (w *WebSocket) Handler(ws *websocket.Conn) {
 	for {
 		var reply string
 		if err := websocket.Message.Receive(ws, &reply); err != nil {
-			xlog.Logger.WithField("err", err).Error("Can't receive")
+			xlog.Logger.Info("Can't receive")
 			break
 		}
 		xlog.Logger.Debugf("Received back from client: " + reply)
@@ -118,7 +118,7 @@ func (w *WebSocket) Handler(ws *websocket.Conn) {
 			return
 		}
 		if message.Type == MessageTypeString {
-			if reply == "ping" {
+			if message.Message == "ping" {
 				_ = w.SendMessage("pong")
 			} else {
 				w._message(message)
