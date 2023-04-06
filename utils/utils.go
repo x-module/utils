@@ -14,9 +14,12 @@ import (
 	"errors"
 	"fmt"
 	"github.com/go-xmodule/utils/global"
+	"github.com/go-xmodule/utils/utils/cryptor"
 	"github.com/go-xmodule/utils/utils/xlog"
+	"github.com/golang-module/carbon"
 	"net"
 	"os"
+	"strings"
 )
 
 func Success(status int) bool {
@@ -72,4 +75,17 @@ func JsonDisplay(obj any) {
 	_, _ = out.WriteTo(os.Stdout)
 	fmt.Printf("\n")
 	fmt.Println("---------------------------------json obj-------------------------------------")
+}
+
+func ApiSign(url string, secret string) string {
+	ts := fmt.Sprint(carbon.Now().Timestamp())
+	signStr := fmt.Sprintf("%s@%s@%s", secret, ts, secret)
+	// 对字符串进行sha1哈希
+	sign := cryptor.Sha1(signStr)
+	if strings.Contains(url, "?") {
+		url += fmt.Sprintf("&ts=%s&sign=%s", ts, sign)
+	} else {
+		url += fmt.Sprintf("?ts=%s&sign=%s", ts, sign)
+	}
+	return url
 }

@@ -37,8 +37,12 @@ console.log(JSON.stringify(data))`
 	code = strings.Replace(code, "#code#", reg, 1)
 	jsFile := path + "/temp_mock.js"
 	// jsFile = getCurrentPath()
-	_ = ioutil.WriteFile(jsFile, []byte(code), 0666)
+	err := ioutil.WriteFile(jsFile, []byte(code), 0666)
+	if err != nil {
+		fmt.Println(err)
+	}
 	command := "/opt/homebrew/bin/node " + jsFile
+	fmt.Println(command)
 	parts := strings.Fields(command)
 	data, err := exec.Command(parts[0], parts[1:]...).Output()
 

@@ -10,10 +10,11 @@ package socket
 
 import (
 	"encoding/json"
-	"fmt"
+	"github.com/go-xmodule/module/global"
 	"github.com/go-xmodule/utils/utils"
 	"github.com/go-xmodule/utils/utils/xlog"
-	"golang.org/x/net/websocket"
+	"github.com/gorilla/websocket"
+	"log"
 	"net/http"
 )
 
@@ -93,44 +94,75 @@ func (w *WebSocket) SendMessage(message string) error {
 	return w.Send(msg)
 }
 
+var messageChan = make(chan string, 1000)
+
 func (w *WebSocket) Send(message Message) error {
-	if err := websocket.Message.Send(w.wsHandler, utils.JsonString(message)); err != nil {
-		xlog.Logger.WithField("err", err).Error("Can't send message")
-		return err
-	}
-	fmt.Println("send back")
+	msg, _ := json.Marshal(message)
+	messageChan <- string(msg)
 	return nil
 }
 
-func (w *WebSocket) Handler(ws *websocket.Conn) {
-	w.wsHandler = ws
+func (w *WebSocket) _send() {
+	defer func() {
+		if err := recover(); err != nil {
+			xlog.Logger.WithField(global.ErrField, err).Error("write connect message error")
+			w._send()
+		}
+	}()
+	for msg := range messageChan {
+		err := w.wsHandler.WriteMessage(websocket.TextMessage, []byte(msg))
+		if err != nil {
+			xlog.Logger.WithField(global.ErrField, err).Error("send message error")
+		}
+	}
+}
+
+var upgrader = websocket.Upgrader{
+	ReadBufferSize:  1024,
+	WriteBufferSize: 1024,
+	// 解决跨域问题
+	CheckOrigin: func(r *http.Request) bool {
+		return true
+	},
+}
+
+func (w *WebSocket) handler(ws http.ResponseWriter, r *http.Request) {
+	c, err := upgrader.Upgrade(ws, r, nil)
+	if err != nil {
+		log.Print("upgrade:", err)
+		return
+	}
+	w.wsHandler = c
+	go w._send()
+	defer c.Close()
 	for {
-		var reply string
-		if err := websocket.Message.Receive(ws, &reply); err != nil {
-			xlog.Logger.Info("Can't receive")
+		mt, msg, err := c.ReadMessage()
+		if err != nil {
+			xlog.Logger.WithField(global.ErrField, err).Error("Can't receive")
 			break
 		}
-		xlog.Logger.Debugf("Received back from client: " + reply)
-		var message Message
-		err := json.Unmarshal([]byte(reply), &message)
-		if err != nil {
-			xlog.Logger.WithField("err", err).Error("parse json error")
-			return
-		}
-		if message.Type == MessageTypeString {
-			if message.Message == "ping" {
-				_ = w.SendMessage("pong")
-			} else {
-				w._message(message)
+		xlog.Logger.Debugf("Received message from client, msgType: %d  msg:%s", mt, string(msg))
+		if string(msg) == "p" {
+			_ = w.SendMessage("h")
+		} else {
+			var message Message
+			err := json.Unmarshal(msg, &message)
+			if err != nil {
+				xlog.Logger.WithField("err", err).Error("parse json error")
+				return
 			}
-		} else if message.Type == MessageTypeEvent {
-			w._event(message)
+			if message.Type == MessageTypeString {
+				w._message(message)
+			} else if message.Type == MessageTypeEvent {
+				w._event(message)
+			}
 		}
+
 	}
 }
 
 func (w *WebSocket) Server() error {
-	http.Handle(w.Pattern, websocket.Handler(w.Handler))
+	http.HandleFunc(w.Pattern, w.handler)
 	if err := http.ListenAndServe(w.Address, nil); err != nil {
 		xlog.Logger.WithField("err", err).Error("websocket listenAndServe err")
 		return err

@@ -17,6 +17,7 @@ import (
 	"github.com/go-xmodule/utils/utils"
 	"github.com/go-xmodule/utils/utils/request"
 	"github.com/go-xmodule/utils/utils/xlog"
+	"github.com/golang-jwt/jwt/v4"
 	"time"
 )
 
