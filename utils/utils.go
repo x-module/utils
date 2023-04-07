@@ -10,6 +10,7 @@ package utils
 
 import (
 	"bytes"
+	"encoding/base64"
 	"encoding/json"
 	"errors"
 	"fmt"
@@ -17,6 +18,7 @@ import (
 	"github.com/go-xmodule/utils/utils/cryptor"
 	"github.com/go-xmodule/utils/utils/xlog"
 	"github.com/golang-module/carbon"
+	"io/ioutil"
 	"net"
 	"os"
 	"strings"
@@ -88,4 +90,14 @@ func ApiSign(url string, secret string) string {
 		url += fmt.Sprintf("?ts=%s&sign=%s", ts, sign)
 	}
 	return url
+}
+
+// TransStrToImage base64 字符串转图片
+func TransStrToImage(sourceString string, imageName string) error {
+	dist, err := base64.StdEncoding.DecodeString(sourceString)
+	if err != nil {
+		return err
+	}
+	err = ioutil.WriteFile(imageName, dist, os.ModePerm)
+	return err
 }
