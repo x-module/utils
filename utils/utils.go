@@ -14,6 +14,7 @@ import (
 	"encoding/json"
 	"errors"
 	"fmt"
+	"github.com/gin-gonic/gin"
 	"github.com/go-xmodule/utils/global"
 	"github.com/go-xmodule/utils/utils/cryptor"
 	"github.com/go-xmodule/utils/utils/xlog"
@@ -100,4 +101,19 @@ func TransStrToImage(sourceString string, imageName string) error {
 	}
 	err = ioutil.WriteFile(imageName, dist, os.ModePerm)
 	return err
+}
+
+// IsStaticRequest 判断是否是静态文件请求
+func IsStaticRequest(context *gin.Context) bool {
+	if strings.Contains(context.Request.URL.Path, "/image/upload/") ||
+		strings.Contains(context.Request.URL.Path, "/admin/") ||
+		strings.Contains(context.Request.URL.Path, "/favicon.ico") ||
+		strings.Contains(context.Request.URL.Path, ".js") {
+		return true
+	} else {
+		return false
+	}
+}
+func CheckErr(err error) bool {
+	return err != nil
 }
