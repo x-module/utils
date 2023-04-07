@@ -17,6 +17,7 @@ import (
 	"fmt"
 	"io"
 	"os"
+	"strings"
 )
 
 // Base64StdEncode encode string with base64 encoding.
@@ -106,10 +107,10 @@ func HmacSha512(data, key string) string {
 
 // Sha1 return the sha1 value (SHA-1 hash algorithm) of string.
 // Play: https://go.dev/play/p/_m_uoD1deMT
-func Sha1(data string) string {
-	sha1 := sha1.New()
-	sha1.Write([]byte(data))
-	return hex.EncodeToString(sha1.Sum([]byte("")))
+func Sha1(s string) string {
+	o := sha1.New()
+	o.Write([]byte(s))
+	return strings.ToUpper(hex.EncodeToString(o.Sum(nil)))
 }
 
 // Sha256 return the sha256 value (SHA256 hash algorithm) of string.
