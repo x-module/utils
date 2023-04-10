@@ -12,6 +12,7 @@ import (
 	"github.com/go-xmodule/utils/global"
 	"github.com/nacos-group/nacos-sdk-go/v2/clients/config_client"
 	"github.com/nacos-group/nacos-sdk-go/v2/vo"
+	"gopkg.in/yaml.v2"
 	"log"
 )
 

@@ -10,11 +10,9 @@ package handler
 
 import (
 	"context"
-	"github.com/go-redis/redis/v8"
+	"fmt"
+	"github.com/garyburd/redigo/redis"
 	"github.com/go-xmodule/utils/dirver"
-	"github.com/go-xmodule/utils/global"
-	"github.com/go-xmodule/utils/utils/xerror"
-	"reflect"
 	"time"
 )
 
@@ -22,9 +20,8 @@ import (
 var RedisHandler *RedisClient
 
 type RedisClient struct {
-	client       *redis.Client
-	backupClient *redis.Client
-	context      context.Context
+	pool    *redis.Pool
+	context context.Context
 }
 type SubscribeData struct {
 	Channel      string `json:"Channel"`
@@ -43,265 +40,357 @@ type RedisConfig struct {
 }
 
 // InitializeRedisPool 初始化redis连接池
-func InitializeRedisPool(config RedisConfig) *redis.Client {
-	c, err := dirver.InitializeRedis(config.Host, config.Port, config.Password, config.Db)
-	xerror.PanicErr(err, global.InitRedisErr.String())
-	RedisHandler = NewRedis(c)
-	return c
+func InitializeRedisPool(config RedisConfig) *RedisClient {
+	pool := dirver.InitializeRedis(config.Host, config.Port, config.Password, config.Db)
+	RedisHandler = NewRedis(pool)
+	return RedisHandler
 }
 
 // NewRedis 实例化
-func NewRedis(client *redis.Client) *RedisClient {
+func NewRedis(pool *redis.Pool) *RedisClient {
 	redisClient := new(RedisClient)
 	redisClient.context = context.Background()
-	redisClient.client = client
+	redisClient.pool = pool
 	return redisClient
 }
 
 // Set 字符串设置
 func (r *RedisClient) Set(key string, value any, expiration time.Duration) error {
+	client := r.pool.Get()
+	defer r.closet(client)
+
 	// 执行命令
-	err := r.client.Set(r.context, key, value, expiration).Err()
+	_, err := client.Do("Set", key, value)
+	if err != nil {
+		return err
+	}
+	_, err = client.Do("expire", key, expiration)
 	if err != nil {
 		return err
 	}
 	return nil
 }
 
+func (r *RedisClient) closet(conn redis.Conn) {
+	_ = conn.Close()
+}
+
 func (r *RedisClient) HSetNX(key, field string, value any) (bool, error) {
+	client := r.pool.Get()
+	defer r.closet(client)
 	// 执行命令
-	result := r.client.HSetNX(r.context, key, field, value)
-	if err := result.Err(); err != nil {
+	result, err := client.Do("HSetNX", key, field, value)
+	if err != nil {
 		return false, err
 	}
-	return result.Result()
+	if result == nil {
+		return false, nil
+	}
+	return result.(int64) == 1, nil
 }
 
 // HSet hash-set
 func (r *RedisClient) HSet(key string, values map[string]string) (int64, error) {
-	// 执行命令
-	result := r.client.HSet(r.context, key, values)
-	if err := result.Err(); err != nil {
+	client := r.pool.Get()
+	defer r.closet(client)
+	paramsList := []interface{}{key}
+	for k, v := range values {
+		paramsList = append(paramsList, k, v)
+	}
+	result, err := client.Do("HSet", paramsList...)
+	if err != nil {
 		return 0, err
 	}
-	return result.Result()
+	if result == nil {
+		return 0, nil
+	}
+	return result.(int64), nil
 }
 
 func (r *RedisClient) SetNX(key string, value any, expiration time.Duration) (bool, error) {
-	// 执行命令
-	// r.client.Conn(r.context).Select(r.context,1)
-	result := r.client.SetNX(r.context, key, value, expiration)
-	if err := result.Err(); err != nil {
+	client := r.pool.Get()
+	defer r.closet(client)
+	result, err := client.Do("SetNX", key, value)
+	if err != nil {
 		return false, err
 	}
-	return result.Result()
+	_, err = client.Do("expire", key, expiration)
+	if err != nil {
+		return false, err
+	}
+	if result == nil {
+		return false, nil
+	}
+	return result.(int64) == 1, nil
 }
 
 func (r *RedisClient) HGetAll(key string) (map[string]string, error) {
-	// r.checkConnect()
-	// 执行命令
-	result := r.client.HGetAll(r.context, key)
-	if err := result.Err(); err != nil {
-		return nil, err
+	client := r.pool.Get()
+	defer r.closet(client)
+	res := map[string]string{}
+	result, err := client.Do("HGetAll", key)
+	if err != nil {
+		return res, err
 	}
-	return result.Result()
+	if result == nil {
+		return res, nil
+	}
+	tKey := ""
+	for _, v := range result.([]interface{}) {
+		temp := string(v.([]uint8))
+		if tKey == "" {
+			tKey = temp
+		} else {
+			res[tKey] = temp
+			tKey = ""
+		}
+	}
+	return res, nil
 }
 
 func (r *RedisClient) HGet(key, field string) (string, error) {
-	// r.checkConnect()
-	// 执行命令
-	result := r.client.HGet(r.context, key, field)
-	if err := result.Err(); err != nil {
+	client := r.pool.Get()
+	defer r.closet(client)
+	result, err := client.Do("HGet", key, field)
+	if err != nil {
 		return "", err
 	}
-	return result.Result()
+	if result == nil {
+		return "", nil
+	}
+	return string(result.([]uint8)), nil
 }
 
 func (r *RedisClient) Get(key string) (bool, string, error) {
-	// r.checkConnect()
-	result, err := r.client.Get(r.context, key).Result()
-	if err == redis.Nil {
-		return false, "", nil
-	} else if err != nil {
+	client := r.pool.Get()
+	defer r.closet(client)
+	result, err := client.Do("Get", key)
+	if err != nil {
 		return false, "", err
-	} else {
-		return true, result, nil
 	}
+	if result == nil {
+		return false, "", nil
+	}
+	if result == nil {
+		return false, "", nil
+	}
+	return true, string(result.([]uint8)), nil
 }
 
-func (r *RedisClient) Delete(key ...string) error {
-	// r.checkConnect()
-	err := r.client.Del(r.context, key...).Err()
-	if err != nil {
-		return err
-	} else {
-		return nil
+func (r *RedisClient) Delete(keys ...string) error {
+	client := r.pool.Get()
+	defer r.closet(client)
+	for _, k := range keys {
+		_, err := client.Do("Del", k)
+		if err != nil {
+			return err
+		}
 	}
+	return nil
 }
 
 func (r *RedisClient) LPop(key string) (string, error) {
-	result := r.client.LPop(r.context, key)
-	if err := result.Err(); err != nil {
+	client := r.pool.Get()
+	defer r.closet(client)
+	result, err := client.Do("LPOP", key)
+	if err != nil {
 		return "", err
-	} else {
-		return result.Result()
 	}
+	if result == nil {
+		return "", nil
+	}
+	return string(result.([]uint8)), nil
 }
 
 func (r *RedisClient) LPush(key string, value any) (int64, error) {
-	result := r.client.LPush(r.context, key, value)
-	if err := result.Err(); err != nil {
+	client := r.pool.Get()
+	defer r.closet(client)
+	result, err := client.Do("LPUSH", key, value)
+	if err != nil {
 		return 0, err
-	} else {
-		return result.Result()
 	}
+	if result == nil {
+		return 0, nil
+	}
+	return result.(int64), nil
 }
 
 func (r *RedisClient) BLPop(key string, timeout time.Duration) ([]string, error) {
-	result := r.client.BLPop(r.context, timeout, key)
-	if err := result.Err(); err != nil {
-		return []string{}, err
-	} else {
-		return result.Result()
+	client := r.pool.Get()
+	defer r.closet(client)
+	result, err := client.Do("BLPop", key, timeout)
+	if err != nil {
+		return nil, err
 	}
+	var res []string
+	for _, v := range result.([]interface{}) {
+		res = append(res, string(v.([]uint8)))
+	}
+	return res, nil
 }
 
 func (r *RedisClient) Keys(pattern string) ([]string, error) {
-	result := r.client.Keys(r.context, pattern)
-	if err := result.Err(); err != nil {
+	client := r.pool.Get()
+	defer r.closet(client)
+	result, err := client.Do("Keys", pattern)
+	if err != nil {
 		return nil, err
-	} else {
-		return result.Result()
 	}
+	var res []string
+	for _, v := range result.([]interface{}) {
+		res = append(res, string(v.([]uint8)))
+	}
+	return res, nil
 }
 
 // Publish 发布
 func (r *RedisClient) Publish(channel string, message any) (int64, error) {
-	result := r.client.Publish(r.context, channel, message)
-	if err := result.Err(); err != nil {
+	client := r.pool.Get()
+	defer r.closet(client)
+	result, err := client.Do("Publish", "test", "success")
+	if err != nil {
 		return 0, err
-	} else {
-		return result.Result()
 	}
+	if result == nil {
+		return 0, nil
+	}
+	return result.(int64), nil
 }
+
+// SubscribeCallback 订阅回调
+type SubscribeCallback func(message string)
 
 // Subscribe 订阅
-func (r *RedisClient) Subscribe(channel string) <-chan *redis.Message {
-	result := r.client.Subscribe(r.context, channel)
-	return result.Channel()
-}
-
-type PipAction func(pipeLiner redis.Pipeliner)
-
-func (r *RedisClient) SelectDbAction(index int, action PipAction) (map[int]any, error) {
-	pipeLine := r.client.Pipeline()
-	pipeLine.Do(context.Background(), "select", index)
-	action(pipeLine)
-	result, err := pipeLine.Exec(context.Background())
+func (r *RedisClient) Subscribe(channel string, callback SubscribeCallback) error {
+	client := r.pool.Get()
+	defer r.closet(client)
+	psc := redis.PubSubConn{Conn: client}
+	err := psc.Subscribe(channel)
 	if err != nil {
-		return map[int]any{}, err
+		return err
 	}
-	return r.getCmdResult(result), nil
-}
-
-func (r *RedisClient) getCmdResult(cmdRes []redis.Cmder) map[int]any {
-	strMap := make(map[int]any, len(cmdRes))
-	for idx, cmder := range cmdRes {
-		// *ClusterSlotsCmd 未实现
-		switch reflect.TypeOf(cmder).String() {
-		case "*redis.Cmd":
-			cmd := cmder.(*redis.Cmd)
-			strMap[idx], _ = cmd.Result()
-			break
-		case "*redis.StringCmd":
-			cmd := cmder.(*redis.StringCmd)
-			strMap[idx], _ = cmd.Result()
-			break
-		case "*redis.SliceCmd":
-			cmd := cmder.(*redis.SliceCmd)
-			strMap[idx], _ = cmd.Result()
-			break
-		case "*redis.StringSliceCmd":
-			cmd := cmder.(*redis.StringSliceCmd)
-			strMap[idx], _ = cmd.Result()
-			break
-		case "*redis.StringStringMapCmd":
-			cmd := cmder.(*redis.StringStringMapCmd)
-			strMap[idx], _ = cmd.Result()
-			break
-		case "*redis.StringIntMapCmd":
-			cmd := cmder.(*redis.StringIntMapCmd)
-			strMap[idx], _ = cmd.Result()
-			break
-		case "*redis.BoolCmd":
-			cmd := cmder.(*redis.BoolCmd)
-			strMap[idx], _ = cmd.Result()
-			break
-		case "*redis.BoolSliceCmd":
-			cmd := cmder.(*redis.BoolSliceCmd)
-			strMap[idx], _ = cmd.Result()
-			break
-		case "*redis.IntCmd":
-			cmd := cmder.(*redis.IntCmd)
-			strMap[idx], _ = cmd.Result()
-			break
-		case "*redis.FloatCmd":
-			cmd := cmder.(*redis.FloatCmd)
-			strMap[idx], _ = cmd.Result()
-			break
-		case "*redis.StatusCmd":
-			cmd := cmder.(*redis.StatusCmd)
-			strMap[idx], _ = cmd.Result()
-			break
-		case "*redis.TimeCmd":
-			cmd := cmder.(*redis.TimeCmd)
-			strMap[idx], _ = cmd.Result()
-			break
-		case "*redis.DurationCmd":
-			cmd := cmder.(*redis.DurationCmd)
-			strMap[idx], _ = cmd.Result()
-			break
-		case "*redis.StringStructMapCmd":
-			cmd := cmder.(*redis.StringStructMapCmd)
-			strMap[idx], _ = cmd.Result()
-			break
-		case "*redis.XMessageSliceCmd":
-			cmd := cmder.(*redis.XMessageSliceCmd)
-			strMap[idx], _ = cmd.Result()
-			break
-		case "*redis.XStreamSliceCmd":
-			cmd := cmder.(*redis.XStreamSliceCmd)
-			strMap[idx], _ = cmd.Result()
-			break
-		case "*redis.XPendingCmd":
-			cmd := cmder.(*redis.XPendingCmd)
-			strMap[idx], _ = cmd.Result()
-			break
-		case "*redis.XPendingExtCmd":
-			cmd := cmder.(*redis.XPendingExtCmd)
-			strMap[idx], _ = cmd.Result()
-			break
-		case "*redis.ZSliceCmd":
-			cmd := cmder.(*redis.ZSliceCmd)
-			strMap[idx], _ = cmd.Result()
-			break
-		case "*redis.ZWithKeyCmd":
-			cmd := cmder.(*redis.ZWithKeyCmd)
-			strMap[idx], _ = cmd.Result()
-			break
-		case "*redis.CommandsInfoCmd":
-			cmd := cmder.(*redis.CommandsInfoCmd)
-			strMap[idx], _ = cmd.Result()
-			break
-		case "*redis.GeoLocationCmd":
-			cmd := cmder.(*redis.GeoLocationCmd)
-			strMap[idx], _ = cmd.Result()
-			break
-		case "*redis.GeoPosCmd":
-			cmd := cmder.(*redis.GeoPosCmd)
-			strMap[idx], _ = cmd.Result()
-			break
+	for {
+		switch v := psc.Receive().(type) {
+		case redis.Message:
+			callback(fmt.Sprint(v.Data))
+		case redis.Subscription:
+			fmt.Printf("%s: %s %d\n", v.Channel, v.Kind, v.Count)
+		case error:
+			panic(v)
 		}
 	}
-	return strMap
 }
+
+// type PipAction func(pipeLiner redis.Pipeliner)
+// func (r *RedisClient) SelectDbAction(index int, action PipAction) (map[int]any, error) {
+// 	pipeLine := r.client.Pipeline()
+// 	pipeLine.Do(context.Background(), "select", index)
+// 	action(pipeLine)
+// 	result, err := pipeLine.Exec(context.Background())
+// 	if err != nil {
+// 		return map[int]any{}, err
+// 	}
+// 	return r.getCmdResult(result), nil
+// }
+//
+// func (r *RedisClient) getCmdResult(cmdRes []redis.Cmder) map[int]any {
+// 	strMap := make(map[int]any, len(cmdRes))
+// 	for idx, cmder := range cmdRes {
+// 		// *ClusterSlotsCmd 未实现
+// 		switch reflect.TypeOf(cmder).String() {
+// 		case "*redis.Cmd":
+// 			cmd := cmder.(*redis.Cmd)
+// 			strMap[idx], _ = cmd.Result()
+// 			break
+// 		case "*redis.StringCmd":
+// 			cmd := cmder.(*redis.StringCmd)
+// 			strMap[idx], _ = cmd.Result()
+// 			break
+// 		case "*redis.SliceCmd":
+// 			cmd := cmder.(*redis.SliceCmd)
+// 			strMap[idx], _ = cmd.Result()
+// 			break
+// 		case "*redis.StringSliceCmd":
+// 			cmd := cmder.(*redis.StringSliceCmd)
+// 			strMap[idx], _ = cmd.Result()
+// 			break
+// 		case "*redis.StringStringMapCmd":
+// 			cmd := cmder.(*redis.StringStringMapCmd)
+// 			strMap[idx], _ = cmd.Result()
+// 			break
+// 		case "*redis.StringIntMapCmd":
+// 			cmd := cmder.(*redis.StringIntMapCmd)
+// 			strMap[idx], _ = cmd.Result()
+// 			break
+// 		case "*redis.BoolCmd":
+// 			cmd := cmder.(*redis.BoolCmd)
+// 			strMap[idx], _ = cmd.Result()
+// 			break
+// 		case "*redis.BoolSliceCmd":
+// 			cmd := cmder.(*redis.BoolSliceCmd)
+// 			strMap[idx], _ = cmd.Result()
+// 			break
+// 		case "*redis.IntCmd":
+// 			cmd := cmder.(*redis.IntCmd)
+// 			strMap[idx], _ = cmd.Result()
+// 			break
+// 		case "*redis.FloatCmd":
+// 			cmd := cmder.(*redis.FloatCmd)
+// 			strMap[idx], _ = cmd.Result()
+// 			break
+// 		case "*redis.StatusCmd":
+// 			cmd := cmder.(*redis.StatusCmd)
+// 			strMap[idx], _ = cmd.Result()
+// 			break
+// 		case "*redis.TimeCmd":
+// 			cmd := cmder.(*redis.TimeCmd)
+// 			strMap[idx], _ = cmd.Result()
+// 			break
+// 		case "*redis.DurationCmd":
+// 			cmd := cmder.(*redis.DurationCmd)
+// 			strMap[idx], _ = cmd.Result()
+// 			break
+// 		case "*redis.StringStructMapCmd":
+// 			cmd := cmder.(*redis.StringStructMapCmd)
+// 			strMap[idx], _ = cmd.Result()
+// 			break
+// 		case "*redis.XMessageSliceCmd":
+// 			cmd := cmder.(*redis.XMessageSliceCmd)
+// 			strMap[idx], _ = cmd.Result()
+// 			break
+// 		case "*redis.XStreamSliceCmd":
+// 			cmd := cmder.(*redis.XStreamSliceCmd)
+// 			strMap[idx], _ = cmd.Result()
+// 			break
+// 		case "*redis.XPendingCmd":
+// 			cmd := cmder.(*redis.XPendingCmd)
+// 			strMap[idx], _ = cmd.Result()
+// 			break
+// 		case "*redis.XPendingExtCmd":
+// 			cmd := cmder.(*redis.XPendingExtCmd)
+// 			strMap[idx], _ = cmd.Result()
+// 			break
+// 		case "*redis.ZSliceCmd":
+// 			cmd := cmder.(*redis.ZSliceCmd)
+// 			strMap[idx], _ = cmd.Result()
+// 			break
+// 		case "*redis.ZWithKeyCmd":
+// 			cmd := cmder.(*redis.ZWithKeyCmd)
+// 			strMap[idx], _ = cmd.Result()
+// 			break
+// 		case "*redis.CommandsInfoCmd":
+// 			cmd := cmder.(*redis.CommandsInfoCmd)
+// 			strMap[idx], _ = cmd.Result()
+// 			break
+// 		case "*redis.GeoLocationCmd":
+// 			cmd := cmder.(*redis.GeoLocationCmd)
+// 			strMap[idx], _ = cmd.Result()
+// 			break
+// 		case "*redis.GeoPosCmd":
+// 			cmd := cmder.(*redis.GeoPosCmd)
+// 			strMap[idx], _ = cmd.Result()
+// 			break
+// 		}
+// 	}
+// 	return strMap
+// }

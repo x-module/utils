@@ -10,18 +10,15 @@ package utils
 
 import (
 	"bytes"
-	"encoding/base64"
 	"encoding/json"
 	"errors"
 	"fmt"
 	"github.com/gin-gonic/gin"
 	"github.com/go-xmodule/utils/global"
-	"github.com/go-xmodule/utils/utils/cryptor"
 	"github.com/go-xmodule/utils/utils/xlog"
-	"github.com/golang-module/carbon"
-	"io/ioutil"
 	"net"
 	"os"
+	"strconv"
 	"strings"
 )
 
@@ -31,6 +28,9 @@ func Success(status int) bool {
 func JsonString(params any) string {
 	b, _ := json.Marshal(params)
 	return string(b)
+}
+func CatchErr(err error, errCode fmt.Stringer) bool {
+	return HasErr(err, errCode)
 }
 
 func HasErr(err error, errCode fmt.Stringer) bool {
@@ -80,29 +80,6 @@ func JsonDisplay(obj any) {
 	fmt.Println("---------------------------------json obj-------------------------------------")
 }
 
-func ApiSign(url string, secret string) string {
-	ts := fmt.Sprint(carbon.Now().Timestamp())
-	signStr := fmt.Sprintf("%s@%s@%s", secret, ts, secret)
-	// 对字符串进行sha1哈希
-	sign := cryptor.Sha1(signStr)
-	if strings.Contains(url, "?") {
-		url += fmt.Sprintf("&ts=%s&sign=%s", ts, sign)
-	} else {
-		url += fmt.Sprintf("?ts=%s&sign=%s", ts, sign)
-	}
-	return url
-}
-
-// TransStrToImage base64 字符串转图片
-func TransStrToImage(sourceString string, imageName string) error {
-	dist, err := base64.StdEncoding.DecodeString(sourceString)
-	if err != nil {
-		return err
-	}
-	err = ioutil.WriteFile(imageName, dist, os.ModePerm)
-	return err
-}
-
 // IsStaticRequest 判断是否是静态文件请求
 func IsStaticRequest(context *gin.Context) bool {
 	if strings.Contains(context.Request.URL.Path, "/image/upload/") ||
@@ -116,4 +93,47 @@ func IsStaticRequest(context *gin.Context) bool {
 }
 func CheckErr(err error) bool {
 	return err != nil
+}
+
+// Decimal 保留2位小数
+func Decimal(value float64) float64 {
+	value, _ = strconv.ParseFloat(fmt.Sprintf("%.2f", value), 64)
+	return value
+}
+
+// TransInterfaceToMap 转换struct 等结构到map
+func TransInterfaceToMap(params any) map[string]any {
+	var paramsMap map[string]any
+	jsonData, _ := json.Marshal(params)
+	_ = json.Unmarshal(jsonData, &paramsMap)
+	return paramsMap
+}
+
+func GetApiServer(url string) string {
+	if strings.Contains(url, "@") {
+		temps := strings.Split(url, "@")
+		return temps[0]
+	}
+	return ""
+}
+func MaxNum(arr []int) (max int, maxIndex int) {
+	max = arr[0]
+	for i := 0; i < len(arr); i++ {
+		if max < arr[i] {
+			max = arr[i]
+			maxIndex = i
+		}
+	}
+	return max, maxIndex
+}
+
+func MinNum(arr []int) (min int, minIndex int) {
+	min = arr[0]
+	for index, val := range arr {
+		if min > val {
+			min = val
+			minIndex = index
+		}
+	}
+	return min, minIndex
 }

@@ -9,9 +9,10 @@
 package subscribe
 
 import (
+	"github.com/go-xmodule/module/global"
+	global2 "github.com/go-xmodule/utils/global"
 	"github.com/go-xmodule/utils/handler"
 	"github.com/go-xmodule/utils/utils"
-	"github.com/go-xmodule/utils/utils/convertor"
 	"github.com/go-xmodule/utils/utils/xlog"
 )
 
@@ -23,15 +24,15 @@ func NewRedisSubscribe() {
 }
 
 // Subscribe 订阅消息
-func (s *RedisSubscribe) Subscribe(channel string, callback SubscribeCallback) {
+func (s *RedisSubscribe) Subscribe(channel string, callback handler.SubscribeCallback) {
 	xlog.Logger.Debug("start subscribe data, channel:", channel)
-	messageList := handler.RedisHandler.Subscribe(channel)
-	for message := range messageList {
+	err := handler.RedisHandler.Subscribe(channel, func(message string) {
 		// 处理消息
 		xlog.Logger.Debug("consumer data:", utils.JsonString(message))
-		var data handler.SubscribeData
-		_ = convertor.TransInterfaceToStruct(message, &data)
-		callback(data.Payload)
+		callback(message)
+	})
+	if err != nil {
+		xlog.Logger.WithField(global.ErrField, err).Error(global2.SubscribeDataErr.String())
 	}
 }
 

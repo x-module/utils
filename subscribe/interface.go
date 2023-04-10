@@ -8,19 +8,18 @@
 
 package subscribe
 
+import "github.com/go-xmodule/utils/handler"
+
 const (
 	PublishErr = "发布消息异常"
 )
-
-// SubscribeCallback 订阅回调
-type SubscribeCallback func(message string)
 
 var SubscribeHandler SubPub
 
 // SubPub 消息发布定义
 type SubPub interface {
 	// Subscribe 订阅消息
-	Subscribe(channel string, callback SubscribeCallback)
+	Subscribe(channel string, callback handler.SubscribeCallback)
 	// Publish 发布消息
 	Publish(channel string, message any) error
 }

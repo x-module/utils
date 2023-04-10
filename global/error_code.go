@@ -95,4 +95,5 @@ const (
 	SubscribeServerErr                               // 服务监听异常
 	UnknownServerErr                                 // 未知服务
 	RPCLinkErr                                       // RPC连接异常
+	SubscribeDataErr                                 // 定义数据异常
 )
