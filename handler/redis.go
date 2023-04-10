@@ -11,8 +11,8 @@ package handler
 import (
 	"context"
 	"fmt"
-	"github.com/garyburd/redigo/redis"
 	"github.com/go-xmodule/utils/dirver"
+	"github.com/gomodule/redigo/redis"
 	"time"
 )
 
@@ -52,6 +52,9 @@ func NewRedis(pool *redis.Pool) *RedisClient {
 	redisClient.context = context.Background()
 	redisClient.pool = pool
 	return redisClient
+}
+func (r *RedisClient) GetPool() *redis.Pool {
+	return r.pool
 }
 
 // Set 字符串设置

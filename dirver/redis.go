@@ -10,10 +10,10 @@ package dirver
 
 import (
 	"fmt"
-	"github.com/garyburd/redigo/redis"
 	"github.com/go-xmodule/utils/global"
 	"github.com/go-xmodule/utils/utils/xerror"
 	"github.com/go-xmodule/utils/utils/xlog"
+	"github.com/gomodule/redigo/redis"
 	"time"
 )
 

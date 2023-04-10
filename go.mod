@@ -6,7 +6,6 @@ require (
 	github.com/bytedance/go-tagexpr/v2 v2.9.6
 	github.com/disintegration/imaging v1.6.2
 	github.com/druidcaesa/gotool v0.0.0-20220613023420-645c641d1304
-	github.com/garyburd/redigo v1.6.4
 	github.com/gin-gonic/gin v1.8.2
 	github.com/go-admin-team/go-admin-core v1.5.1
 	github.com/go-admin-team/go-admin-core/sdk v1.5.1
@@ -14,6 +13,7 @@ require (
 	github.com/golang-jwt/jwt/v4 v4.4.2
 	github.com/golang-module/carbon v1.7.3
 	github.com/golang/protobuf v1.5.2
+	github.com/gomodule/redigo v1.8.9
 	github.com/google/uuid v1.3.0
 	github.com/gorilla/websocket v1.4.2
 	github.com/jinzhu/now v1.1.5
