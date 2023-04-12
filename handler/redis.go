@@ -250,7 +250,7 @@ func (r *RedisClient) Keys(pattern string) ([]string, error) {
 func (r *RedisClient) Publish(channel string, message any) (int64, error) {
 	client := r.pool.Get()
 	defer r.closet(client)
-	result, err := client.Do("Publish", "test", "success")
+	result, err := client.Do("Publish", channel, message)
 	if err != nil {
 		return 0, err
 	}
