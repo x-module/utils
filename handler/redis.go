@@ -275,7 +275,7 @@ func (r *RedisClient) Subscribe(channel string, callback SubscribeCallback) erro
 	for {
 		switch v := psc.Receive().(type) {
 		case redis.Message:
-			callback(fmt.Sprint(v.Data))
+			callback(string(v.Data))
 		case redis.Subscription:
 			fmt.Printf("%s: %s %d\n", v.Channel, v.Kind, v.Count)
 		case error:
