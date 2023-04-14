@@ -67,7 +67,7 @@ func (r *RedisClient) Set(key string, value any, expiration time.Duration) error
 	if err != nil {
 		return err
 	}
-	_, err = client.Do("expire", key, expiration)
+	_, err = client.Do("expire", key, int64(expiration))
 	if err != nil {
 		return err
 	}
