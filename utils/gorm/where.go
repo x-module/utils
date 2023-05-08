@@ -10,6 +10,7 @@ package gorm
 
 import (
 	"fmt"
+	"github.com/go-xmodule/utils/utils"
 	"gorm.io/gorm"
 	"reflect"
 	"strings"
@@ -33,6 +34,7 @@ func MakeCondition[T any](params T) func(db *gorm.DB) *gorm.DB {
 		valueOfCat := reflect.ValueOf(params)
 		search := map[string]Field{}
 		whereList := getValue(typeOfCat, valueOfCat, search)
+		utils.JsonDisplay(whereList)
 		for _, item := range whereList {
 			if item.Value == "" {
 				continue
@@ -42,6 +44,9 @@ func MakeCondition[T any](params T) func(db *gorm.DB) *gorm.DB {
 				option = item.Option
 			}
 			query := fmt.Sprintf("%s %s %s", item.Name, option, "?")
+			if item.Field != "" {
+				query = fmt.Sprintf("%s %s %s", item.Field, option, "?")
+			}
 			db = db.Where(query, item.Value)
 		}
 		return db

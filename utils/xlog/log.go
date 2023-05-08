@@ -33,6 +33,27 @@ const (
 // Logger 系统日志
 var Logger *logrus.Logger
 
+func Debug(args ...interface{}) {
+	Logger.Debug(args...)
+}
+func Info(args ...interface{}) {
+	Logger.Info(args...)
+}
+func Warn(args ...interface{}) {
+	Logger.Warn(args...)
+}
+func Error(args ...interface{}) {
+	Logger.Error(args...)
+}
+
+func Fatal(args ...interface{}) {
+	Logger.Fatal(args...)
+}
+
+func WithField(key string, value interface{}) *logrus.Entry {
+	return Logger.WithField(key, value)
+}
+
 // InitLogger 日志模块初始化
 func InitLogger(logFilePath, logFileName string, model string) *logrus.Logger {
 	if !fileutil.IsExist(logFilePath) {

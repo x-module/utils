@@ -19,8 +19,12 @@ import (
 // RedisHandler Redis操作句柄
 var RedisHandler *RedisClient
 
+// SubscribeCallback 订阅回调
+type SubscribeCallback func(message string)
+
 type RedisClient struct {
 	pool    *redis.Pool
+	con     redis.Conn
 	context context.Context
 }
 type SubscribeData struct {
@@ -57,30 +61,38 @@ func (r *RedisClient) GetPool() *redis.Pool {
 	return r.pool
 }
 
+func (r *RedisClient) GetCon() redis.Conn {
+	r.con = r.pool.Get()
+	return r.con
+}
+
 // Set 字符串设置
-func (r *RedisClient) Set(key string, value any, expiration time.Duration) error {
+func (r *RedisClient) Set(key string, value any, expiration ...time.Duration) error {
 	client := r.pool.Get()
-	defer r.closet(client)
+	defer r.Close(client)
 
 	// 执行命令
 	_, err := client.Do("Set", key, value)
 	if err != nil {
 		return err
 	}
-	_, err = client.Do("expire", key, int64(expiration))
-	if err != nil {
-		return err
+	if len(expiration) > 0 {
+		_, err = client.Do("expire", key, int64(expiration[0]))
+		if err != nil {
+			return err
+		}
 	}
 	return nil
 }
 
-func (r *RedisClient) closet(conn redis.Conn) {
+func (r *RedisClient) Close(conn redis.Conn) {
 	_ = conn.Close()
+	r.con = nil
 }
 
 func (r *RedisClient) HSetNX(key, field string, value any) (bool, error) {
 	client := r.pool.Get()
-	defer r.closet(client)
+	defer r.Close(client)
 	// 执行命令
 	result, err := client.Do("HSetNX", key, field, value)
 	if err != nil {
@@ -93,9 +105,14 @@ func (r *RedisClient) HSetNX(key, field string, value any) (bool, error) {
 }
 
 // HSet hash-set
-func (r *RedisClient) HSet(key string, values map[string]string) (int64, error) {
-	client := r.pool.Get()
-	defer r.closet(client)
+func (r *RedisClient) HSet(key string, values map[string]string, con ...redis.Conn) (int64, error) {
+	var client redis.Conn
+	if len(con) > 0 {
+		client = con[0]
+	} else {
+		client = r.pool.Get()
+		defer r.Close(client)
+	}
 	paramsList := []interface{}{key}
 	for k, v := range values {
 		paramsList = append(paramsList, k, v)
@@ -112,7 +129,7 @@ func (r *RedisClient) HSet(key string, values map[string]string) (int64, error) 
 
 func (r *RedisClient) SetNX(key string, value any, expiration time.Duration) (bool, error) {
 	client := r.pool.Get()
-	defer r.closet(client)
+	defer r.Close(client)
 	result, err := client.Do("SetNX", key, value)
 	if err != nil {
 		return false, err
@@ -129,7 +146,7 @@ func (r *RedisClient) SetNX(key string, value any, expiration time.Duration) (bo
 
 func (r *RedisClient) HGetAll(key string) (map[string]string, error) {
 	client := r.pool.Get()
-	defer r.closet(client)
+	defer r.Close(client)
 	res := map[string]string{}
 	result, err := client.Do("HGetAll", key)
 	if err != nil {
@@ -153,7 +170,7 @@ func (r *RedisClient) HGetAll(key string) (map[string]string, error) {
 
 func (r *RedisClient) HGet(key, field string) (string, error) {
 	client := r.pool.Get()
-	defer r.closet(client)
+	defer r.Close(client)
 	result, err := client.Do("HGet", key, field)
 	if err != nil {
 		return "", err
@@ -164,9 +181,27 @@ func (r *RedisClient) HGet(key, field string) (string, error) {
 	return string(result.([]uint8)), nil
 }
 
+func (r *RedisClient) HDel(key, field string, con ...redis.Conn) (int64, error) {
+	var client redis.Conn
+	if len(con) > 0 {
+		client = con[0]
+	} else {
+		client = r.pool.Get()
+		defer r.Close(client)
+	}
+	result, err := client.Do("HDEL", key, field)
+	if err != nil {
+		return 0, err
+	}
+	if result == nil {
+		return 0, nil
+	}
+	return result.(int64), nil
+}
+
 func (r *RedisClient) Get(key string) (bool, string, error) {
 	client := r.pool.Get()
-	defer r.closet(client)
+	defer r.Close(client)
 	result, err := client.Do("Get", key)
 	if err != nil {
 		return false, "", err
@@ -181,8 +216,13 @@ func (r *RedisClient) Get(key string) (bool, string, error) {
 }
 
 func (r *RedisClient) Delete(keys ...string) error {
-	client := r.pool.Get()
-	defer r.closet(client)
+	var client redis.Conn
+	if r.con != nil {
+		client = r.con
+	} else {
+		client = r.pool.Get()
+		defer r.Close(client)
+	}
 	for _, k := range keys {
 		_, err := client.Do("Del", k)
 		if err != nil {
@@ -194,7 +234,7 @@ func (r *RedisClient) Delete(keys ...string) error {
 
 func (r *RedisClient) LPop(key string) (string, error) {
 	client := r.pool.Get()
-	defer r.closet(client)
+	defer r.Close(client)
 	result, err := client.Do("LPOP", key)
 	if err != nil {
 		return "", err
@@ -207,7 +247,7 @@ func (r *RedisClient) LPop(key string) (string, error) {
 
 func (r *RedisClient) LPush(key string, value any) (int64, error) {
 	client := r.pool.Get()
-	defer r.closet(client)
+	defer r.Close(client)
 	result, err := client.Do("LPUSH", key, value)
 	if err != nil {
 		return 0, err
@@ -220,7 +260,7 @@ func (r *RedisClient) LPush(key string, value any) (int64, error) {
 
 func (r *RedisClient) BLPop(key string, timeout time.Duration) ([]string, error) {
 	client := r.pool.Get()
-	defer r.closet(client)
+	defer r.Close(client)
 	result, err := client.Do("BLPop", key, timeout)
 	if err != nil {
 		return nil, err
@@ -234,7 +274,7 @@ func (r *RedisClient) BLPop(key string, timeout time.Duration) ([]string, error)
 
 func (r *RedisClient) Keys(pattern string) ([]string, error) {
 	client := r.pool.Get()
-	defer r.closet(client)
+	defer r.Close(client)
 	result, err := client.Do("Keys", pattern)
 	if err != nil {
 		return nil, err
@@ -249,7 +289,7 @@ func (r *RedisClient) Keys(pattern string) ([]string, error) {
 // Publish 发布
 func (r *RedisClient) Publish(channel string, message any) (int64, error) {
 	client := r.pool.Get()
-	defer r.closet(client)
+	defer r.Close(client)
 	result, err := client.Do("Publish", channel, message)
 	if err != nil {
 		return 0, err
@@ -260,13 +300,10 @@ func (r *RedisClient) Publish(channel string, message any) (int64, error) {
 	return result.(int64), nil
 }
 
-// SubscribeCallback 订阅回调
-type SubscribeCallback func(message string)
-
 // Subscribe 订阅
 func (r *RedisClient) Subscribe(channel string, callback SubscribeCallback) error {
 	client := r.pool.Get()
-	defer r.closet(client)
+	defer r.Close(client)
 	psc := redis.PubSubConn{Conn: client}
 	err := psc.Subscribe(channel)
 	if err != nil {
@@ -283,117 +320,3 @@ func (r *RedisClient) Subscribe(channel string, callback SubscribeCallback) erro
 		}
 	}
 }
-
-// type PipAction func(pipeLiner redis.Pipeliner)
-// func (r *RedisClient) SelectDbAction(index int, action PipAction) (map[int]any, error) {
-// 	pipeLine := r.client.Pipeline()
-// 	pipeLine.Do(context.Background(), "select", index)
-// 	action(pipeLine)
-// 	result, err := pipeLine.Exec(context.Background())
-// 	if err != nil {
-// 		return map[int]any{}, err
-// 	}
-// 	return r.getCmdResult(result), nil
-// }
-//
-// func (r *RedisClient) getCmdResult(cmdRes []redis.Cmder) map[int]any {
-// 	strMap := make(map[int]any, len(cmdRes))
-// 	for idx, cmder := range cmdRes {
-// 		// *ClusterSlotsCmd 未实现
-// 		switch reflect.TypeOf(cmder).String() {
-// 		case "*redis.Cmd":
-// 			cmd := cmder.(*redis.Cmd)
-// 			strMap[idx], _ = cmd.Result()
-// 			break
-// 		case "*redis.StringCmd":
-// 			cmd := cmder.(*redis.StringCmd)
-// 			strMap[idx], _ = cmd.Result()
-// 			break
-// 		case "*redis.SliceCmd":
-// 			cmd := cmder.(*redis.SliceCmd)
-// 			strMap[idx], _ = cmd.Result()
-// 			break
-// 		case "*redis.StringSliceCmd":
-// 			cmd := cmder.(*redis.StringSliceCmd)
-// 			strMap[idx], _ = cmd.Result()
-// 			break
-// 		case "*redis.StringStringMapCmd":
-// 			cmd := cmder.(*redis.StringStringMapCmd)
-// 			strMap[idx], _ = cmd.Result()
-// 			break
-// 		case "*redis.StringIntMapCmd":
-// 			cmd := cmder.(*redis.StringIntMapCmd)
-// 			strMap[idx], _ = cmd.Result()
-// 			break
-// 		case "*redis.BoolCmd":
-// 			cmd := cmder.(*redis.BoolCmd)
-// 			strMap[idx], _ = cmd.Result()
-// 			break
-// 		case "*redis.BoolSliceCmd":
-// 			cmd := cmder.(*redis.BoolSliceCmd)
-// 			strMap[idx], _ = cmd.Result()
-// 			break
-// 		case "*redis.IntCmd":
-// 			cmd := cmder.(*redis.IntCmd)
-// 			strMap[idx], _ = cmd.Result()
-// 			break
-// 		case "*redis.FloatCmd":
-// 			cmd := cmder.(*redis.FloatCmd)
-// 			strMap[idx], _ = cmd.Result()
-// 			break
-// 		case "*redis.StatusCmd":
-// 			cmd := cmder.(*redis.StatusCmd)
-// 			strMap[idx], _ = cmd.Result()
-// 			break
-// 		case "*redis.TimeCmd":
-// 			cmd := cmder.(*redis.TimeCmd)
-// 			strMap[idx], _ = cmd.Result()
-// 			break
-// 		case "*redis.DurationCmd":
-// 			cmd := cmder.(*redis.DurationCmd)
-// 			strMap[idx], _ = cmd.Result()
-// 			break
-// 		case "*redis.StringStructMapCmd":
-// 			cmd := cmder.(*redis.StringStructMapCmd)
-// 			strMap[idx], _ = cmd.Result()
-// 			break
-// 		case "*redis.XMessageSliceCmd":
-// 			cmd := cmder.(*redis.XMessageSliceCmd)
-// 			strMap[idx], _ = cmd.Result()
-// 			break
-// 		case "*redis.XStreamSliceCmd":
-// 			cmd := cmder.(*redis.XStreamSliceCmd)
-// 			strMap[idx], _ = cmd.Result()
-// 			break
-// 		case "*redis.XPendingCmd":
-// 			cmd := cmder.(*redis.XPendingCmd)
-// 			strMap[idx], _ = cmd.Result()
-// 			break
-// 		case "*redis.XPendingExtCmd":
-// 			cmd := cmder.(*redis.XPendingExtCmd)
-// 			strMap[idx], _ = cmd.Result()
-// 			break
-// 		case "*redis.ZSliceCmd":
-// 			cmd := cmder.(*redis.ZSliceCmd)
-// 			strMap[idx], _ = cmd.Result()
-// 			break
-// 		case "*redis.ZWithKeyCmd":
-// 			cmd := cmder.(*redis.ZWithKeyCmd)
-// 			strMap[idx], _ = cmd.Result()
-// 			break
-// 		case "*redis.CommandsInfoCmd":
-// 			cmd := cmder.(*redis.CommandsInfoCmd)
-// 			strMap[idx], _ = cmd.Result()
-// 			break
-// 		case "*redis.GeoLocationCmd":
-// 			cmd := cmder.(*redis.GeoLocationCmd)
-// 			strMap[idx], _ = cmd.Result()
-// 			break
-// 		case "*redis.GeoPosCmd":
-// 			cmd := cmder.(*redis.GeoPosCmd)
-// 			strMap[idx], _ = cmd.Result()
-// 			break
-// 		}
-// 	}
-// 	return strMap
-// }

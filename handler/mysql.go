@@ -72,6 +72,15 @@ func (d *Database) SetResult(resultModel any) *Database {
 	return d
 }
 
+// AutoMigrate 生成表结构
+func (d *Database) AutoMigrate() error {
+	err := d.db.AutoMigrate(d.Result)
+	if err != nil {
+		return err
+	}
+	return nil
+}
+
 // DeleteByWhere 删除数据
 func (d *Database) DeleteByWhere(where any) error {
 	err := d.db.Where(where).Delete(d.Result).Error
@@ -141,6 +150,33 @@ func (d *Database) Save(model any) error {
 // Delete 删除数据
 func (d *Database) Delete(model any) error {
 	return d.db.Delete(model).Error
+}
+
+// 获取表注释
+
+func (d *Database) GetTableComment(database string, table string) (string, error) {
+	var tableName string
+	sqlFormat := "select table_comment from  information_schema.TABLES where TABLE_SCHEMA ='%s' and TABLE_NAME='%s'"
+	sql := fmt.Sprintf(sqlFormat, database, table)
+	err := d.SetResult(&tableName).ExecuteSql(sql)
+	if err != nil {
+		return "", err
+	}
+	return tableName, nil
+}
+
+type Field struct {
+	ColumnName    string `json:"column_name"`
+	DataType      string `json:"data_type"`
+	ColumnComment string `json:"column_comment"`
+}
+
+func (d *Database) GetTableFieldComment(database string, table string) ([]Field, error) {
+	sqlFormat := "select column_name,data_type,column_comment from information_schema.COLUMNS where TABLE_SCHEMA ='%s' and TABLE_NAME='%s'"
+	sql := fmt.Sprintf(sqlFormat, database, table)
+	var result []Field
+	err := d.SetResult(&result).ExecuteSql(sql)
+	return result, err
 }
 
 // PaginationQuery 分页查询

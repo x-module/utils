@@ -14,8 +14,10 @@ import (
 	"errors"
 	"fmt"
 	"github.com/gin-gonic/gin"
+	global2 "github.com/go-xmodule/module/global"
 	"github.com/go-xmodule/utils/global"
 	"github.com/go-xmodule/utils/utils/xlog"
+	"gorm.io/gorm"
 	"net"
 	"os"
 	"strconv"
@@ -31,6 +33,11 @@ func JsonString(params any) string {
 }
 func CatchErr(err error, errCode fmt.Stringer) bool {
 	return HasErr(err, errCode)
+}
+func DebugResponse(err error, errCode fmt.Stringer, debugMsg string) {
+	if !HasErr(err, errCode) {
+		xlog.Logger.Debug(debugMsg)
+	}
 }
 
 func HasErr(err error, errCode fmt.Stringer) bool {
@@ -52,6 +59,20 @@ func HasWar(err error, errCode fmt.Stringer) bool {
 		return true
 	}
 	return false
+}
+
+// HasQueryErr 数据库查询异常
+func HasQueryErr(err error, errCode fmt.Stringer) bool {
+	if err == nil {
+		return false
+	}
+	if err == gorm.ErrRecordNotFound {
+		msg := fmt.Sprintf("%s desc:%s", errCode.String(), global.NoRecordErr.String())
+		xlog.WithField(global2.ErrField, err).Warn(msg)
+	} else {
+		xlog.WithField(global2.ErrField, err).Error(errCode.String())
+	}
+	return true
 }
 
 // OpenFreeUDPPort opens free UDP port

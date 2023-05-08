@@ -58,8 +58,9 @@ func InitializeDB(params LinkParams) (*gorm.DB, error) {
 	})
 	xerror.PanicErr(err, global.ConnectMysqlErr.String())
 	// 链接池设置
-	// db.DB().SetMaxOpenConns(params.MaxOpenConn)
-	// db.DB().SetMaxIdleConns(params.MaxIdleConn)
+	sdb, _ := db.DB()
+	sdb.SetMaxOpenConns(params.MaxOpenConn)
+	sdb.SetMaxIdleConns(params.MaxIdleConn)
 	// db.LogMode(params.Mode == DebugMode)
 	// db.LogMode(false)
 	return db, nil

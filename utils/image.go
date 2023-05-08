@@ -24,6 +24,10 @@ type ImageUtil struct {
 	targetImg string
 }
 
+func NewImageUtil() *ImageUtil {
+	return new(ImageUtil)
+}
+
 func (i *ImageUtil) SetImage(sourceImg string, targetImg string) *ImageUtil {
 	i.sourceImg = sourceImg
 	i.targetImg = targetImg

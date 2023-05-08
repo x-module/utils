@@ -20,7 +20,7 @@ import (
 // InitializeRedis 初始化redis 链接
 func InitializeRedis(host string, port int, password string, db int) *redis.Pool {
 	address := fmt.Sprintf("%s:%d", host, port)
-	xlog.Logger.Debug("start collect  redis . address:", address)
+	xlog.Logger.Debug("start collect  redis.  address:", address)
 	return &redis.Pool{ // 实例化一个连接池
 		MaxIdle:     50,  // 最初的连接数量
 		MaxActive:   0,   // 连接池最大连接数量,不确定可以用0（0表示自动定义），按需分配

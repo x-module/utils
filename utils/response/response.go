@@ -23,7 +23,7 @@ type ResponseData struct {
 	Data any          `json:"data"`
 }
 
-// ApiResponse 异常通知
+// ApiResponse  异常通知
 func ApiResponse(context *gin.Context, errorCode fmt.Stringer, data ...any) {
 	response := ResponseData{
 		Code: errorCode,
@@ -31,6 +31,8 @@ func ApiResponse(context *gin.Context, errorCode fmt.Stringer, data ...any) {
 	}
 	if len(data) > 0 {
 		response.Data = data[0]
+	} else if global.Success == errorCode {
+		response.Data = "success"
 	}
 	context.JSON(http.StatusOK, response)
 }

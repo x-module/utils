@@ -10,6 +10,8 @@ import (
 	"encoding/gob"
 	"encoding/json"
 	"fmt"
+	jsoniter "github.com/json-iterator/go"
+	"github.com/json-iterator/go/extra"
 	"math"
 	"reflect"
 	"regexp"
@@ -349,8 +351,8 @@ func TransInterfaceToStruct(params any, v any) error {
 	if err != nil {
 		return err
 	}
-
-	err = json.Unmarshal(jsonData, v)
+	extra.RegisterFuzzyDecoders()
+	err = jsoniter.UnmarshalFromString(string(jsonData), v)
 	if err != nil {
 		return err
 	}
