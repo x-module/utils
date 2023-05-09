@@ -62,7 +62,7 @@ func FormatStr(str string) string {
 }
 
 func GetTableComment(comment string) string {
-	return strings.ReplaceAll(strings.TrimSpace(comment), "\n", "")
+	return "请输入" + strings.ReplaceAll(strings.TrimSpace(comment), "\n", "")
 }
 
 func getType(fieldType string) string {
