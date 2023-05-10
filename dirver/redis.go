@@ -27,12 +27,12 @@ func InitializeRedis(host string, port int, password string, db int) *redis.Pool
 		IdleTimeout: 300, // 连接关闭时间 300秒 （300秒不使用自动关闭）
 		Dial: func() (redis.Conn, error) {
 			client, err := redis.Dial("tcp", address,
-				redis.DialUseTLS(true),
+				// redis.DialUseTLS(true),
 				// redis.DialReadTimeout(20*time.Second),
 				redis.DialWriteTimeout(20*time.Second),
 				redis.DialDatabase(db),
 				redis.DialPassword(password),
-				redis.DialTLSSkipVerify(true),
+				// redis.DialTLSSkipVerify(true),
 			)
 			xerror.PanicErr(err, global.InitRedisErr.String())
 			return client, err
