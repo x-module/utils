@@ -1,41 +1,80 @@
 /**
- * Created by Goland.
+ * Created by PhpStorm.
  * @file   redis.go
- * @author 李锦 <Ljin@cavemanstudio.net>
- * @date   2023/4/9 21:12
+ * @author 李锦 <lijin@cavemanstudio.net>
+ * @date   2023/5/15 15:43
  * @desc   redis.go
  */
 
 package dirver
 
 import (
+	"context"
+	"crypto/tls"
 	"fmt"
-	"github.com/go-xmodule/utils/global"
-	"github.com/go-xmodule/utils/utils/xerror"
+	"github.com/go-xmodule/module/global"
+	global2 "github.com/go-xmodule/utils/global"
 	"github.com/go-xmodule/utils/utils/xlog"
-	"github.com/gomodule/redigo/redis"
+	"github.com/redis/go-redis/v9"
 	"time"
 )
 
-// InitializeRedis 初始化redis 链接
-func InitializeRedis(host string, port int, password string, db int) *redis.Pool {
-	address := fmt.Sprintf("%s:%d", host, port)
-	xlog.Logger.Debug("start collect  redis.  address:", address)
-	return &redis.Pool{ // 实例化一个连接池
-		MaxIdle:     50,  // 最初的连接数量
-		MaxActive:   0,   // 连接池最大连接数量,不确定可以用0（0表示自动定义），按需分配
-		IdleTimeout: 300, // 连接关闭时间 300秒 （300秒不使用自动关闭）
-		Dial: func() (redis.Conn, error) {
-			client, err := redis.Dial("tcp", address,
-				// redis.DialUseTLS(true),
-				// redis.DialReadTimeout(20*time.Second),
-				redis.DialWriteTimeout(20*time.Second),
-				redis.DialDatabase(db),
-				redis.DialPassword(password),
-				// redis.DialTLSSkipVerify(true),
-			)
-			xerror.PanicErr(err, global.InitRedisErr.String())
-			return client, err
-		},
+// Config 配置
+type Config struct {
+	Host     string `yaml:"host"`
+	Port     int    `yaml:"port"`
+	Password string `yaml:"password"`
+}
+
+// RedisConfig 服务配置
+type RedisConfig struct {
+	List map[string]Config `json:"config,omitempty"`
+	Db   int               `yaml:"db"`
+	TLS  int               `yaml:"TLS"`
+}
+
+var password = map[string]string{}
+
+// 设置单个实例的密码
+func userPassForAddr(addr string) string {
+	if pass, exist := password[addr]; exist {
+		return pass
 	}
+	return ""
+}
+
+// InitializeRedis 链接Redis服务
+func InitializeRedis(config RedisConfig) *redis.Ring {
+	addr := map[string]string{}
+	for key, conf := range config.List {
+		address := fmt.Sprintf("%s:%d", conf.Host, conf.Port)
+		addr[key] = address
+		password[address] = conf.Password
+	}
+	option := &redis.RingOptions{
+		Addrs: addr,
+		DB:    config.Db,
+		NewClient: func(opt *redis.Options) *redis.Client {
+			pass := userPassForAddr(opt.Addr)
+			opt.Password = pass
+			return redis.NewClient(opt)
+		},
+		DialTimeout:  20 * time.Second, // 设置连接超时
+		ReadTimeout:  20 * time.Second, // 设置读取超时
+		WriteTimeout: 20 * time.Second, // 设置写入超时
+	}
+	if config.TLS == 1 { // 使用tls加密通讯
+		option.TLSConfig = &tls.Config{
+			InsecureSkipVerify: true,
+		}
+	}
+	rdb := redis.NewRing(option)
+	// 验证服务
+	err := rdb.ForEachShard(context.Background(), func(ctx context.Context, shard *redis.Client) error {
+		return shard.Ping(ctx).Err()
+	})
+	if err != nil {
+		xlog.Logger.WithField(global.ErrField, err).Fatal(global2.InitRedisErr.String())
+	}
+	return rdb
 }

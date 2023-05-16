@@ -36,6 +36,9 @@ var Logger *logrus.Logger
 func Debug(args ...interface{}) {
 	Logger.Debug(args...)
 }
+func Debugf(format string, args ...interface{}) {
+	Logger.Debugf(format, args...)
+}
 func Info(args ...interface{}) {
 	Logger.Info(args...)
 }

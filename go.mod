@@ -19,10 +19,15 @@ require (
 	github.com/jinzhu/now v1.1.5
 	github.com/jordan-wright/email v4.0.1-0.20210109023952-943e75fe5223+incompatible
 	github.com/json-iterator/go v1.1.12
+	github.com/leaanthony/slicer v1.6.0
 	github.com/lestrrat-go/file-rotatelogs v2.4.0+incompatible
+	github.com/matryer/is v1.4.0
 	github.com/nacos-group/nacos-sdk-go/v2 v2.1.3
+	github.com/redis/go-redis/v9 v9.0.4
 	github.com/rifflock/lfshook v0.0.0-20180920164130-b9218ef580f5
+	github.com/samber/lo v1.38.1
 	github.com/sirupsen/logrus v1.8.1
+	github.com/tkrajina/go-reflector v0.5.5
 	github.com/wcharczuk/go-chart v2.0.1+incompatible
 	golang.org/x/exp v0.0.0-20221208152030-732eee02a75a
 	golang.org/x/text v0.7.0
@@ -41,7 +46,7 @@ require (
 	github.com/bsm/redislock v0.8.2 // indirect
 	github.com/buger/jsonparser v1.1.1 // indirect
 	github.com/casbin/casbin/v2 v2.54.0 // indirect
-	github.com/cespare/xxhash/v2 v2.1.2 // indirect
+	github.com/cespare/xxhash/v2 v2.2.0 // indirect
 	github.com/chanxuehong/rand v0.0.0-20201110082127-2f19a1bdd973 // indirect
 	github.com/chanxuehong/wechat v0.0.0-20201110083048-0180211b69fd // indirect
 	github.com/dgryski/go-rendezvous v0.0.0-20200823014737-9f7001d12a5f // indirect
@@ -68,7 +73,6 @@ require (
 	github.com/jmespath/go-jmespath v0.4.0 // indirect
 	github.com/joho/godotenv v1.3.0 // indirect
 	github.com/kballard/go-shellquote v0.0.0-20180428030007-95032a82bc51 // indirect
-	github.com/leaanthony/slicer v1.6.0 // indirect
 	github.com/leodido/go-urn v1.2.1 // indirect
 	github.com/lestrrat-go/strftime v1.0.6 // indirect
 	github.com/mattn/go-colorable v0.1.11 // indirect
@@ -88,11 +92,9 @@ require (
 	github.com/prometheus/procfs v0.7.3 // indirect
 	github.com/robfig/cron/v3 v3.0.1 // indirect
 	github.com/rogpeppe/go-internal v1.8.0 // indirect
-	github.com/samber/lo v1.38.1 // indirect
 	github.com/tsuyoshiwada/go-gitcmd v0.0.0-20180205145712-5f1f5f9475df // indirect
 	github.com/ugorji/go/codec v1.2.7 // indirect
 	github.com/urfave/cli v1.20.0 // indirect
-	github.com/wailsapp/wails/v2 v2.4.1 // indirect
 	go.uber.org/atomic v1.7.0 // indirect
 	go.uber.org/multierr v1.6.0 // indirect
 	go.uber.org/zap v1.21.0 // indirect
