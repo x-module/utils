@@ -5,7 +5,7 @@ import (
 	"encoding/json"
 	"errors"
 	"fmt"
-	"github.com/go-xmodule/module/global"
+	"github.com/go-xmodule/utils/global"
 	"github.com/gorilla/websocket"
 	"github.com/sirupsen/logrus"
 	"io/ioutil"

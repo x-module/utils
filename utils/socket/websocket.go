@@ -10,7 +10,7 @@ package socket
 
 import (
 	"encoding/json"
-	"github.com/go-xmodule/module/global"
+	"github.com/go-xmodule/utils/global"
 	"github.com/go-xmodule/utils/utils"
 	"github.com/go-xmodule/utils/utils/xlog"
 	"github.com/gorilla/websocket"

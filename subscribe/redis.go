@@ -9,8 +9,7 @@
 package subscribe
 
 import (
-	"github.com/go-xmodule/module/global"
-	global2 "github.com/go-xmodule/utils/global"
+	"github.com/go-xmodule/utils/global"
 	"github.com/go-xmodule/utils/handler"
 	"github.com/go-xmodule/utils/utils"
 	"github.com/go-xmodule/utils/utils/xlog"
@@ -32,14 +31,14 @@ func (s *RedisSubscribe) Subscribe(channel string, callback handler.SubscribeCal
 		callback(message)
 	})
 	if err != nil {
-		xlog.Logger.WithField(global.ErrField, err).Error(global2.SubscribeDataErr.String())
+		xlog.Logger.WithField(global.ErrField, err).Error(global.SubscribeDataErr.String())
 	}
 }
 
 // Publish 发布数据
 func (s *RedisSubscribe) Publish(channel string, message any) error {
 	xlog.Logger.Debug("start publish data,channel:", channel, " message:", utils.JsonString(message))
-	_, err := handler.RedisHandler.Publish(channel, message)
+	err := handler.RedisHandler.Publish(channel, message)
 	if err != nil {
 		xlog.Logger.Error(PublishErr, err.Error())
 		return err

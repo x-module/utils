@@ -9,17 +9,15 @@
 package socket
 
 //
-//import (
-//"github.com/go-xmodule/module/config"
-//system "github.com/go-xmodule/module/initialize"
-//"github.com/go-xmodule/utils/utils/xlog"
-//"time"
-//"vue/server/socket"
-//)
+// import (
+// "time"
+// "vue/server/socket"
+// )
 //
-//var socketHandler *socket.WebSocket
+// var socketHandler *socket.WebSocket
 //
-//func main() {
+// func main() {
+
 // system.InitializeLogger(config.Log{
 //  Path: "./data/log",
 //  File: "run.log",
@@ -50,4 +48,4 @@ package socket
 // for {
 //  time.Sleep(time.Second)
 // }
-//}
+// }

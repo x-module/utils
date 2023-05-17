@@ -10,7 +10,7 @@ package utils
 
 import (
 	"fmt"
-	"github.com/go-xmodule/module/global"
+	"github.com/go-xmodule/utils/global"
 	"net/http"
 
 	"github.com/gin-gonic/gin"

@@ -14,7 +14,6 @@ import (
 	"errors"
 	"fmt"
 	"github.com/gin-gonic/gin"
-	global2 "github.com/go-xmodule/module/global"
 	"github.com/go-xmodule/utils/global"
 	"github.com/go-xmodule/utils/utils/xlog"
 	"gorm.io/gorm"
@@ -68,9 +67,9 @@ func HasQueryErr(err error, errCode fmt.Stringer) bool {
 	}
 	if err == gorm.ErrRecordNotFound {
 		msg := fmt.Sprintf("%s desc:%s", errCode.String(), global.NoRecordErr.String())
-		xlog.WithField(global2.ErrField, err).Warn(msg)
+		xlog.WithField(global.ErrField, err).Warn(msg)
 	} else {
-		xlog.WithField(global2.ErrField, err).Error(errCode.String())
+		xlog.WithField(global.ErrField, err).Error(errCode.String())
 	}
 	return true
 }

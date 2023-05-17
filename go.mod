@@ -9,7 +9,6 @@ require (
 	github.com/gin-gonic/gin v1.8.2
 	github.com/go-admin-team/go-admin-core v1.5.1
 	github.com/go-admin-team/go-admin-core/sdk v1.5.1
-	github.com/go-xmodule/module v1.0.2
 	github.com/golang-jwt/jwt/v4 v4.4.2
 	github.com/golang-module/carbon v1.7.3
 	github.com/golang/protobuf v1.5.2
@@ -72,6 +71,7 @@ require (
 	github.com/jinzhu/inflection v1.0.0 // indirect
 	github.com/jmespath/go-jmespath v0.4.0 // indirect
 	github.com/joho/godotenv v1.3.0 // indirect
+	github.com/jonboulle/clockwork v0.4.0 // indirect
 	github.com/kballard/go-shellquote v0.0.0-20180428030007-95032a82bc51 // indirect
 	github.com/leodido/go-urn v1.2.1 // indirect
 	github.com/lestrrat-go/strftime v1.0.6 // indirect

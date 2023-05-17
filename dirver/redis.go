@@ -12,25 +12,24 @@ import (
 	"context"
 	"crypto/tls"
 	"fmt"
-	"github.com/go-xmodule/module/global"
 	global2 "github.com/go-xmodule/utils/global"
 	"github.com/go-xmodule/utils/utils/xlog"
 	"github.com/redis/go-redis/v9"
 	"time"
 )
 
-// Config 配置
-type Config struct {
+// Redis 配置
+type Redis struct {
 	Host     string `yaml:"host"`
 	Port     int    `yaml:"port"`
 	Password string `yaml:"password"`
 }
 
-// RedisConfig 服务配置
+// RedisConfig 配置
 type RedisConfig struct {
-	List map[string]Config `json:"config,omitempty"`
-	Db   int               `yaml:"db"`
-	TLS  int               `yaml:"TLS"`
+	List map[string]Redis `yaml:"list"`
+	Db   int              `yaml:"db"`
+	TLS  int              `yaml:"tls"`
 }
 
 var password = map[string]string{}
@@ -74,7 +73,7 @@ func InitializeRedis(config RedisConfig) *redis.Ring {
 		return shard.Ping(ctx).Err()
 	})
 	if err != nil {
-		xlog.Logger.WithField(global.ErrField, err).Fatal(global2.InitRedisErr.String())
+		xlog.Logger.WithField(global2.ErrField, err).Fatal(global2.InitRedisErr.String())
 	}
 	return rdb
 }

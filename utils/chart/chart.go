@@ -11,7 +11,6 @@ package chart
 import (
 	"fmt"
 	"github.com/druidcaesa/gotool"
-	"github.com/go-xmodule/module/server/service"
 	"github.com/go-xmodule/utils/utils/datetime"
 	"github.com/go-xmodule/utils/utils/xlog"
 	"github.com/wcharczuk/go-chart"
@@ -21,7 +20,6 @@ import (
 )
 
 type Chart struct {
-	service.BaseService
 	height int
 	width  int
 	path   string
