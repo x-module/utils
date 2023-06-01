@@ -104,7 +104,7 @@ func (r *Response) Json(T any) error {
 	if err != nil {
 		return err
 	}
-	err = json.Unmarshal(body, &T)
+	err = json.Unmarshal(body, T)
 	if err != nil {
 		return err
 	}

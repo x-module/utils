@@ -111,6 +111,7 @@ func (d *Database) Exist(where Where) (bool, error) {
 		xlog.Logger.WithField("err", err).Error(global.DbErr.String())
 	}
 	return count > 0, nil
+
 }
 
 // ExecuteSql 执行sql

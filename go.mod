@@ -12,7 +12,6 @@ require (
 	github.com/golang-jwt/jwt/v4 v4.4.2
 	github.com/golang-module/carbon v1.7.3
 	github.com/golang/protobuf v1.5.2
-	github.com/gomodule/redigo v1.8.9
 	github.com/google/uuid v1.3.0
 	github.com/gorilla/websocket v1.4.2
 	github.com/jinzhu/now v1.1.5
@@ -33,7 +32,7 @@ require (
 	google.golang.org/grpc v1.52.3
 	gopkg.in/yaml.v2 v2.4.0
 	gorm.io/driver/mysql v1.4.7
-	gorm.io/gorm v1.24.5
+	gorm.io/gorm v1.25.1
 )
 
 require (
