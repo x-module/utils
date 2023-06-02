@@ -12,9 +12,9 @@ import (
 	"context"
 	"crypto/tls"
 	"fmt"
-	global2 "github.com/go-xmodule/utils/global"
-	"github.com/go-xmodule/utils/utils/xlog"
 	"github.com/redis/go-redis/v9"
+	global2 "github.com/x-module/utils/global"
+	"github.com/x-module/utils/utils/xlog"
 	"time"
 )
 

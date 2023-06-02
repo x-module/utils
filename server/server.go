@@ -11,12 +11,12 @@ package server
 import (
 	"errors"
 	"fmt"
-	"github.com/go-xmodule/utils/global"
-	"github.com/go-xmodule/utils/nacos"
-	"github.com/go-xmodule/utils/utils/convertor"
-	"github.com/go-xmodule/utils/utils/xlog"
 	"github.com/nacos-group/nacos-sdk-go/v2/clients/naming_client"
 	"github.com/nacos-group/nacos-sdk-go/v2/model"
+	"github.com/x-module/utils/global"
+	"github.com/x-module/utils/nacos"
+	"github.com/x-module/utils/utils/convertor"
+	"github.com/x-module/utils/utils/xlog"
 	"log"
 	"strings"
 )

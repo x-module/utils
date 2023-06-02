@@ -9,33 +9,18 @@
 package socket
 
 //
-// import (
-// 	"encoding/json"
-// 	"github.com/x-module/utils/utils"
-// 	"github.com/x-module/utils/utils/xlog"
-// 	"golang.org/x/net/websocket"
-// 	"net/http"
-// )
-//
 // const (
 // 	MessageTypeString = "message"
 // 	MessageTypeEvent  = "event"
-// 	MessageTypeCall   = "call"
 // )
 //
 // type MessageCallback func(message Message, socket *WebSocket) error
 // type EventCallback func(message Message, socket *WebSocket) error
 //
 // type Message struct {
-// 	Type    string
-// 	Method  string
-// 	Params  any
-// 	Event   string
-// 	Message string
-// 	Id      string
-// 	Code    int
-// 	Data    any
-// 	Error   string
+// 	Type    string `json:"Type"`
+// 	Event   string `json:"Event"`
+// 	Message string `json:"Message"`
 // }
 //
 // type WebSocket struct {
@@ -100,11 +85,16 @@ package socket
 // 	return w.Send(msg)
 // }
 //
+//
+//
+//
 // func (w *WebSocket) Send(message Message) error {
-// 	if err := websocket.Message.Send(w.wsHandler, utils.JsonString(message)); err != nil {
-// 		xlog.Logger.WithField("err", err).Error("Can't send message")
-// 		return err
-// 	}
+// 	// if err := websocket.Message.Send(w.wsHandler, utils.JsonString(message)); err != nil {
+// 	// 	xlog.Logger.WithField("err", err).Error("Can't send message")
+// 	// 	return err
+// 	// }
+// 	fmt.Println(websocket.Message.Send(w.wsHandler, "h"))
+// 	fmt.Println("send back")
 // 	return nil
 // }
 //
@@ -113,33 +103,25 @@ package socket
 // 	for {
 // 		var reply string
 // 		if err := websocket.Message.Receive(ws, &reply); err != nil {
-// 			xlog.Logger.WithField("err", err).Error("Can't receive")
+// 			xlog.Logger.Debug("Can't receive")
 // 			break
 // 		}
 // 		xlog.Logger.Debugf("Received back from client: " + reply)
-// 		var message Message
-// 		err := json.Unmarshal([]byte(reply), &message)
-// 		if err != nil {
-// 			xlog.Logger.WithField("err", err).Error("parse json error")
-// 			return
-// 		}
-// 		if message.Type == MessageTypeString {
-// 			if reply == "ping" {
-// 				_ = w.SendMessage("pong")
-// 			} else {
+// 		if reply == "p" {
+// 			fmt.Println("send")
+// 			_ = w.SendMessage("h")
+// 		} else {
+// 			var message Message
+// 			err := json.Unmarshal([]byte(reply), &message)
+// 			if err != nil {
+// 				xlog.Logger.WithField("err", err).Error("parse json error")
+// 				return
+// 			}
+// 			if message.Type == MessageTypeString {
 // 				w._message(message)
+// 			} else if message.Type == MessageTypeEvent {
+// 				w._event(message)
 // 			}
-// 		} else if message.Type == MessageTypeEvent {
-// 			w._event(message)
-// 		} else if message.Type == MessageTypeCall {
-// 			result := Message{
-// 				Type:    MessageTypeCall,
-// 				Id:      message.Id,
-// 				Data:    "call success",
-// 				Message: "success",
-// 				Error:   "",
-// 			}
-// 			_ = w.Send(result)
 // 		}
 // 	}
 // }

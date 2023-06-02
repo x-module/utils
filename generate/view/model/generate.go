@@ -9,7 +9,7 @@
 package model
 
 import (
-	"github.com/go-xmodule/utils/handler"
+	"github.com/x-module/utils/handler"
 )
 
 func GetTableInfo(database string, table string) (string, []handler.Field, error) {

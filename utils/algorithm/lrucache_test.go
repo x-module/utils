@@ -3,7 +3,7 @@ package algorithm
 import (
 	"testing"
 
-	"github.com/go-xmodule/utils/utils/internal"
+	"github.com/x-module/utils/utils/internal"
 )
 
 func TestLRUCache(t *testing.T) {

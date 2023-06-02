@@ -13,7 +13,7 @@ mathutil包实现了一些数学计算的函数.
 ## 用法:
 ```go
 import (
-    "github.com/go-xmodule/utils/mathutil"
+    "github.com/x-module/utils/mathutil"
 )
 ```
 
@@ -53,7 +53,7 @@ package main
 
 import (
     "fmt"
-    "github.com/go-xmodule/utils/mathutil"
+    "github.com/x-module/utils/mathutil"
 )
 
 func main() {
@@ -80,7 +80,7 @@ package main
 
 import (
     "fmt"
-    "github.com/go-xmodule/utils/mathutil"
+    "github.com/x-module/utils/mathutil"
 )
 
 func main() {
@@ -107,7 +107,7 @@ package main
 
 import (
     "fmt"
-    "github.com/go-xmodule/utils/mathutil"
+    "github.com/x-module/utils/mathutil"
 )
 
 func main() {
@@ -136,7 +136,7 @@ package main
 
 import (
     "fmt"
-    "github.com/go-xmodule/utils/mathutil"
+    "github.com/x-module/utils/mathutil"
 )
 
 func main() {
@@ -163,7 +163,7 @@ package main
 
 import (
     "fmt"
-    "github.com/go-xmodule/utils/mathutil"
+    "github.com/x-module/utils/mathutil"
 )
 
 func main() {
@@ -190,7 +190,7 @@ package main
 
 import (
     "fmt"
-    "github.com/go-xmodule/utils/mathutil"
+    "github.com/x-module/utils/mathutil"
 )
 
 func main() {
@@ -229,7 +229,7 @@ package main
 
 import (
     "fmt"
-    "github.com/go-xmodule/utils/mathutil"
+    "github.com/x-module/utils/mathutil"
 )
 
 func main() {
@@ -256,7 +256,7 @@ package main
 
 import (
     "fmt"
-    "github.com/go-xmodule/utils/mathutil"
+    "github.com/x-module/utils/mathutil"
 )
 
 func main() {
@@ -295,7 +295,7 @@ package main
 
 import (
     "fmt"
-    "github.com/go-xmodule/utils/mathutil"
+    "github.com/x-module/utils/mathutil"
 )
 
 func main() {
@@ -321,7 +321,7 @@ package main
 
 import (
     "fmt"
-    "github.com/go-xmodule/utils/mathutil"
+    "github.com/x-module/utils/mathutil"
 )
 
 func main() {
@@ -351,7 +351,7 @@ package main
 
 import (
     "fmt"
-    "github.com/go-xmodule/utils/mathutil"
+    "github.com/x-module/utils/mathutil"
 )
 
 func main() {
@@ -380,7 +380,7 @@ package main
 
 import (
     "fmt"
-    "github.com/go-xmodule/utils/mathutil"
+    "github.com/x-module/utils/mathutil"
 )
 
 func main() {

@@ -15,7 +15,7 @@ A queue is a kind of linear table. It only allows delete operations at the front
 ## Usage
 ```go
 import (
-    queue "github.com/go-xmodule/utils/datastructure/queue"
+    queue "github.com/x-module/utils/datastructure/queue"
 )
 ```
 
@@ -106,7 +106,7 @@ package main
 
 import (
     "fmt"
-    queue "github.com/go-xmodule/utils/datastructure/queue"
+    queue "github.com/x-module/utils/datastructure/queue"
 )
 
 func main() {
@@ -132,7 +132,7 @@ package main
 
 import (
     "fmt"
-    queue "github.com/go-xmodule/utils/datastructure/queue"
+    queue "github.com/x-module/utils/datastructure/queue"
 )
 
 func main() {
@@ -159,7 +159,7 @@ package main
 
 import (
     "fmt"
-    queue "github.com/go-xmodule/utils/datastructure/queue"
+    queue "github.com/x-module/utils/datastructure/queue"
 )
 
 func main() {
@@ -190,7 +190,7 @@ package main
 
 import (
     "fmt"
-    queue "github.com/go-xmodule/utils/datastructure/queue"
+    queue "github.com/x-module/utils/datastructure/queue"
 )
 
 func main() {
@@ -222,7 +222,7 @@ package main
 
 import (
     "fmt"
-    queue "github.com/go-xmodule/utils/datastructure/queue"
+    queue "github.com/x-module/utils/datastructure/queue"
 )
 
 func main() {
@@ -254,7 +254,7 @@ package main
 
 import (
     "fmt"
-    queue "github.com/go-xmodule/utils/datastructure/queue"
+    queue "github.com/x-module/utils/datastructure/queue"
 )
 
 func main() {
@@ -285,7 +285,7 @@ package main
 
 import (
     "fmt"
-    queue "github.com/go-xmodule/utils/datastructure/queue"
+    queue "github.com/x-module/utils/datastructure/queue"
 )
 
 func main() {
@@ -315,7 +315,7 @@ package main
 
 import (
     "fmt"
-    queue "github.com/go-xmodule/utils/datastructure/queue"
+    queue "github.com/x-module/utils/datastructure/queue"
 )
 
 func main() {
@@ -348,7 +348,7 @@ package main
 
 import (
     "fmt"
-    queue "github.com/go-xmodule/utils/datastructure/queue"
+    queue "github.com/x-module/utils/datastructure/queue"
 )
 
 func main() {
@@ -380,7 +380,7 @@ package main
 
 import (
     "fmt"
-    queue "github.com/go-xmodule/utils/datastructure/queue"
+    queue "github.com/x-module/utils/datastructure/queue"
 )
 
 func main() {
@@ -411,7 +411,7 @@ package main
 
 import (
     "fmt"
-    queue "github.com/go-xmodule/utils/datastructure/queue"
+    queue "github.com/x-module/utils/datastructure/queue"
 )
 
 func main() {
@@ -455,7 +455,7 @@ package main
 
 import (
     "fmt"
-    queue "github.com/go-xmodule/utils/datastructure/queue"
+    queue "github.com/x-module/utils/datastructure/queue"
 )
 
 func main() {
@@ -481,7 +481,7 @@ package main
 
 import (
     "fmt"
-    queue "github.com/go-xmodule/utils/datastructure/queue"
+    queue "github.com/x-module/utils/datastructure/queue"
 )
 
 func main() {
@@ -508,7 +508,7 @@ package main
 
 import (
     "fmt"
-    queue "github.com/go-xmodule/utils/datastructure/queue"
+    queue "github.com/x-module/utils/datastructure/queue"
 )
 
 func main() {
@@ -539,7 +539,7 @@ package main
 
 import (
     "fmt"
-    queue "github.com/go-xmodule/utils/datastructure/queue"
+    queue "github.com/x-module/utils/datastructure/queue"
 )
 
 func main() {
@@ -571,7 +571,7 @@ package main
 
 import (
     "fmt"
-    queue "github.com/go-xmodule/utils/datastructure/queue"
+    queue "github.com/x-module/utils/datastructure/queue"
 )
 
 func main() {
@@ -603,7 +603,7 @@ package main
 
 import (
     "fmt"
-    queue "github.com/go-xmodule/utils/datastructure/queue"
+    queue "github.com/x-module/utils/datastructure/queue"
 )
 
 func main() {
@@ -634,7 +634,7 @@ package main
 
 import (
     "fmt"
-    queue "github.com/go-xmodule/utils/datastructure/queue"
+    queue "github.com/x-module/utils/datastructure/queue"
 )
 
 func main() {
@@ -664,7 +664,7 @@ package main
 
 import (
     "fmt"
-    queue "github.com/go-xmodule/utils/datastructure/queue"
+    queue "github.com/x-module/utils/datastructure/queue"
 )
 
 func main() {
@@ -697,7 +697,7 @@ package main
 
 import (
     "fmt"
-    queue "github.com/go-xmodule/utils/datastructure/queue"
+    queue "github.com/x-module/utils/datastructure/queue"
 )
 
 func main() {
@@ -728,7 +728,7 @@ package main
 
 import (
     "fmt"
-    queue "github.com/go-xmodule/utils/datastructure/queue"
+    queue "github.com/x-module/utils/datastructure/queue"
 )
 
 func main() {
@@ -770,7 +770,7 @@ package main
 
 import (
     "fmt"
-    queue "github.com/go-xmodule/utils/datastructure/queue"
+    queue "github.com/x-module/utils/datastructure/queue"
 )
 
 func main() {
@@ -796,7 +796,7 @@ package main
 
 import (
     "fmt"
-    queue "github.com/go-xmodule/utils/datastructure/queue"
+    queue "github.com/x-module/utils/datastructure/queue"
 )
 
 func main() {
@@ -823,7 +823,7 @@ package main
 
 import (
     "fmt"
-    queue "github.com/go-xmodule/utils/datastructure/queue"
+    queue "github.com/x-module/utils/datastructure/queue"
 )
 
 func main() {
@@ -854,7 +854,7 @@ package main
 
 import (
     "fmt"
-    queue "github.com/go-xmodule/utils/datastructure/queue"
+    queue "github.com/x-module/utils/datastructure/queue"
 )
 
 func main() {
@@ -887,7 +887,7 @@ package main
 
 import (
     "fmt"
-    queue "github.com/go-xmodule/utils/datastructure/queue"
+    queue "github.com/x-module/utils/datastructure/queue"
 )
 
 func main() {
@@ -919,7 +919,7 @@ package main
 
 import (
     "fmt"
-    queue "github.com/go-xmodule/utils/datastructure/queue"
+    queue "github.com/x-module/utils/datastructure/queue"
 )
 
 func main() {
@@ -950,7 +950,7 @@ package main
 
 import (
     "fmt"
-    queue "github.com/go-xmodule/utils/datastructure/queue"
+    queue "github.com/x-module/utils/datastructure/queue"
 )
 
 func main() {
@@ -980,7 +980,7 @@ package main
 
 import (
     "fmt"
-    queue "github.com/go-xmodule/utils/datastructure/queue"
+    queue "github.com/x-module/utils/datastructure/queue"
 )
 
 func main() {
@@ -1013,7 +1013,7 @@ package main
 
 import (
     "fmt"
-    queue "github.com/go-xmodule/utils/datastructure/queue"
+    queue "github.com/x-module/utils/datastructure/queue"
 )
 
 func main() {
@@ -1045,7 +1045,7 @@ package main
 
 import (
     "fmt"
-    queue "github.com/go-xmodule/utils/datastructure/queue"
+    queue "github.com/x-module/utils/datastructure/queue"
 )
 
 func main() {
@@ -1076,7 +1076,7 @@ package main
 
 import (
     "fmt"
-    queue "github.com/go-xmodule/utils/datastructure/queue"
+    queue "github.com/x-module/utils/datastructure/queue"
 )
 
 func main() {
@@ -1115,7 +1115,7 @@ package main
 
 import (
     "fmt"
-    queue "github.com/go-xmodule/utils/datastructure/queue"
+    queue "github.com/x-module/utils/datastructure/queue"
 )
 
 func main() {
@@ -1141,7 +1141,7 @@ package main
 
 import (
     "fmt"
-    queue "github.com/go-xmodule/utils/datastructure/queue"
+    queue "github.com/x-module/utils/datastructure/queue"
 )
 
 func main() {
@@ -1168,7 +1168,7 @@ package main
 
 import (
     "fmt"
-    queue "github.com/go-xmodule/utils/datastructure/queue"
+    queue "github.com/x-module/utils/datastructure/queue"
 )
 
 type intComparator struct{}
@@ -1214,7 +1214,7 @@ package main
 
 import (
     "fmt"
-    queue "github.com/go-xmodule/utils/datastructure/queue"
+    queue "github.com/x-module/utils/datastructure/queue"
 )
 
 
@@ -1261,7 +1261,7 @@ package main
 
 import (
     "fmt"
-    queue "github.com/go-xmodule/utils/datastructure/queue"
+    queue "github.com/x-module/utils/datastructure/queue"
 )
 
 type intComparator struct{}
@@ -1308,7 +1308,7 @@ package main
 
 import (
     "fmt"
-    queue "github.com/go-xmodule/utils/datastructure/queue"
+    queue "github.com/x-module/utils/datastructure/queue"
 )
 
 type intComparator struct{}
@@ -1355,7 +1355,7 @@ package main
 
 import (
     "fmt"
-    queue "github.com/go-xmodule/utils/datastructure/queue"
+    queue "github.com/x-module/utils/datastructure/queue"
 )
 
 type intComparator struct{}

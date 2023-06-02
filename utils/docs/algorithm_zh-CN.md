@@ -14,7 +14,7 @@ algorithm算法包实现一些基本算法，sort，search，lrucache。
 ## 用法
 ```go
 import (
-    "github.com/go-xmodule/utils/algorithm"
+    "github.com/x-module/utils/algorithm"
 )
 ```
 
@@ -57,7 +57,7 @@ package main
 
 import (
     "fmt"
-    "github.com/go-xmodule/utils/algorithm"
+    "github.com/x-module/utils/algorithm"
 )
 
 func main() {
@@ -102,7 +102,7 @@ package main
 
 import (
     "fmt"
-    "github.com/go-xmodule/utils/algorithm"
+    "github.com/x-module/utils/algorithm"
 )
 
 func main() {
@@ -167,7 +167,7 @@ package main
 
 import (
     "fmt"
-    "github.com/go-xmodule/utils/algorithm"
+    "github.com/x-module/utils/algorithm"
 )
 
 func main() {
@@ -212,7 +212,7 @@ package main
 
 import (
     "fmt"
-    "github.com/go-xmodule/utils/algorithm"
+    "github.com/x-module/utils/algorithm"
 )
 
 func main() {
@@ -257,7 +257,7 @@ package main
 
 import (
     "fmt"
-    "github.com/go-xmodule/utils/algorithm"
+    "github.com/x-module/utils/algorithm"
 )
 
 func main() {
@@ -302,7 +302,7 @@ package main
 
 import (
     "fmt"
-    "github.com/go-xmodule/utils/algorithm"
+    "github.com/x-module/utils/algorithm"
 )
 
 func main() {
@@ -347,7 +347,7 @@ package main
 
 import (
     "fmt"
-    "github.com/go-xmodule/utils/algorithm"
+    "github.com/x-module/utils/algorithm"
 )
 
 func main() {
@@ -391,7 +391,7 @@ package main
 
 import (
     "fmt"
-    "github.com/go-xmodule/utils/algorithm"
+    "github.com/x-module/utils/algorithm"
 )
 
 func main() {
@@ -436,7 +436,7 @@ package main
 
 import (
     "fmt"
-    "github.com/go-xmodule/utils/algorithm"
+    "github.com/x-module/utils/algorithm"
 )
 
 func main() {
@@ -482,7 +482,7 @@ package main
 
 import (
     "fmt"
-    "github.com/go-xmodule/utils/algorithm"
+    "github.com/x-module/utils/algorithm"
 )
 
 func main() {
@@ -529,7 +529,7 @@ package main
 
 import (
     "fmt"
-    "github.com/go-xmodule/utils/algorithm"
+    "github.com/x-module/utils/algorithm"
 )
 
 func main() {
@@ -580,7 +580,7 @@ package main
 
 import (
     "fmt"
-    "github.com/go-xmodule/utils/algorithm"
+    "github.com/x-module/utils/algorithm"
 )
 
 func main() {

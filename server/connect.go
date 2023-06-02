@@ -9,9 +9,9 @@
 package server
 
 import (
-	"github.com/go-xmodule/utils/global"
-	"github.com/go-xmodule/utils/nacos"
 	"github.com/nacos-group/nacos-sdk-go/v2/clients/naming_client"
+	"github.com/x-module/utils/global"
+	"github.com/x-module/utils/nacos"
 	"log"
 )
 

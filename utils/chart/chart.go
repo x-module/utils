@@ -11,10 +11,9 @@ package chart
 import (
 	"fmt"
 	"github.com/druidcaesa/gotool"
-	"github.com/go-xmodule/utils/utils/datetime"
-	"github.com/go-xmodule/utils/utils/xlog"
-	"github.com/wcharczuk/go-chart"
 	"github.com/wcharczuk/go-chart/util"
+	"github.com/x-module/utils/utils/datetime"
+	"github.com/x-module/utils/utils/xlog"
 	"os"
 	"time"
 )

@@ -1,7 +1,7 @@
 package netutil
 
 import (
-	"github.com/go-xmodule/utils/utils/internal"
+	"github.com/x-module/utils/utils/internal"
 	"io"
 	"log"
 	"net/http"

@@ -8,7 +8,7 @@
 
 package subscribe
 
-import "github.com/go-xmodule/utils/handler"
+import "github.com/x-module/utils/handler"
 
 const (
 	PublishErr = "发布消息异常"

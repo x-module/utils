@@ -13,7 +13,7 @@ List是线性表数据结构, 用go切片实现。
 ## 用法
 ```go
 import (
-    "github.com/go-xmodule/utils/datastructure"
+    "github.com/x-module/utils/datastructure"
 )
 ```
 
@@ -73,7 +73,7 @@ package main
 
 import (
     "fmt"
-    list "github.com/go-xmodule/utils/datastructure/list"
+    list "github.com/x-module/utils/datastructure/list"
 )
 
 func main() {
@@ -99,7 +99,7 @@ package main
 
 import (
     "fmt"
-    list "github.com/go-xmodule/utils/datastructure/list"
+    list "github.com/x-module/utils/datastructure/list"
 )
 
 func main() {
@@ -128,7 +128,7 @@ package main
 
 import (
     "fmt"
-    list "github.com/go-xmodule/utils/datastructure/list"
+    list "github.com/x-module/utils/datastructure/list"
 )
 
 func main() {
@@ -157,7 +157,7 @@ package main
 
 import (
     "fmt"
-    list "github.com/go-xmodule/utils/datastructure/list"
+    list "github.com/x-module/utils/datastructure/list"
 )
 
 func main() {
@@ -187,7 +187,7 @@ package main
 
 import (
     "fmt"
-    list "github.com/go-xmodule/utils/datastructure/list"
+    list "github.com/x-module/utils/datastructure/list"
 )
 
 func main() {
@@ -214,7 +214,7 @@ package main
 
 import (
     "fmt"
-    list "github.com/go-xmodule/utils/datastructure/list"
+    list "github.com/x-module/utils/datastructure/list"
 )
 
 func main() {
@@ -240,7 +240,7 @@ package main
 
 import (
     "fmt"
-    list "github.com/go-xmodule/utils/datastructure/list"
+    list "github.com/x-module/utils/datastructure/list"
 )
 
 func main() {
@@ -266,7 +266,7 @@ package main
 
 import (
     "fmt"
-    list "github.com/go-xmodule/utils/datastructure/list"
+    list "github.com/x-module/utils/datastructure/list"
 )
 
 func main() {
@@ -294,7 +294,7 @@ package main
 
 import (
     "fmt"
-    list "github.com/go-xmodule/utils/datastructure/list"
+    list "github.com/x-module/utils/datastructure/list"
 )
 
 func main() {
@@ -323,7 +323,7 @@ package main
 
 import (
     "fmt"
-    list "github.com/go-xmodule/utils/datastructure/list"
+    list "github.com/x-module/utils/datastructure/list"
 )
 
 func main() {
@@ -355,7 +355,7 @@ package main
 
 import (
     "fmt"
-    list "github.com/go-xmodule/utils/datastructure/list"
+    list "github.com/x-module/utils/datastructure/list"
 )
 
 func main() {
@@ -386,7 +386,7 @@ package main
 
 import (
     "fmt"
-    list "github.com/go-xmodule/utils/datastructure/list"
+    list "github.com/x-module/utils/datastructure/list"
 )
 
 func main() {
@@ -424,7 +424,7 @@ package main
 
 import (
     "fmt"
-    list "github.com/go-xmodule/utils/datastructure/list"
+    list "github.com/x-module/utils/datastructure/list"
 )
 
 func main() {
@@ -461,7 +461,7 @@ package main
 
 import (
     "fmt"
-    list "github.com/go-xmodule/utils/datastructure/list"
+    list "github.com/x-module/utils/datastructure/list"
 )
 
 func main() {
@@ -494,7 +494,7 @@ package main
 
 import (
     "fmt"
-    list "github.com/go-xmodule/utils/datastructure/list"
+    list "github.com/x-module/utils/datastructure/list"
 )
 
 func main() {
@@ -524,7 +524,7 @@ package main
 
 import (
     "fmt"
-    list "github.com/go-xmodule/utils/datastructure/list"
+    list "github.com/x-module/utils/datastructure/list"
 )
 
 func main() {
@@ -554,7 +554,7 @@ package main
 
 import (
     "fmt"
-    list "github.com/go-xmodule/utils/datastructure/list"
+    list "github.com/x-module/utils/datastructure/list"
 )
 
 func main() {
@@ -582,7 +582,7 @@ package main
 
 import (
     "fmt"
-    list "github.com/go-xmodule/utils/datastructure/list"
+    list "github.com/x-module/utils/datastructure/list"
 )
 
 func main() {
@@ -611,7 +611,7 @@ package main
 
 import (
     "fmt"
-    list "github.com/go-xmodule/utils/datastructure/list"
+    list "github.com/x-module/utils/datastructure/list"
 )
 
 func main() {
@@ -640,7 +640,7 @@ package main
 
 import (
     "fmt"
-    list "github.com/go-xmodule/utils/datastructure/list"
+    list "github.com/x-module/utils/datastructure/list"
 )
 
 func main() {
@@ -667,7 +667,7 @@ package main
 
 import (
     "fmt"
-    list "github.com/go-xmodule/utils/datastructure/list"
+    list "github.com/x-module/utils/datastructure/list"
 )
 
 func main() {
@@ -696,7 +696,7 @@ package main
 
 import (
     "fmt"
-    list "github.com/go-xmodule/utils/datastructure/list"
+    list "github.com/x-module/utils/datastructure/list"
 )
 
 func main() {
@@ -725,7 +725,7 @@ package main
 
 import (
     "fmt"
-    list "github.com/go-xmodule/utils/datastructure/list"
+    list "github.com/x-module/utils/datastructure/list"
 )
 
 func main() {
@@ -754,7 +754,7 @@ package main
 
 import (
     "fmt"
-    list "github.com/go-xmodule/utils/datastructure/list"
+    list "github.com/x-module/utils/datastructure/list"
 )
 
 func main() {
@@ -783,7 +783,7 @@ package main
 
 import (
     "fmt"
-    list "github.com/go-xmodule/utils/datastructure/list"
+    list "github.com/x-module/utils/datastructure/list"
 )
 
 func main() {
@@ -813,7 +813,7 @@ package main
 
 import (
     "fmt"
-    list "github.com/go-xmodule/utils/datastructure/list"
+    list "github.com/x-module/utils/datastructure/list"
 )
 
 func main() {
@@ -842,7 +842,7 @@ package main
 
 import (
     "fmt"
-    list "github.com/go-xmodule/utils/datastructure/list"
+    list "github.com/x-module/utils/datastructure/list"
 )
 
 func main() {
@@ -870,7 +870,7 @@ package main
 
 import (
     "fmt"
-    list "github.com/go-xmodule/utils/datastructure/list"
+    list "github.com/x-module/utils/datastructure/list"
 )
 
 func main() {

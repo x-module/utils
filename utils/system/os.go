@@ -6,7 +6,7 @@ package system
 
 import (
 	"bytes"
-	"github.com/go-xmodule/utils/utils/validator"
+	"github.com/x-module/utils/utils/validator"
 	"os"
 	"os/exec"
 	"runtime"

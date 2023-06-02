@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"math"
 
-	"github.com/go-xmodule/utils/utils/datastructure"
-	"github.com/go-xmodule/utils/utils/lancetconstraints"
+	"github.com/x-module/utils/utils/datastructure"
+	"github.com/x-module/utils/utils/lancetconstraints"
 )
 
 func preOrderTraverse[T any](node *datastructure.TreeNode[T]) []T {

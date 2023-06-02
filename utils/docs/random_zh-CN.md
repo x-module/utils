@@ -14,7 +14,7 @@ random 随机数生成器包，可以生成随机[]bytes, int, string。
 
 ```go
 import (
-    "github.com/go-xmodule/utils/random"
+    "github.com/x-module/utils/random"
 )
 ```
 
@@ -52,7 +52,7 @@ package main
 
 import (
     "fmt"
-    "github.com/go-xmodule/utils/random"
+    "github.com/x-module/utils/random"
 )
 
 func main() {
@@ -78,7 +78,7 @@ package main
 
 import (
     "fmt"
-    "github.com/go-xmodule/utils/random"
+    "github.com/x-module/utils/random"
 )
 
 func main() {
@@ -104,7 +104,7 @@ package main
 
 import (
     "fmt"
-    "github.com/go-xmodule/utils/random"
+    "github.com/x-module/utils/random"
 )
 
 func main() {
@@ -130,7 +130,7 @@ package main
 
 import (
     "fmt"
-    "github.com/go-xmodule/utils/random"
+    "github.com/x-module/utils/random"
 )
 
 func main() {
@@ -156,7 +156,7 @@ package main
 
 import (
     "fmt"
-    "github.com/go-xmodule/utils/random"
+    "github.com/x-module/utils/random"
 )
 
 func main() {
@@ -182,7 +182,7 @@ package main
 
 import (
     "fmt"
-    "github.com/go-xmodule/utils/random"
+    "github.com/x-module/utils/random"
 )
 
 func main() {
@@ -208,7 +208,7 @@ package main
 
 import (
     "fmt"
-    "github.com/go-xmodule/utils/random"
+    "github.com/x-module/utils/random"
 )
 
 func main() {
@@ -234,7 +234,7 @@ package main
 
 import (
     "fmt"
-    "github.com/go-xmodule/utils/random"
+    "github.com/x-module/utils/random"
 )
 
 func main() {

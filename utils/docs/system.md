@@ -13,7 +13,7 @@ Package system contains some functions about os, runtime, shell command.
 ## Usage:
 ```go
 import (
-    "github.com/go-xmodule/utils/system"
+    "github.com/x-module/utils/system"
 )
 ```
 
@@ -49,7 +49,7 @@ func IsWindows() bool
 ```go
 import (
 	"fmt"
-	"github.com/go-xmodule/utils/system"
+	"github.com/x-module/utils/system"
 )
 
 func main() {
@@ -74,7 +74,7 @@ func IsLinux() bool
 ```go
 import (
 	"fmt"
-	"github.com/go-xmodule/utils/system"
+	"github.com/x-module/utils/system"
 )
 
 func main() {
@@ -98,7 +98,7 @@ func IsMac() bool
 ```go
 import (
 	"fmt"
-	"github.com/go-xmodule/utils/system"
+	"github.com/x-module/utils/system"
 )
 
 func main() {
@@ -122,7 +122,7 @@ func GetOsEnv(key string) string
 ```go
 import (
 	"fmt"
-	"github.com/go-xmodule/utils/system"
+	"github.com/x-module/utils/system"
 )
 
 func main() {
@@ -146,7 +146,7 @@ func SetOsEnv(key, value string) error
 ```go
 import (
 	"fmt"
-	"github.com/go-xmodule/utils/system"
+	"github.com/x-module/utils/system"
 )
 
 func main() {
@@ -171,7 +171,7 @@ func RemoveOsEnv(key string) error
 ```go
 import (
 	"fmt"
-	"github.com/go-xmodule/utils/system"
+	"github.com/x-module/utils/system"
 )
 
 func main() {
@@ -197,7 +197,7 @@ func CompareOsEnv(key, comparedEnv string) bool
 ```go
 import (
 	"fmt"
-	"github.com/go-xmodule/utils/system"
+	"github.com/x-module/utils/system"
 )
 
 func main() {
@@ -223,7 +223,7 @@ func ExecCommand(command string) (stdout, stderr string, err error)
 ```go
 import (
 	"fmt"
-	"github.com/go-xmodule/utils/system"
+	"github.com/x-module/utils/system"
 )
 
 func main() {
@@ -264,7 +264,7 @@ func GetOsBits() int
 ```go
 import (
 	"fmt"
-	"github.com/go-xmodule/utils/system"
+	"github.com/x-module/utils/system"
 )
 
 func main() {

@@ -13,7 +13,7 @@ Package datetime supports date and time format and compare.
 ## Usage:
 ```go
 import (
-    "github.com/go-xmodule/utils/datetime"
+    "github.com/x-module/utils/datetime"
 )
 ```
 
@@ -95,7 +95,7 @@ package main
 import (
     "fmt"
     "time"
-    "github.com/go-xmodule/utils/datetime"
+    "github.com/x-module/utils/datetime"
 )
 
 func main() {
@@ -124,7 +124,7 @@ package main
 import (
     "fmt"
     "time"
-    "github.com/go-xmodule/utils/datetime"
+    "github.com/x-module/utils/datetime"
 )
 
 func main() {
@@ -152,7 +152,7 @@ package main
 import (
     "fmt"
     "time"
-    "github.com/go-xmodule/utils/datetime"
+    "github.com/x-module/utils/datetime"
 )
 
 func main() {
@@ -180,7 +180,7 @@ package main
 import (
     "fmt"
     "time"
-    "github.com/go-xmodule/utils/datetime"
+    "github.com/x-module/utils/datetime"
 )
 
 func main() {
@@ -206,7 +206,7 @@ package main
 import (
     "fmt"
     "time"
-    "github.com/go-xmodule/utils/datetime"
+    "github.com/x-module/utils/datetime"
 )
 
 func main() {
@@ -232,7 +232,7 @@ package main
 import (
     "fmt"
     "time"
-    "github.com/go-xmodule/utils/datetime"
+    "github.com/x-module/utils/datetime"
 )
 
 func main() {
@@ -260,7 +260,7 @@ package main
 import (
     "fmt"
     "time"
-    "github.com/go-xmodule/utils/datetime"
+    "github.com/x-module/utils/datetime"
 )
 
 func main() {
@@ -288,7 +288,7 @@ package main
 import (
     "fmt"
     "time"
-    "github.com/go-xmodule/utils/datetime"
+    "github.com/x-module/utils/datetime"
 )
 
 func main() {
@@ -315,7 +315,7 @@ package main
 import (
     "fmt"
     "time"
-    "github.com/go-xmodule/utils/datetime"
+    "github.com/x-module/utils/datetime"
 )
 
 func main() {
@@ -343,7 +343,7 @@ package main
 import (
     "fmt"
     "time"
-    "github.com/go-xmodule/utils/datetime"
+    "github.com/x-module/utils/datetime"
 )
 
 func main() {
@@ -369,7 +369,7 @@ package main
 import (
     "fmt"
     "time"
-    "github.com/go-xmodule/utils/datetime"
+    "github.com/x-module/utils/datetime"
 )
 
 func main() {
@@ -395,7 +395,7 @@ package main
 import (
     "fmt"
     "time"
-    "github.com/go-xmodule/utils/datetime"
+    "github.com/x-module/utils/datetime"
 )
 
 func main() {
@@ -423,7 +423,7 @@ package main
 import (
     "fmt"
     "time"
-    "github.com/go-xmodule/utils/datetime"
+    "github.com/x-module/utils/datetime"
 )
 
 func main() {
@@ -451,7 +451,7 @@ package main
 import (
     "fmt"
     "time"
-    "github.com/go-xmodule/utils/datetime"
+    "github.com/x-module/utils/datetime"
 )
 
 func main() {
@@ -478,7 +478,7 @@ package main
 import (
     "fmt"
     "time"
-    "github.com/go-xmodule/utils/datetime"
+    "github.com/x-module/utils/datetime"
 )
 
 func main() {
@@ -505,7 +505,7 @@ package main
 import (
     "fmt"
     "time"
-    "github.com/go-xmodule/utils/datetime"
+    "github.com/x-module/utils/datetime"
 )
 
 func main() {
@@ -532,7 +532,7 @@ package main
 import (
     "fmt"
     "time"
-    "github.com/go-xmodule/utils/datetime"
+    "github.com/x-module/utils/datetime"
 )
 
 func main() {
@@ -559,7 +559,7 @@ package main
 import (
     "fmt"
     "time"
-    "github.com/go-xmodule/utils/datetime"
+    "github.com/x-module/utils/datetime"
 )
 
 func main() {
@@ -586,7 +586,7 @@ package main
 import (
     "fmt"
     "time"
-    "github.com/go-xmodule/utils/datetime"
+    "github.com/x-module/utils/datetime"
 )
 
 func main() {
@@ -613,7 +613,7 @@ package main
 import (
     "fmt"
     "time"
-    "github.com/go-xmodule/utils/datetime"
+    "github.com/x-module/utils/datetime"
 )
 
 func main() {
@@ -639,7 +639,7 @@ package main
 import (
     "fmt"
     "time"
-    "github.com/go-xmodule/utils/datetime"
+    "github.com/x-module/utils/datetime"
 )
 
 func main() {
@@ -665,7 +665,7 @@ package main
 
 import (
     "fmt"
-    "github.com/go-xmodule/utils/datetime"
+    "github.com/x-module/utils/datetime"
 )
 
 func main() {
@@ -694,7 +694,7 @@ package main
 
 import (
     "fmt"
-    "github.com/go-xmodule/utils/datetime"
+    "github.com/x-module/utils/datetime"
 )
 
 func main() {
@@ -722,7 +722,7 @@ package main
 
 import (
     "fmt"
-    "github.com/go-xmodule/utils/datetime"
+    "github.com/x-module/utils/datetime"
 )
 
 func main() {
@@ -751,7 +751,7 @@ package main
 
 import (
     "fmt"
-    "github.com/go-xmodule/utils/datetime"
+    "github.com/x-module/utils/datetime"
 )
 
 func main() {
@@ -781,7 +781,7 @@ package main
 
 import (
     "fmt"
-    "github.com/go-xmodule/utils/datetime"
+    "github.com/x-module/utils/datetime"
 )
 
 func main() {
@@ -807,7 +807,7 @@ package main
 
 import (
     "fmt"
-    "github.com/go-xmodule/utils/datetime"
+    "github.com/x-module/utils/datetime"
 )
 
 func main() {
@@ -833,7 +833,7 @@ package main
 
 import (
     "fmt"
-    "github.com/go-xmodule/utils/datetime"
+    "github.com/x-module/utils/datetime"
 )
 
 func main() {
@@ -859,7 +859,7 @@ package main
 
 import (
     "fmt"
-    "github.com/go-xmodule/utils/datetime"
+    "github.com/x-module/utils/datetime"
 )
 
 func main() {
@@ -885,7 +885,7 @@ package main
 
 import (
     "fmt"
-    "github.com/go-xmodule/utils/datetime"
+    "github.com/x-module/utils/datetime"
 )
 
 func main() {

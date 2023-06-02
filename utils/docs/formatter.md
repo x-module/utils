@@ -12,7 +12,7 @@ formatter contains some functions for data formatting.
 ## Usage:
 ```go
 import (
-    "github.com/go-xmodule/utils/formatter"
+    "github.com/x-module/utils/formatter"
 )
 ```
 
@@ -42,7 +42,7 @@ package main
 
 import (
     "fmt"
-    "github.com/go-xmodule/utils/formatter"
+    "github.com/x-module/utils/formatter"
 )
 
 func main() {

@@ -12,7 +12,7 @@ Package xerror implements helpers for errors.
 ## Usage:
 ```go
 import (
-    "github.com/go-xmodule/utils/xerror"
+    "github.com/x-module/utils/xerror"
 )
 ```
 
@@ -42,7 +42,7 @@ package main
 
 import (
     "fmt"
-    "github.com/go-xmodule/utils/xerror"
+    "github.com/x-module/utils/xerror"
 )
 
 func main() {

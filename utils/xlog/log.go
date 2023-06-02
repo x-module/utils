@@ -11,11 +11,11 @@ package xlog
 import (
 	"github.com/druidcaesa/gotool"
 	"github.com/druidcaesa/gotool/openfile"
-	"github.com/go-xmodule/utils/utils/fileutil"
-	"github.com/go-xmodule/utils/utils/xerror"
 	rotatelogs "github.com/lestrrat-go/file-rotatelogs"
 	"github.com/rifflock/lfshook"
 	"github.com/sirupsen/logrus"
+	"github.com/x-module/utils/utils/fileutil"
+	"github.com/x-module/utils/utils/xerror"
 	"os"
 	"path"
 	"time"

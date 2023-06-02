@@ -3,7 +3,7 @@ package function
 import (
 	"testing"
 
-	"github.com/go-xmodule/utils/utils/internal"
+	"github.com/x-module/utils/utils/internal"
 )
 
 func TestWatcher(t *testing.T) {

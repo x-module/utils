@@ -10,8 +10,8 @@ package grpc
 
 import (
 	"context"
-	"github.com/go-xmodule/utils/global"
-	"github.com/go-xmodule/utils/utils/xlog"
+	"github.com/x-module/utils/global"
+	"github.com/x-module/utils/utils/xlog"
 	"google.golang.org/grpc"
 	"log"
 	"strconv"

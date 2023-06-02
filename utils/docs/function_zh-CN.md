@@ -13,7 +13,7 @@ function函数包控制函数执行流程，包含部分函数式编程。
 ## 用法:
 ```go
 import (
-    "github.com/go-xmodule/utils/function"
+    "github.com/x-module/utils/function"
 )
 ```
 
@@ -50,7 +50,7 @@ package main
 
 import (
     "fmt"
-    "github.com/go-xmodule/utils/function"
+    "github.com/x-module/utils/function"
 )
 
 func main() {
@@ -97,8 +97,8 @@ package main
 
 import (
     "fmt"
-    "github.com/go-xmodule/utils/function"
-    "github.com/go-xmodule/utils/internal"
+    "github.com/x-module/utils/function"
+    "github.com/x-module/utils/internal"
 )
 
 func main() {
@@ -141,7 +141,7 @@ package main
 
 import (
     "fmt"
-    "github.com/go-xmodule/utils/function"
+    "github.com/x-module/utils/function"
 )
 
 func main() {
@@ -178,7 +178,7 @@ package main
 
 import (
     "fmt"
-    "github.com/go-xmodule/utils/function"
+    "github.com/x-module/utils/function"
 )
 
 func main() {
@@ -214,7 +214,7 @@ package main
 
 import (
     "fmt"
-    "github.com/go-xmodule/utils/function"
+    "github.com/x-module/utils/function"
 )
 
 func main() {
@@ -256,7 +256,7 @@ package main
 
 import (
     "fmt"
-    "github.com/go-xmodule/utils/function"
+    "github.com/x-module/utils/function"
 )
 
 func main() {
@@ -285,7 +285,7 @@ package main
 
 import (
     "fmt"
-    "github.com/go-xmodule/utils/function"
+    "github.com/x-module/utils/function"
 )
 
 func main() {
@@ -320,7 +320,7 @@ package main
 
 import (
     "fmt"
-    "github.com/go-xmodule/utils/function"
+    "github.com/x-module/utils/function"
 )
 
 func main() {
@@ -367,7 +367,7 @@ package main
 
 import (
     "fmt"
-    "github.com/go-xmodule/utils/function"
+    "github.com/x-module/utils/function"
 )
 
 func main() {

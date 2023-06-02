@@ -12,7 +12,7 @@ Package concurrency contain some functions to support concurrent programming. eg
 ## Usage:
 ```go
 import (
-    "github.com/go-xmodule/utils/concurrency"
+    "github.com/x-module/utils/concurrency"
 )
 ```
 
@@ -53,7 +53,7 @@ package main
 
 import (
     "fmt"
-    "github.com/go-xmodule/utils/concurrency"
+    "github.com/x-module/utils/concurrency"
 )
 
 func main() {
@@ -80,7 +80,7 @@ package main
 import (
     "context"
     "fmt"
-    "github.com/go-xmodule/utils/concurrency"
+    "github.com/x-module/utils/concurrency"
 )
 
 func main() {
@@ -134,7 +134,7 @@ package main
 import (
     "context"
     "fmt"
-    "github.com/go-xmodule/utils/concurrency"
+    "github.com/x-module/utils/concurrency"
 )
 
 func main() {
@@ -174,7 +174,7 @@ package main
 import (
     "context"
     "fmt"
-    "github.com/go-xmodule/utils/concurrency"
+    "github.com/x-module/utils/concurrency"
 )
 
 func main() {
@@ -214,7 +214,7 @@ package main
 import (
     "context"
     "fmt"
-    "github.com/go-xmodule/utils/concurrency"
+    "github.com/x-module/utils/concurrency"
 )
 
 func main() {
@@ -252,7 +252,7 @@ package main
 import (
     "context"
     "fmt"
-    "github.com/go-xmodule/utils/concurrency"
+    "github.com/x-module/utils/concurrency"
 )
 
 func main() {
@@ -295,7 +295,7 @@ package main
 import (
     "context"
     "fmt"
-    "github.com/go-xmodule/utils/concurrency"
+    "github.com/x-module/utils/concurrency"
 )
 
 func main() {
@@ -341,7 +341,7 @@ package main
 import (
     "context"
     "fmt"
-    "github.com/go-xmodule/utils/concurrency"
+    "github.com/x-module/utils/concurrency"
 )
 
 func main() {
@@ -381,7 +381,7 @@ package main
 import (
     "context"
     "fmt"
-    "github.com/go-xmodule/utils/concurrency"
+    "github.com/x-module/utils/concurrency"
 )
 
 func main() {
@@ -428,7 +428,7 @@ package main
 import (
     "context"
     "fmt"
-    "github.com/go-xmodule/utils/concurrency"
+    "github.com/x-module/utils/concurrency"
 )
 
 func main() {

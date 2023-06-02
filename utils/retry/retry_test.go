@@ -6,7 +6,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/go-xmodule/utils/utils/internal"
+	"github.com/x-module/utils/utils/internal"
 )
 
 func TestRetryFailed(t *testing.T) {

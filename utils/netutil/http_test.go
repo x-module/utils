@@ -7,7 +7,7 @@ import (
 	"net/url"
 	"testing"
 
-	"github.com/go-xmodule/utils/utils/internal"
+	"github.com/x-module/utils/utils/internal"
 )
 
 func TestHttpGet(t *testing.T) {

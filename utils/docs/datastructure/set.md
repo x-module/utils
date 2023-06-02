@@ -13,7 +13,7 @@ Set is a data container, like list, but elements of set is not duplicate.
 ## Usage
 ```go
 import (
-    set "github.com/go-xmodule/utils/datastructure/set"
+    set "github.com/x-module/utils/datastructure/set"
 )
 ```
 
@@ -62,7 +62,7 @@ package main
 
 import (
     "fmt"
-    set "github.com/go-xmodule/utils/datastructure/set"
+    set "github.com/x-module/utils/datastructure/set"
 )
 
 func main() {
@@ -87,7 +87,7 @@ package main
 
 import (
     "fmt"
-    set "github.com/go-xmodule/utils/datastructure/set"
+    set "github.com/x-module/utils/datastructure/set"
 )
 
 func main() {
@@ -113,7 +113,7 @@ package main
 
 import (
     "fmt"
-    set "github.com/go-xmodule/utils/datastructure/set"
+    set "github.com/x-module/utils/datastructure/set"
 )
 
 func main() {
@@ -140,7 +140,7 @@ package main
 
 import (
     "fmt"
-    set "github.com/go-xmodule/utils/datastructure/set"
+    set "github.com/x-module/utils/datastructure/set"
 )
 
 func main() {
@@ -167,7 +167,7 @@ package main
 
 import (
     "fmt"
-    set "github.com/go-xmodule/utils/datastructure/set"
+    set "github.com/x-module/utils/datastructure/set"
 )
 
 func main() {
@@ -199,7 +199,7 @@ package main
 
 import (
     "fmt"
-    set "github.com/go-xmodule/utils/datastructure/set"
+    set "github.com/x-module/utils/datastructure/set"
 )
 
 func main() {
@@ -237,7 +237,7 @@ package main
 
 import (
     "fmt"
-    set "github.com/go-xmodule/utils/datastructure/set"
+    set "github.com/x-module/utils/datastructure/set"
 )
 
 func main() {
@@ -266,7 +266,7 @@ package main
 
 import (
     "fmt"
-    set "github.com/go-xmodule/utils/datastructure/set"
+    set "github.com/x-module/utils/datastructure/set"
 )
 
 func main() {
@@ -296,7 +296,7 @@ package main
 
 import (
     "fmt"
-    set "github.com/go-xmodule/utils/datastructure/set"
+    set "github.com/x-module/utils/datastructure/set"
 )
 
 func main() {
@@ -326,7 +326,7 @@ package main
 
 import (
     "fmt"
-    set "github.com/go-xmodule/utils/datastructure/set"
+    set "github.com/x-module/utils/datastructure/set"
 )
 
 func main() {
@@ -353,7 +353,7 @@ package main
 
 import (
     "fmt"
-    set "github.com/go-xmodule/utils/datastructure/set"
+    set "github.com/x-module/utils/datastructure/set"
 )
 
 func main() {
@@ -383,7 +383,7 @@ package main
 
 import (
     "fmt"
-    set "github.com/go-xmodule/utils/datastructure/set"
+    set "github.com/x-module/utils/datastructure/set"
 )
 
 func main() {
@@ -413,7 +413,7 @@ package main
 
 import (
     "fmt"
-    set "github.com/go-xmodule/utils/datastructure/set"
+    set "github.com/x-module/utils/datastructure/set"
 )
 
 func main() {
@@ -444,7 +444,7 @@ package main
 
 import (
     "fmt"
-    set "github.com/go-xmodule/utils/datastructure/set"
+    set "github.com/x-module/utils/datastructure/set"
 )
 
 func main() {
@@ -473,7 +473,7 @@ package main
 
 import (
     "fmt"
-    set "github.com/go-xmodule/utils/datastructure/set"
+    set "github.com/x-module/utils/datastructure/set"
 )
 
 func main() {
@@ -502,7 +502,7 @@ package main
 
 import (
     "fmt"
-    set "github.com/go-xmodule/utils/datastructure/set"
+    set "github.com/x-module/utils/datastructure/set"
 )
 
 func main() {
@@ -533,7 +533,7 @@ package main
 
 import (
     "fmt"
-    set "github.com/go-xmodule/utils/datastructure/set"
+    set "github.com/x-module/utils/datastructure/set"
 )
 
 func main() {
@@ -564,7 +564,7 @@ package main
 
 import (
     "fmt"
-    set "github.com/go-xmodule/utils/datastructure/set"
+    set "github.com/x-module/utils/datastructure/set"
 )
 
 func main() {

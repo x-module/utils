@@ -12,7 +12,7 @@ Package convertor contains some functions for data type convertion.
 ## Usage:
 ```go
 import (
-    "github.com/go-xmodule/utils/convertor"
+    "github.com/x-module/utils/convertor"
 )
 ```
 
@@ -57,7 +57,7 @@ package main
 
 import (
     "fmt"
-    "github.com/go-xmodule/utils/convertor"
+    "github.com/x-module/utils/convertor"
 )
 
 func main() {
@@ -85,7 +85,7 @@ package main
 
 import (
     "fmt"
-    "github.com/go-xmodule/utils/convertor"
+    "github.com/x-module/utils/convertor"
 )
 
 func main() {
@@ -116,7 +116,7 @@ package main
 
 import (
     "fmt"
-    "github.com/go-xmodule/utils/convertor"
+    "github.com/x-module/utils/convertor"
 )
 
 func main() {
@@ -152,7 +152,7 @@ package main
 
 import (
     "fmt"
-    "github.com/go-xmodule/utils/convertor"
+    "github.com/x-module/utils/convertor"
 )
 
 func main() {
@@ -182,7 +182,7 @@ package main
 
 import (
     "fmt"
-    "github.com/go-xmodule/utils/convertor"
+    "github.com/x-module/utils/convertor"
 )
 
 func main() {
@@ -214,7 +214,7 @@ package main
 
 import (
     "fmt"
-    "github.com/go-xmodule/utils/convertor"
+    "github.com/x-module/utils/convertor"
 )
 
 func main() {
@@ -252,7 +252,7 @@ package main
 
 import (
     "fmt"
-    "github.com/go-xmodule/utils/convertor"
+    "github.com/x-module/utils/convertor"
 )
 
 func main() {
@@ -285,7 +285,7 @@ package main
 
 import (
     "fmt"
-    "github.com/go-xmodule/utils/convertor"
+    "github.com/x-module/utils/convertor"
 )
 
 func main() {
@@ -318,7 +318,7 @@ package main
 
 import (
     "fmt"
-    "github.com/go-xmodule/utils/convertor"
+    "github.com/x-module/utils/convertor"
 )
 
 func main() {
@@ -346,7 +346,7 @@ package main
 
 import (
     "fmt"
-    "github.com/go-xmodule/utils/convertor"
+    "github.com/x-module/utils/convertor"
 )
 
 func main() {
@@ -384,7 +384,7 @@ package main
 
 import (
     "fmt"
-    "github.com/go-xmodule/utils/convertor"
+    "github.com/x-module/utils/convertor"
 )
 
 func main() {
@@ -410,7 +410,7 @@ package main
 
 import (
     "fmt"
-    "github.com/go-xmodule/utils/convertor"
+    "github.com/x-module/utils/convertor"
 )
 
 func main() {
@@ -437,7 +437,7 @@ package main
 
 import (
     "fmt"
-    "github.com/go-xmodule/utils/convertor"
+    "github.com/x-module/utils/convertor"
 )
 
 func main() {
@@ -473,7 +473,7 @@ package main
 
 import (
     "fmt"
-    "github.com/go-xmodule/utils/convertor"
+    "github.com/x-module/utils/convertor"
 )
 
 func main() {
@@ -503,7 +503,7 @@ package main
 
 import (
     "fmt"
-    "github.com/go-xmodule/utils/convertor"
+    "github.com/x-module/utils/convertor"
 )
 
 func main() {
@@ -530,7 +530,7 @@ package main
 
 import (
     "fmt"
-    "github.com/go-xmodule/utils/convertor"
+    "github.com/x-module/utils/convertor"
 )
 
 func main() {

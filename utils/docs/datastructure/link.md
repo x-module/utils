@@ -14,7 +14,7 @@ Linklist a linked list, whose node has a value and a pointer points to next node
 ## Usage
 ```go
 import (
-    link "github.com/go-xmodule/utils/datastructure/link"
+    link "github.com/x-module/utils/datastructure/link"
 )
 ```
 
@@ -88,7 +88,7 @@ package main
 
 import (
     "fmt"
-    link "github.com/go-xmodule/utils/datastructure/link"
+    link "github.com/x-module/utils/datastructure/link"
 )
 
 func main() {
@@ -114,7 +114,7 @@ package main
 
 import (
     "fmt"
-    link "github.com/go-xmodule/utils/datastructure/link"
+    link "github.com/x-module/utils/datastructure/link"
 )
 
 func main() {
@@ -146,7 +146,7 @@ package main
 
 import (
     "fmt"
-    link "github.com/go-xmodule/utils/datastructure/link"
+    link "github.com/x-module/utils/datastructure/link"
 )
 
 func main() {
@@ -181,7 +181,7 @@ package main
 
 import (
     "fmt"
-    link "github.com/go-xmodule/utils/datastructure/link"
+    link "github.com/x-module/utils/datastructure/link"
 )
 
 func main() {
@@ -213,7 +213,7 @@ package main
 
 import (
     "fmt"
-    link "github.com/go-xmodule/utils/datastructure/link"
+    link "github.com/x-module/utils/datastructure/link"
 )
 
 func main() {
@@ -244,7 +244,7 @@ package main
 
 import (
     "fmt"
-    link "github.com/go-xmodule/utils/datastructure/link"
+    link "github.com/x-module/utils/datastructure/link"
 )
 
 func main() {
@@ -278,7 +278,7 @@ package main
 
 import (
     "fmt"
-    link "github.com/go-xmodule/utils/datastructure/link"
+    link "github.com/x-module/utils/datastructure/link"
 )
 
 func main() {
@@ -313,7 +313,7 @@ package main
 
 import (
     "fmt"
-    link "github.com/go-xmodule/utils/datastructure/link"
+    link "github.com/x-module/utils/datastructure/link"
 )
 
 func main() {
@@ -346,7 +346,7 @@ package main
 
 import (
     "fmt"
-    link "github.com/go-xmodule/utils/datastructure/link"
+    link "github.com/x-module/utils/datastructure/link"
 )
 
 func main() {
@@ -380,7 +380,7 @@ package main
 
 import (
     "fmt"
-    link "github.com/go-xmodule/utils/datastructure/link"
+    link "github.com/x-module/utils/datastructure/link"
 )
 
 func main() {
@@ -412,7 +412,7 @@ package main
 
 import (
     "fmt"
-    link "github.com/go-xmodule/utils/datastructure/link"
+    link "github.com/x-module/utils/datastructure/link"
 )
 
 func main() {
@@ -444,7 +444,7 @@ package main
 
 import (
     "fmt"
-    link "github.com/go-xmodule/utils/datastructure/link"
+    link "github.com/x-module/utils/datastructure/link"
 )
 
 func main() {
@@ -475,7 +475,7 @@ package main
 
 import (
     "fmt"
-    link "github.com/go-xmodule/utils/datastructure/link"
+    link "github.com/x-module/utils/datastructure/link"
 )
 
 func main() {
@@ -507,7 +507,7 @@ package main
 
 import (
     "fmt"
-    link "github.com/go-xmodule/utils/datastructure/link"
+    link "github.com/x-module/utils/datastructure/link"
 )
 
 func main() {
@@ -540,7 +540,7 @@ package main
 
 import (
     "fmt"
-    link "github.com/go-xmodule/utils/datastructure/link"
+    link "github.com/x-module/utils/datastructure/link"
 )
 
 func main() {
@@ -583,7 +583,7 @@ package main
 
 import (
     "fmt"
-    link "github.com/go-xmodule/utils/datastructure/link"
+    link "github.com/x-module/utils/datastructure/link"
 )
 
 func main() {
@@ -609,7 +609,7 @@ package main
 
 import (
     "fmt"
-    link "github.com/go-xmodule/utils/datastructure/link"
+    link "github.com/x-module/utils/datastructure/link"
 )
 
 func main() {
@@ -641,7 +641,7 @@ package main
 
 import (
     "fmt"
-    link "github.com/go-xmodule/utils/datastructure/link"
+    link "github.com/x-module/utils/datastructure/link"
 )
 
 func main() {
@@ -676,7 +676,7 @@ package main
 
 import (
     "fmt"
-    link "github.com/go-xmodule/utils/datastructure/link"
+    link "github.com/x-module/utils/datastructure/link"
 )
 
 func main() {
@@ -708,7 +708,7 @@ package main
 
 import (
     "fmt"
-    link "github.com/go-xmodule/utils/datastructure/link"
+    link "github.com/x-module/utils/datastructure/link"
 )
 
 func main() {
@@ -739,7 +739,7 @@ package main
 
 import (
     "fmt"
-    link "github.com/go-xmodule/utils/datastructure/link"
+    link "github.com/x-module/utils/datastructure/link"
 )
 
 func main() {
@@ -773,7 +773,7 @@ package main
 
 import (
     "fmt"
-    link "github.com/go-xmodule/utils/datastructure/link"
+    link "github.com/x-module/utils/datastructure/link"
 )
 
 func main() {
@@ -808,7 +808,7 @@ package main
 
 import (
     "fmt"
-    link "github.com/go-xmodule/utils/datastructure/link"
+    link "github.com/x-module/utils/datastructure/link"
 )
 
 func main() {
@@ -843,7 +843,7 @@ package main
 
 import (
     "fmt"
-    link "github.com/go-xmodule/utils/datastructure/link"
+    link "github.com/x-module/utils/datastructure/link"
 )
 
 func main() {
@@ -875,7 +875,7 @@ package main
 
 import (
     "fmt"
-    link "github.com/go-xmodule/utils/datastructure/link"
+    link "github.com/x-module/utils/datastructure/link"
 )
 
 func main() {
@@ -907,7 +907,7 @@ package main
 
 import (
     "fmt"
-    link "github.com/go-xmodule/utils/datastructure/link"
+    link "github.com/x-module/utils/datastructure/link"
 )
 
 func main() {
@@ -938,7 +938,7 @@ package main
 
 import (
     "fmt"
-    link "github.com/go-xmodule/utils/datastructure/link"
+    link "github.com/x-module/utils/datastructure/link"
 )
 
 func main() {
@@ -970,7 +970,7 @@ package main
 
 import (
     "fmt"
-    link "github.com/go-xmodule/utils/datastructure/link"
+    link "github.com/x-module/utils/datastructure/link"
 )
 
 func main() {
@@ -1003,7 +1003,7 @@ package main
 
 import (
     "fmt"
-    link "github.com/go-xmodule/utils/datastructure/link"
+    link "github.com/x-module/utils/datastructure/link"
 )
 
 func main() {

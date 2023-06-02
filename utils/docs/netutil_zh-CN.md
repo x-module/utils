@@ -16,7 +16,7 @@ netutil网络包支持获取ip地址，发送http请求。
 ## 用法:
 ```go
 import (
-    "github.com/go-xmodule/utils/netutil"
+    "github.com/x-module/utils/netutil"
 )
 ```
 
@@ -64,7 +64,7 @@ package main
 
 import (
     "fmt"
-    "github.com/go-xmodule/utils/netutil"
+    "github.com/x-module/utils/netutil"
 )
 
 func main() {
@@ -96,7 +96,7 @@ package main
 
 import (
     "fmt"
-    "github.com/go-xmodule/utils/netutil"
+    "github.com/x-module/utils/netutil"
 )
 
 func main() {
@@ -128,7 +128,7 @@ package main
 import (
     "fmt"
 	"net"
-    "github.com/go-xmodule/utils/netutil"
+    "github.com/x-module/utils/netutil"
 )
 
 func main() {
@@ -156,7 +156,7 @@ package main
 import (
     "fmt"
 	"net"
-    "github.com/go-xmodule/utils/netutil"
+    "github.com/x-module/utils/netutil"
 )
 
 func main() {
@@ -183,7 +183,7 @@ package main
 import (
     "fmt"
 	"net"
-    "github.com/go-xmodule/utils/netutil"
+    "github.com/x-module/utils/netutil"
 )
 
 func main() {
@@ -223,7 +223,7 @@ package main
 
 import (
     "fmt"
-    "github.com/go-xmodule/utils/netutil"
+    "github.com/x-module/utils/netutil"
 )
 
 func main() {
@@ -253,7 +253,7 @@ package main
 
 import (
     "fmt"
-    "github.com/go-xmodule/utils/netutil"
+    "github.com/x-module/utils/netutil"
 )
 
 func main() {
@@ -298,7 +298,7 @@ package main
 import (
     "fmt"
 	"net"
-    "github.com/go-xmodule/utils/netutil"
+    "github.com/x-module/utils/netutil"
 )
 
 func main() {
@@ -328,7 +328,7 @@ package main
 import (
     "fmt"
 	"net"
-    "github.com/go-xmodule/utils/netutil"
+    "github.com/x-module/utils/netutil"
 )
 
 func main() {
@@ -364,7 +364,7 @@ package main
 import (
     "fmt"
 	"net"
-    "github.com/go-xmodule/utils/netutil"
+    "github.com/x-module/utils/netutil"
 )
 
 func main() {
@@ -421,7 +421,7 @@ import (
     "fmt"
 	"net"
 	"time"
-    "github.com/go-xmodule/utils/netutil"
+    "github.com/x-module/utils/netutil"
 )
 
 func main() {
@@ -452,7 +452,7 @@ import (
     "fmt"
 	"net"
 	"time"
-    "github.com/go-xmodule/utils/netutil"
+    "github.com/x-module/utils/netutil"
 )
 
 func main() {
@@ -500,7 +500,7 @@ import (
     "fmt"
 	"net"
 	"time"
-    "github.com/go-xmodule/utils/netutil"
+    "github.com/x-module/utils/netutil"
 )
 
 func main() {
@@ -545,7 +545,7 @@ package main
 
 import (
     "fmt"
-    "github.com/go-xmodule/utils/netutil"
+    "github.com/x-module/utils/netutil"
 )
 
 func main() {
@@ -587,7 +587,7 @@ import (
     "fmt"
 	"io/ioutil"
 	"log"
-    "github.com/go-xmodule/utils/netutil"
+    "github.com/x-module/utils/netutil"
 )
 
 func main() {
@@ -630,7 +630,7 @@ import (
     "fmt"
 	"io/ioutil"
 	"log"
-    "github.com/go-xmodule/utils/netutil"
+    "github.com/x-module/utils/netutil"
 )
 
 func main() {
@@ -679,7 +679,7 @@ import (
     "fmt"
 	"io/ioutil"
 	"log"
-    "github.com/go-xmodule/utils/netutil"
+    "github.com/x-module/utils/netutil"
 )
 
 func main() {
@@ -729,7 +729,7 @@ import (
     "fmt"
 	"io/ioutil"
 	"log"
-    "github.com/go-xmodule/utils/netutil"
+    "github.com/x-module/utils/netutil"
 )
 
 func main() {
@@ -768,7 +768,7 @@ import (
     "fmt"
 	"io/ioutil"
 	"log"
-    "github.com/go-xmodule/utils/netutil"
+    "github.com/x-module/utils/netutil"
 )
 
 func main() {
@@ -814,7 +814,7 @@ import (
     "fmt"
 	"io/ioutil"
 	"log"
-    "github.com/go-xmodule/utils/netutil"
+    "github.com/x-module/utils/netutil"
 )
 
 func main() {

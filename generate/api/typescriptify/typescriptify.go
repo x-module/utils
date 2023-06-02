@@ -3,7 +3,7 @@ package typescriptify
 import (
 	"bufio"
 	"fmt"
-	"github.com/go-xmodule/utils/utils/xlog"
+	"github.com/x-module/utils/utils/xlog"
 	"io/ioutil"
 	"log"
 	"os"

@@ -9,10 +9,10 @@
 package nacos
 
 import (
-	"github.com/go-xmodule/utils/global"
-	"github.com/go-xmodule/utils/utils/netutil"
 	"github.com/nacos-group/nacos-sdk-go/v2/clients/naming_client"
 	"github.com/nacos-group/nacos-sdk-go/v2/vo"
+	"github.com/x-module/utils/global"
+	"github.com/x-module/utils/utils/netutil"
 	"log"
 )
 

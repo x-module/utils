@@ -3,7 +3,7 @@ package formatter
 import (
 	"testing"
 
-	"github.com/go-xmodule/utils/utils/internal"
+	"github.com/x-module/utils/utils/internal"
 )
 
 func TestComma(t *testing.T) {

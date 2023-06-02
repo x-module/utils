@@ -2,7 +2,7 @@ package datastructure
 
 import (
 	"errors"
-	"github.com/go-xmodule/utils/utils/lancetconstraints"
+	"github.com/x-module/utils/utils/lancetconstraints"
 )
 
 // PriorityQueue is a priority queue implemented by binary heap tree

@@ -1,11 +1,11 @@
 package server
 
 import (
-	"github.com/go-xmodule/utils/gamelift/pkg/gamelift"
-	"github.com/go-xmodule/utils/gamelift/pkg/proto/pbuffer"
-	"github.com/go-xmodule/utils/global"
-	"github.com/go-xmodule/utils/utils"
-	"github.com/go-xmodule/utils/utils/xlog"
+	"github.com/x-module/utils/gamelift/pkg/gamelift"
+	"github.com/x-module/utils/gamelift/pkg/proto/pbuffer"
+	"github.com/x-module/utils/global"
+	"github.com/x-module/utils/utils"
+	"github.com/x-module/utils/utils/xlog"
 	"net"
 )
 

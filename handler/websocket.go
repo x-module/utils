@@ -8,7 +8,7 @@
 
 package handler
 
-import "github.com/go-xmodule/utils/utils/socket"
+import "github.com/x-module/utils/utils/socket"
 
 var WebsocketHandler *socket.WebSocket
 

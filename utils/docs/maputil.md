@@ -13,7 +13,7 @@ Package maputil includes some functions to manipulate map.
 ## Example:
 ```go
 import (
-    "github.com/go-xmodule/utils/maputil"
+    "github.com/x-module/utils/maputil"
 )
 ```
 
@@ -50,7 +50,7 @@ package main
 
 import (
     "fmt"
-    "github.com/go-xmodule/utils/maputil"
+    "github.com/x-module/utils/maputil"
 )
 
 func main() {
@@ -88,7 +88,7 @@ package main
 
 import (
     "fmt"
-    "github.com/go-xmodule/utils/maputil"
+    "github.com/x-module/utils/maputil"
 )
 
 func main() {
@@ -129,7 +129,7 @@ package main
 
 import (
     "fmt"
-    "github.com/go-xmodule/utils/maputil"
+    "github.com/x-module/utils/maputil"
 )
 
 func main() {
@@ -178,7 +178,7 @@ package main
 
 import (
     "fmt"
-    "github.com/go-xmodule/utils/maputil"
+    "github.com/x-module/utils/maputil"
 )
 
 func main() {
@@ -214,7 +214,7 @@ package main
 
 import (
     "fmt"
-    "github.com/go-xmodule/utils/maputil"
+    "github.com/x-module/utils/maputil"
 )
 
 func main() {
@@ -248,7 +248,7 @@ package main
 
 import (
     "fmt"
-    "github.com/go-xmodule/utils/maputil"
+    "github.com/x-module/utils/maputil"
 )
 
 func main() {
@@ -285,7 +285,7 @@ package main
 
 import (
     "fmt"
-    "github.com/go-xmodule/utils/maputil"
+    "github.com/x-module/utils/maputil"
 )
 
 func main() {
@@ -319,7 +319,7 @@ package main
 
 import (
     "fmt"
-    "github.com/go-xmodule/utils/maputil"
+    "github.com/x-module/utils/maputil"
 )
 
 func main() {

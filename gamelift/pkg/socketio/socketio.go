@@ -4,8 +4,8 @@ import (
 	"encoding/json"
 	"errors"
 	"fmt"
-	"github.com/go-xmodule/utils/gamelift/pkg/eventio"
 	"github.com/sirupsen/logrus"
+	"github.com/x-module/utils/gamelift/pkg/eventio"
 	"strconv"
 	"sync"
 )

@@ -10,8 +10,8 @@ package tools
 
 import (
 	"fmt"
-	"github.com/go-xmodule/utils/utils/fileutil"
-	"github.com/go-xmodule/utils/utils/strutil"
+	"github.com/x-module/utils/utils/fileutil"
+	"github.com/x-module/utils/utils/strutil"
 	"strings"
 )
 

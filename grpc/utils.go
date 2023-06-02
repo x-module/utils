@@ -10,7 +10,7 @@ package grpc
 
 import (
 	"fmt"
-	"github.com/go-xmodule/utils/utils/cryptor"
+	"github.com/x-module/utils/utils/cryptor"
 	"time"
 )
 

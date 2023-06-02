@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"reflect"
 
-	"github.com/go-xmodule/utils/utils/datastructure"
+	"github.com/x-module/utils/utils/datastructure"
 )
 
 // SinglyLink is a linked list. Whose node has a Value generics and Next pointer points to a next node of the sl.

@@ -12,7 +12,7 @@ package panel
 import (
 	"fmt"
 	"github.com/gin-gonic/gin"
-	"github.com/go-xmodule/utils/handler"
+	"github.com/x-module/utils/handler"
 	"html/template"
 	"strings"
 )

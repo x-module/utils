@@ -12,12 +12,11 @@ import (
 	"crypto"
 	"errors"
 	"fmt"
-	"github.com/go-xmodule/utils/global"
-	"github.com/go-xmodule/utils/nakama/common"
-	"github.com/go-xmodule/utils/utils"
-	"github.com/go-xmodule/utils/utils/request"
-	"github.com/go-xmodule/utils/utils/xlog"
-	"github.com/golang-jwt/jwt/v4"
+	"github.com/x-module/utils/global"
+	"github.com/x-module/utils/nakama/common"
+	"github.com/x-module/utils/utils"
+	"github.com/x-module/utils/utils/request"
+	"github.com/x-module/utils/utils/xlog"
 	"time"
 )
 

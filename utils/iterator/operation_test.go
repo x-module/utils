@@ -13,7 +13,7 @@ package iterator
 import (
 	"testing"
 
-	"github.com/go-xmodule/utils/utils/internal"
+	"github.com/x-module/utils/utils/internal"
 )
 
 func TestMapIterator(t *testing.T) {

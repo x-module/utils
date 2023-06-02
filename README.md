@@ -11,7 +11,7 @@
 ### Note:
 
 ```go
-go get github.com/go-xmodule/utils  
+go get github.com/x-module/utils  
 ```
 
 ## 用法
@@ -19,7 +19,7 @@ go get github.com/go-xmodule/utils
 以包的结构组织代码的，使用时需要导入相应的包名。例如：如果使用字符串相关函数，需要导入 strutil 包:
 
 ```go
-import "github.com/go-xmodule/utils/strutil"
+import "github.com/x-module/utils/strutil"
 ```
 
 ## 例子
@@ -31,7 +31,7 @@ package main
 
 import (
     "fmt"
-    "github.com/go-xmodule/utils/strutil"
+    "github.com/x-module/utils/strutil"
 )
 
 func main() {
@@ -51,7 +51,7 @@ func main() {
 ### 1. algorithm 包实现一些基本查找和排序算法。
 
 ```go
-import "github.com/go-xmodule/utils/algorithm"
+import "github.com/x-module/utils/algorithm"
 ```
 
 #### Function list:
@@ -95,7 +95,7 @@ import "github.com/go-xmodule/utils/algorithm"
 ### 2. concurrency 包含一些支持并发编程的功能。例如：goroutine, channel, async 等。
 
 ```go
-import "github.com/go-xmodule/utils/concurrency"
+import "github.com/x-module/utils/concurrency"
 ```
 
 #### Function list:
@@ -124,7 +124,7 @@ import "github.com/go-xmodule/utils/concurrency"
 ### 3. condition 包含一些用于条件判断的函数。
 
 ```go
-import "github.com/go-xmodule/utils/condition"
+import "github.com/x-module/utils/condition"
 ```
 
 #### Function list:
@@ -157,7 +157,7 @@ import "github.com/go-xmodule/utils/condition"
 ### 4. convertor 转换器包支持一些常见的数据类型转换。
 
 ```go
-import "github.com/go-xmodule/utils/convertor"
+import "github.com/x-module/utils/convertor"
 ```
 
 #### 函数列表:
@@ -214,7 +214,7 @@ import "github.com/go-xmodule/utils/convertor"
 ### 5. cryptor 加密包支持数据加密和解密，获取 md5，hash 值。支持 base64, md5, hmac, aes, des, rsa。
 
 ```go
-import "github.com/go-xmodule/utils/cryptor"
+import "github.com/x-module/utils/cryptor"
 ```
 
 #### 函数列表:
@@ -320,7 +320,7 @@ import "github.com/go-xmodule/utils/cryptor"
 ### 6. datetime 日期时间处理包，格式化日期，比较日期。
 
 ```go
-import "github.com/go-xmodule/utils/datetime"
+import "github.com/x-module/utils/datetime"
 ```
 
 #### 函数列表:
@@ -421,14 +421,14 @@ import "github.com/go-xmodule/utils/datetime"
 ### 7. datastructure 包含一些普通的数据结构实现。例如：list, linklist, stack, queue, set, tree, graph.
 
 ```go
-import list "github.com/go-xmodule/utils/datastructure/list"
-import link "github.com/go-xmodule/utils/datastructure/link"
-import stack "github.com/go-xmodule/utils/datastructure/stack"
-import queue "github.com/go-xmodule/utils/datastructure/queue"
-import set "github.com/go-xmodule/utils/datastructure/set"
-import tree "github.com/go-xmodule/utils/datastructure/tree"
-import heap "github.com/go-xmodule/utils/datastructure/heap"
-import hashmap "github.com/go-xmodule/utils/datastructure/hashmap"
+import list "github.com/x-module/utils/datastructure/list"
+import link "github.com/x-module/utils/datastructure/link"
+import stack "github.com/x-module/utils/datastructure/stack"
+import queue "github.com/x-module/utils/datastructure/queue"
+import set "github.com/x-module/utils/datastructure/set"
+import tree "github.com/x-module/utils/datastructure/tree"
+import heap "github.com/x-module/utils/datastructure/heap"
+import hashmap "github.com/x-module/utils/datastructure/hashmap"
 ```
 
 #### Function list:
@@ -456,7 +456,7 @@ import hashmap "github.com/go-xmodule/utils/datastructure/hashmap"
 ### 8. fileutil 包含文件基本操作。
 
 ```go
-import "github.com/go-xmodule/utils/fileutil"
+import "github.com/x-module/utils/fileutil"
 ```
 
 #### 函数列表：
@@ -510,7 +510,7 @@ import "github.com/go-xmodule/utils/fileutil"
 ### 9. formatter 格式化器包含一些数据格式化处理方法。
 
 ```go
-import "github.com/go-xmodule/utils/formatter"
+import "github.com/x-module/utils/formatter"
 ```
 
 #### 函数列表:
@@ -522,7 +522,7 @@ import "github.com/go-xmodule/utils/formatter"
 ### 10. function 函数包控制函数执行流程，包含部分函数式编程。
 
 ```go
-import "github.com/go-xmodule/utils/function"
+import "github.com/x-module/utils/function"
 ```
 
 #### 函数列表:
@@ -556,7 +556,7 @@ import "github.com/go-xmodule/utils/function"
 ### 11. maputil 包括一些操作 map 的函数.
 
 ```go
-import "github.com/go-xmodule/utils/maputil"
+import "github.com/x-module/utils/maputil"
 ```
 
 #### 函数列表:
@@ -589,7 +589,7 @@ import "github.com/go-xmodule/utils/maputil"
 ### 12. mathutil 包实现了一些数学计算的函数。
 
 ```go
-import "github.com/go-xmodule/utils/mathutil"
+import "github.com/x-module/utils/mathutil"
 ```
 
 #### Function list:
@@ -633,7 +633,7 @@ import "github.com/go-xmodule/utils/mathutil"
 ### 13. netutil 网络包支持获取 ip 地址，发送 http 请求。
 
 ```go
-import "github.com/go-xmodule/utils/netutil"
+import "github.com/x-module/utils/netutil"
 ```
 
 #### 函数列表:
@@ -699,7 +699,7 @@ import "github.com/go-xmodule/utils/netutil"
 ### 14. random 随机数生成器包，可以生成随机[]bytes, int, string。
 
 ```go
-import "github.com/go-xmodule/utils/random"
+import "github.com/x-module/utils/random"
 ```
 
 #### 函数列表:
@@ -734,7 +734,7 @@ import "github.com/go-xmodule/utils/random"
 ### 15. retry 重试执行函数直到函数运行成功或被 context cancel。
 
 ```go
-import "github.com/go-xmodule/utils/retry"
+import "github.com/x-module/utils/retry"
 ```
 
 #### 函数列表:
@@ -760,7 +760,7 @@ import "github.com/go-xmodule/utils/retry"
 ### 16. slice 包含操作切片的方法集合。
 
 ```go
-import "github.com/go-xmodule/utils/slice"
+import "github.com/x-module/utils/slice"
 ```
 
 #### 函数列表:
@@ -928,7 +928,7 @@ import "github.com/go-xmodule/utils/slice"
 ### 17. strutil 包含字符串处理的相关函数。
 
 ```go
-import "github.com/go-xmodule/utils/strutil"
+import "github.com/x-module/utils/strutil"
 ```
 
 #### 函数列表:
@@ -996,7 +996,7 @@ import "github.com/go-xmodule/utils/strutil"
 ### 18. system 包含 os, runtime, shell command 的相关函数。
 
 ```go
-import "github.com/go-xmodule/utils/system"
+import "github.com/x-module/utils/system"
 ```
 
 #### 函数列表:
@@ -1032,7 +1032,7 @@ import "github.com/go-xmodule/utils/system"
 ### 19. validator 验证器包，包含常用字符串格式验证函数。
 
 ```go
-import "github.com/go-xmodule/utils/validator"
+import "github.com/x-module/utils/validator"
 ```
 
 #### 函数列表:
@@ -1126,7 +1126,7 @@ import "github.com/go-xmodule/utils/validator"
 ### 20. xerror 包实现一些错误处理函数
 
 ```go
-import "github.com/go-xmodule/utils/xerror"
+import "github.com/x-module/utils/xerror"
 ```
 
 #### 函数列表:

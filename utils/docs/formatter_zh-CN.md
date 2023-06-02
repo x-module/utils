@@ -12,7 +12,7 @@ formatter格式化器包含一些数据格式化处理方法。
 ## 用法:
 ```go
 import (
-    "github.com/go-xmodule/utils/formatter"
+    "github.com/x-module/utils/formatter"
 )
 ```
 
@@ -42,7 +42,7 @@ package main
 
 import (
     "fmt"
-    "github.com/go-xmodule/utils/formatter"
+    "github.com/x-module/utils/formatter"
 )
 
 func main() {

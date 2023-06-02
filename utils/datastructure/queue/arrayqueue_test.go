@@ -3,7 +3,7 @@ package datastructure
 import (
 	"testing"
 
-	"github.com/go-xmodule/utils/utils/internal"
+	"github.com/x-module/utils/utils/internal"
 )
 
 func TestArrayQueue_Enqueue(t *testing.T) {

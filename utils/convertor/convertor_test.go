@@ -5,8 +5,8 @@ import (
 	"strconv"
 	"testing"
 
-	"github.com/go-xmodule/utils/utils/internal"
-	"github.com/go-xmodule/utils/utils/slice"
+	"github.com/x-module/utils/utils/internal"
+	"github.com/x-module/utils/utils/slice"
 )
 
 func TestToChar(t *testing.T) {

@@ -9,7 +9,7 @@
 package algorithm
 
 import (
-	"github.com/go-xmodule/utils/utils/lancetconstraints"
+	"github.com/x-module/utils/utils/lancetconstraints"
 )
 
 type AscComparator struct{}

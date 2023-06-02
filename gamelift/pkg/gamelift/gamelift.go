@@ -3,10 +3,10 @@ package gamelift
 import (
 	"encoding/json"
 	"fmt"
-	"github.com/go-xmodule/utils/gamelift/pkg/proto/pbuffer"
-	"github.com/go-xmodule/utils/gamelift/pkg/socketio"
-	"github.com/go-xmodule/utils/global"
 	"github.com/sirupsen/logrus"
+	"github.com/x-module/utils/gamelift/pkg/proto/pbuffer"
+	"github.com/x-module/utils/gamelift/pkg/socketio"
+	"github.com/x-module/utils/global"
 	"net/url"
 	"os"
 	"strings"

@@ -13,7 +13,7 @@ cryptor加密包支持数据加密和解密，获取md5，hash值。支持base64
 ## 用法:
 ```go
 import (
-    "github.com/go-xmodule/utils/cryptor"
+    "github.com/x-module/utils/cryptor"
 )
 ```
 
@@ -76,7 +76,7 @@ package main
 
 import (
     "fmt"
-    "github.com/go-xmodule/utils/cryptor"
+    "github.com/x-module/utils/cryptor"
 )
 
 func main() {
@@ -106,7 +106,7 @@ package main
 
 import (
     "fmt"
-    "github.com/go-xmodule/utils/cryptor"
+    "github.com/x-module/utils/cryptor"
 )
 
 func main() {
@@ -136,7 +136,7 @@ package main
 
 import (
     "fmt"
-    "github.com/go-xmodule/utils/cryptor"
+    "github.com/x-module/utils/cryptor"
 )
 
 func main() {
@@ -167,7 +167,7 @@ package main
 
 import (
     "fmt"
-    "github.com/go-xmodule/utils/cryptor"
+    "github.com/x-module/utils/cryptor"
 )
 
 func main() {
@@ -199,7 +199,7 @@ package main
 
 import (
     "fmt"
-    "github.com/go-xmodule/utils/cryptor"
+    "github.com/x-module/utils/cryptor"
 )
 
 func main() {
@@ -231,7 +231,7 @@ package main
 
 import (
     "fmt"
-    "github.com/go-xmodule/utils/cryptor"
+    "github.com/x-module/utils/cryptor"
 )
 
 func main() {
@@ -261,7 +261,7 @@ package main
 
 import (
     "fmt"
-    "github.com/go-xmodule/utils/cryptor"
+    "github.com/x-module/utils/cryptor"
 )
 
 func main() {
@@ -292,7 +292,7 @@ package main
 
 import (
     "fmt"
-    "github.com/go-xmodule/utils/cryptor"
+    "github.com/x-module/utils/cryptor"
 )
 
 func main() {
@@ -322,7 +322,7 @@ package main
 
 import (
     "fmt"
-    "github.com/go-xmodule/utils/cryptor"
+    "github.com/x-module/utils/cryptor"
 )
 
 func main() {
@@ -352,7 +352,7 @@ package main
 
 import (
     "fmt"
-    "github.com/go-xmodule/utils/cryptor"
+    "github.com/x-module/utils/cryptor"
 )
 
 func main() {
@@ -380,7 +380,7 @@ package main
 
 import (
     "fmt"
-    "github.com/go-xmodule/utils/cryptor"
+    "github.com/x-module/utils/cryptor"
 )
 
 func main() {
@@ -408,7 +408,7 @@ package main
 
 import (
     "fmt"
-    "github.com/go-xmodule/utils/cryptor"
+    "github.com/x-module/utils/cryptor"
 )
 
 func main() {
@@ -439,7 +439,7 @@ package main
 
 import (
     "fmt"
-    "github.com/go-xmodule/utils/cryptor"
+    "github.com/x-module/utils/cryptor"
 )
 
 func main() {
@@ -471,7 +471,7 @@ package main
 
 import (
     "fmt"
-    "github.com/go-xmodule/utils/cryptor"
+    "github.com/x-module/utils/cryptor"
 )
 
 func main() {
@@ -502,7 +502,7 @@ package main
 
 import (
     "fmt"
-    "github.com/go-xmodule/utils/cryptor"
+    "github.com/x-module/utils/cryptor"
 )
 
 func main() {
@@ -534,7 +534,7 @@ package main
 
 import (
     "fmt"
-    "github.com/go-xmodule/utils/cryptor"
+    "github.com/x-module/utils/cryptor"
 )
 
 func main() {
@@ -566,7 +566,7 @@ package main
 
 import (
     "fmt"
-    "github.com/go-xmodule/utils/cryptor"
+    "github.com/x-module/utils/cryptor"
 )
 
 func main() {
@@ -596,7 +596,7 @@ package main
 
 import (
     "fmt"
-    "github.com/go-xmodule/utils/cryptor"
+    "github.com/x-module/utils/cryptor"
 )
 
 func main() {
@@ -627,7 +627,7 @@ package main
 
 import (
     "fmt"
-    "github.com/go-xmodule/utils/cryptor"
+    "github.com/x-module/utils/cryptor"
 )
 
 func main() {
@@ -657,7 +657,7 @@ package main
 
 import (
     "fmt"
-    "github.com/go-xmodule/utils/cryptor"
+    "github.com/x-module/utils/cryptor"
 )
 
 func main() {
@@ -688,7 +688,7 @@ package main
 
 import (
     "fmt"
-    "github.com/go-xmodule/utils/cryptor"
+    "github.com/x-module/utils/cryptor"
 )
 
 func main() {
@@ -716,7 +716,7 @@ package main
 
 import (
     "fmt"
-    "github.com/go-xmodule/utils/cryptor"
+    "github.com/x-module/utils/cryptor"
 )
 
 func main() {
@@ -744,7 +744,7 @@ package main
 
 import (
     "fmt"
-    "github.com/go-xmodule/utils/cryptor"
+    "github.com/x-module/utils/cryptor"
 )
 
 func main() {
@@ -772,7 +772,7 @@ package main
 
 import (
     "fmt"
-    "github.com/go-xmodule/utils/cryptor"
+    "github.com/x-module/utils/cryptor"
 )
 
 func main() {
@@ -801,7 +801,7 @@ package main
 
 import (
     "fmt"
-    "github.com/go-xmodule/utils/cryptor"
+    "github.com/x-module/utils/cryptor"
 )
 
 func main() {
@@ -829,7 +829,7 @@ package main
 
 import (
     "fmt"
-    "github.com/go-xmodule/utils/cryptor"
+    "github.com/x-module/utils/cryptor"
 )
 
 func main() {
@@ -857,7 +857,7 @@ package main
 
 import (
     "fmt"
-    "github.com/go-xmodule/utils/cryptor"
+    "github.com/x-module/utils/cryptor"
 )
 
 func main() {
@@ -885,7 +885,7 @@ package main
 
 import (
     "fmt"
-    "github.com/go-xmodule/utils/cryptor"
+    "github.com/x-module/utils/cryptor"
 )
 
 func main() {
@@ -913,7 +913,7 @@ package main
 
 import (
     "fmt"
-    "github.com/go-xmodule/utils/cryptor"
+    "github.com/x-module/utils/cryptor"
 )
 
 func main() {
@@ -941,7 +941,7 @@ package main
 
 import (
     "fmt"
-    "github.com/go-xmodule/utils/cryptor"
+    "github.com/x-module/utils/cryptor"
 )
 
 func main() {
@@ -971,7 +971,7 @@ package main
 
 import (
     "fmt"
-    "github.com/go-xmodule/utils/cryptor"
+    "github.com/x-module/utils/cryptor"
 )
 
 func main() {
@@ -1005,7 +1005,7 @@ package main
 
 import (
     "fmt"
-    "github.com/go-xmodule/utils/cryptor"
+    "github.com/x-module/utils/cryptor"
 )
 
 func main() {

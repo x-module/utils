@@ -14,7 +14,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/go-xmodule/utils/utils/slice"
+	"github.com/x-module/utils/utils/slice"
 )
 
 // HttpRequest struct is a composed http request

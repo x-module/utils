@@ -11,9 +11,9 @@ package dirver
 
 import (
 	"fmt"
-	"github.com/go-xmodule/utils/global"
-	"github.com/go-xmodule/utils/utils/xerror"
-	"github.com/go-xmodule/utils/utils/xlog"
+	"github.com/x-module/utils/global"
+	"github.com/x-module/utils/utils/xerror"
+	"github.com/x-module/utils/utils/xlog"
 	"gorm.io/driver/mysql"
 	"gorm.io/gorm"
 	"gorm.io/gorm/logger"

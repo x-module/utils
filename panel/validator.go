@@ -10,8 +10,8 @@ package panel
 
 import (
 	"errors"
-	"github.com/go-xmodule/utils/handler"
-	"github.com/go-xmodule/utils/utils/xlog"
+	"github.com/x-module/utils/handler"
+	"github.com/x-module/utils/utils/xlog"
 	"strings"
 )
 

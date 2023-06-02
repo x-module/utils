@@ -4,7 +4,7 @@ import (
 	"sort"
 	"testing"
 
-	"github.com/go-xmodule/utils/utils/internal"
+	"github.com/x-module/utils/utils/internal"
 )
 
 func TestKeys(t *testing.T) {

@@ -4,7 +4,7 @@ import (
 	"bytes"
 	_ "embed"
 	"fmt"
-	"github.com/go-xmodule/utils/generate/api/fs"
+	"github.com/x-module/utils/generate/api/fs"
 	"os"
 	"path/filepath"
 	"regexp"

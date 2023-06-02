@@ -11,9 +11,9 @@ package panel
 
 import (
 	"fmt"
-	"github.com/go-xmodule/utils/utils/convertor"
-	"github.com/go-xmodule/utils/utils/cryptor"
-	"github.com/go-xmodule/utils/utils/datetime"
+	"github.com/x-module/utils/utils/convertor"
+	"github.com/x-module/utils/utils/cryptor"
+	"github.com/x-module/utils/utils/datetime"
 	"html/template"
 	"reflect"
 	"strings"

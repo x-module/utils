@@ -12,7 +12,7 @@ Package fileutil implements some basic functions for file operations.
 ## Usage:
 ```go
 import (
-    "github.com/go-xmodule/utils/fileutil"
+    "github.com/x-module/utils/fileutil"
 )
 ```
 
@@ -57,7 +57,7 @@ package main
 
 import (
     "fmt"
-    "github.com/go-xmodule/utils/fileutil"
+    "github.com/x-module/utils/fileutil"
 )
 
 func main() {
@@ -83,7 +83,7 @@ package main
 
 import (
     "fmt"
-    "github.com/go-xmodule/utils/fileutil"
+    "github.com/x-module/utils/fileutil"
 )
 
 func main() {
@@ -109,7 +109,7 @@ package main
 
 import (
     "fmt"
-    "github.com/go-xmodule/utils/fileutil"
+    "github.com/x-module/utils/fileutil"
 )
 
 func main() {
@@ -134,7 +134,7 @@ package main
 
 import (
     "fmt"
-    "github.com/go-xmodule/utils/fileutil"
+    "github.com/x-module/utils/fileutil"
 )
 
 func main() {
@@ -162,7 +162,7 @@ package main
 
 import (
     "fmt"
-    "github.com/go-xmodule/utils/fileutil"
+    "github.com/x-module/utils/fileutil"
 )
 
 func main() {
@@ -192,7 +192,7 @@ package main
 import (
     "fmt"
     "os"
-    "github.com/go-xmodule/utils/fileutil"
+    "github.com/x-module/utils/fileutil"
 )
 
 func main() {
@@ -223,7 +223,7 @@ package main
 
 import (
     "fmt"
-    "github.com/go-xmodule/utils/fileutil"
+    "github.com/x-module/utils/fileutil"
 )
 
 func main() {
@@ -250,7 +250,7 @@ package main
 
 import (
     "fmt"
-    "github.com/go-xmodule/utils/fileutil"
+    "github.com/x-module/utils/fileutil"
 )
 
 func main() {
@@ -276,7 +276,7 @@ package main
 
 import (
     "fmt"
-    "github.com/go-xmodule/utils/fileutil"
+    "github.com/x-module/utils/fileutil"
 )
 
 func main() {
@@ -305,7 +305,7 @@ package main
 
 import (
     "fmt"
-    "github.com/go-xmodule/utils/fileutil"
+    "github.com/x-module/utils/fileutil"
 )
 
 func main() {
@@ -331,7 +331,7 @@ package main
 
 import (
     "fmt"
-    "github.com/go-xmodule/utils/fileutil"
+    "github.com/x-module/utils/fileutil"
 )
 
 func main() {
@@ -359,7 +359,7 @@ package main
 import (
     "fmt"
     "os"
-    "github.com/go-xmodule/utils/fileutil"
+    "github.com/x-module/utils/fileutil"
 )
 
 func main() {
@@ -392,7 +392,7 @@ package main
 import (
     "fmt"
     "os"
-    "github.com/go-xmodule/utils/fileutil"
+    "github.com/x-module/utils/fileutil"
 )
 
 func main() {
@@ -425,7 +425,7 @@ package main
 
 import (
     "fmt"
-    "github.com/go-xmodule/utils/fileutil"
+    "github.com/x-module/utils/fileutil"
 )
 
 func main() {
@@ -454,7 +454,7 @@ package main
 
 import (
     "fmt"
-    "github.com/go-xmodule/utils/fileutil"
+    "github.com/x-module/utils/fileutil"
 )
 
 func main() {
