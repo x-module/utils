@@ -12,6 +12,7 @@ import (
 	"crypto"
 	"errors"
 	"fmt"
+	"github.com/golang-jwt/jwt/v4"
 	"github.com/x-module/utils/global"
 	"github.com/x-module/utils/nakama/common"
 	"github.com/x-module/utils/utils"

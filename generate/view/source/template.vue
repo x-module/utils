@@ -21,15 +21,15 @@
                 />
             </n-col>
         </n-row>
-        <!--  新增 -->
-        <n-modal v-model:show="showAddModal" preset="dialog" title="Dialog" style="width: 510px"
+        <!--  新增 111-->
+        <n-modal v-model:show="showAddModal" preset="dialog" title="Dialog" style="width: 760px"
                  :mask-closable="false"
                  transform-origin="center">
             <template #header>
                 <div>{{ formTitle }}</div>
             </template>
             <n-spin :show="loading" description="working...">
-                <div style="margin-top: 30px;padding-left: 5px;padding-right: 5px">
+                <div style="margin-top: 20px;">
                     <n-form ref="formRef" :show-label="false" :model="permissionForm" :rules="rules" size="large">
 <!--addField-->
 
@@ -45,13 +45,13 @@
                 </n-button>
             </template>
         </n-modal>
-        <n-modal v-model:show="showDetailModal" preset="dialog" title="Dialog" style="width: 550px"
+        <n-modal v-model:show="showDetailModal" preset="dialog" title="Dialog" style="width: 760px"
                  :mask-closable="false"
                  transform-origin="center">
             <template #header>
                 <div>{{ formTitle }}</div>
             </template>
-            <div style="margin-top: 30px;padding-left: 5px;padding-right: 5px">
+            <div style="margin-top: 20px;">
                 <n-descriptions label-placement="top" bordered :column="3" size="large">
 <!--showField-->
                 </n-descriptions>
@@ -242,9 +242,3 @@ export default defineComponent({
 })
 
 </script>
-<style scoped>
-.input-width-style {
-    width: 500px;
-}
-
-</style>

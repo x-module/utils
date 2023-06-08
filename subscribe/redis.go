@@ -40,7 +40,7 @@ func (s *RedisSubscribe) Publish(channel string, message any) error {
 	xlog.Logger.Debug("start publish data,channel:", channel, " message:", utils.JsonString(message))
 	err := handler.RedisHandler.Publish(channel, message)
 	if err != nil {
-		xlog.Logger.Error(PublishErr, err.Error())
+		xlog.Logger.Error(global.PublishErr.String(), err.Error())
 		return err
 	}
 	xlog.Logger.Debug("publish data success")

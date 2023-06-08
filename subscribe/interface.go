@@ -10,10 +10,6 @@ package subscribe
 
 import "github.com/x-module/utils/handler"
 
-const (
-	PublishErr = "发布消息异常"
-)
-
 var SubscribeHandler SubPub
 
 // SubPub 消息发布定义

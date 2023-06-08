@@ -59,9 +59,9 @@ func getAddFieldCode(tableName string, fields []Field) string {
 		fmt.Println("------", field.ColumnName, ":", field.DataType)
 		str += `<n-form-item path="` + fieldName + `" label="` + GetTableComment(field.ColumnComment) + `"> ` + "\n"
 		if getType(field.DataType) == "string" {
-			str += `<n-input v-model:value="` + tableName + `Form.` + fieldName + `" class="input-width-style"  placeholder="` + GetTableComment(field.ColumnComment) + `"/>` + "\n"
+			str += `<n-input v-model:value="` + tableName + `Form.` + fieldName + `" placeholder="` + GetTableComment(field.ColumnComment) + `"/>` + "\n"
 		} else {
-			str += `<n-input-number v-model:value="` + tableName + `Form.` + fieldName + `" class="input-width-style"  placeholder="` + GetTableComment(field.ColumnComment) + `"/>` + "\n"
+			str += `<n-input-number v-model:value="` + tableName + `Form.` + fieldName + `" placeholder="` + GetTableComment(field.ColumnComment) + `"/>` + "\n"
 		}
 		str += "</n-form-item>\n"
 	}

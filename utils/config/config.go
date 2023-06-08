@@ -34,7 +34,7 @@ func GetConfig(path string, config any) error {
 	if err != nil {
 		return err
 	}
-	if yaml.Unmarshal(content, config) != nil {
+	if err = yaml.Unmarshal(content, config); err != nil {
 		return err
 	}
 	return nil

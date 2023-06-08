@@ -100,7 +100,7 @@ func getRules(fields []Field) string {
 		str += "        {\n"
 		str += "            type: '" + getType(field.DataType) + "',\n"
 		str += "            required: true,\n"
-		str += "            message: '" + GetTableComment(field.ColumnComment) + "不能为空',\n"
+		str += "            message: '" + GetTableComment(field.ColumnComment) + "',\n"
 		str += "            trigger: ['blur', 'change'],\n"
 		str += "        },\n"
 		str += "    ],\n"

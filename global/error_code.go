@@ -98,4 +98,5 @@ const (
 	RPCLinkErr                                       // RPC连接异常
 	SubscribeDataErr                                 // 定义数据异常
 	NoRecordErr                                      // 数据查询为空！
+	PublishErr                                       // 发布消息异常
 )
