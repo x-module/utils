@@ -63,16 +63,33 @@ func getShowField(className string, fields []Field) string {
 		fieldName := FormatStr(field.ColumnName)
 		if fieldName == "DeletedAt" {
 			continue
-		} else if fieldName == "CreatedAt" || fieldName == "UpdatedAt" {
+		} else if fieldName == "CreatedAt" {
+			str += "        {\n"
+			str += "            title:'" + GetTableComment(field.ColumnComment) + "',\n"
+			str += "            key:'" + fieldName + "',\n"
+			str += `            render(row: ` + className + `) {
+				return h(
+                    "span",
+                    {
+                    },
+                    {
+                        default: () =>  moment(row.CreatedAt).format('YYYY-MM-DD HH:mm:ss')
+                    }
+                )
+            },`
+			str += "        },\n"
+		} else if fieldName == "UpdatedAt" {
 			str += "        {\n"
 			str += "            title:'" + GetTableComment(field.ColumnComment) + "',\n"
 			str += "            key:'" + fieldName + "',\n"
 			str += `            render(row: ` + className + `) {
                 return h(
-                    NTime,
+                    "span",
                     {
-                        format:"yyyy-MM-dd HH:mm:ss",
                     },
+                    {
+                        default: () =>  moment(row.UpdatedAt).format('YYYY-MM-DD HH:mm:ss')
+                    }
                 )
             },`
 			str += "        },\n"
