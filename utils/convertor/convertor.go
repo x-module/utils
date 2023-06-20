@@ -19,6 +19,10 @@ import (
 	"strings"
 )
 
+func init() {
+	extra.RegisterFuzzyDecoders()
+}
+
 // ToBool convert string to boolean.
 // Play: https://go.dev/play/p/ARht2WnGdIN
 func ToBool(s string) (bool, error) {
@@ -351,7 +355,6 @@ func TransInterfaceToStruct(params any, v any) error {
 	if err != nil {
 		return err
 	}
-	extra.RegisterFuzzyDecoders()
 	err = jsoniter.UnmarshalFromString(string(jsonData), v)
 	if err != nil {
 		return err
