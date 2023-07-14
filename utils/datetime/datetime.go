@@ -228,3 +228,7 @@ func BeginOfYear(t time.Time) time.Time {
 func EndOfYear(t time.Time) time.Time {
 	return BeginOfYear(t).AddDate(1, 0, 0).Add(-time.Nanosecond)
 }
+
+func TodayStartTime() string {
+	return BeginOfDay(time.Now()).Format("2006-01-02 15:04:05")
+}

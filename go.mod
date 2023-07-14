@@ -24,6 +24,7 @@ require (
 	github.com/redis/go-redis/v9 v9.0.4
 	github.com/rifflock/lfshook v0.0.0-20180920164130-b9218ef580f5
 	github.com/samber/lo v1.38.1
+	github.com/shopspring/decimal v1.3.1
 	github.com/sirupsen/logrus v1.8.1
 	github.com/tkrajina/go-reflector v0.5.5
 	github.com/wcharczuk/go-chart v2.0.1+incompatible

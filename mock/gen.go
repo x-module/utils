@@ -18,7 +18,11 @@ type MockResult struct {
 	Data any `json:"data"`
 }
 
-func MockData(fields map[string]any, count int, target any, path string) error {
+func MockData(fields map[string]any, count int, target any, tempPath ...string) error {
+	path := "."
+	if len(tempPath) > 0 {
+		path = tempPath[0]
+	}
 	extra.RegisterFuzzyDecoders()
 	key := fmt.Sprintf("%s|%d", "data", count)
 	paramsBite := map[string][]map[string]any{

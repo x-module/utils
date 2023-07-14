@@ -21,6 +21,10 @@ func main() {
 }
 */
 
+func init() {
+
+}
+
 type JsonSnakeCase struct {
 	Value interface{}
 }
@@ -124,4 +128,13 @@ func (b *Buffer) append(s string) *Buffer {
 	}()
 	b.WriteString(s)
 	return b
+}
+func TransJsonString(source []byte) []byte {
+	var keyMatchRegex = regexp.MustCompile(`\"(\w+)\":`)
+	return keyMatchRegex.ReplaceAllFunc(
+		source,
+		func(match []byte) []byte {
+			return []byte(Case2Camel(string(match)))
+		},
+	)
 }
