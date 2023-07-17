@@ -6,7 +6,7 @@
  * @desc   decimal.go
  */
 
-package data
+package types
 
 import (
 	"github.com/shopspring/decimal"

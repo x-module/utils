@@ -496,7 +496,7 @@ type TSNamer interface {
 }
 
 func (t *TypeScriptify) convertEnum(depth int, typeOf reflect.Type, elements []enumElement) (string, error) {
-	xlog.Logger.Debug(depth, "Converting enum %s", typeOf.String())
+	xlog.Logger.Debugf("Converting enum %s", typeOf.String())
 	if _, found := t.alreadyConverted[typeOf.String()]; found { // Already converted
 		return "", nil
 	}
@@ -590,7 +590,7 @@ func (t *TypeScriptify) convertType(depth int, typeOf reflect.Type, customCode m
 	if len(fields) == 0 {
 		return "", nil
 	}
-	xlog.Logger.Debug(depth, "  Converting type %s", typeOf.String())
+	xlog.Logger.Debugf("  Converting type %s", typeOf.String())
 	if differentNamespaces(t.Namespace, typeOf) {
 		return "", nil
 	}
@@ -634,22 +634,23 @@ func (t *TypeScriptify) convertType(depth int, typeOf reflect.Type, customCode m
 		var err error
 		fldOpts := t.getFieldOptions(typeOf, field)
 		if fldOpts.TSTransform != "" {
-			xlog.Logger.Debug(depth, "	simple field %s.%s", typeOf.Name(), field.Name)
+			xlog.Logger.Debugf("	simple field %s.%s", typeOf.Name(), field.Name)
 			err = builder.AddSimpleField(jsonFieldName, field, fldOpts)
 		} else if _, isEnum := t.enums[field.Type]; isEnum {
-			xlog.Logger.Debug(depth, "	enum field %s.%s", typeOf.Name(), field.Name)
+			xlog.Logger.Debugf("	enum field %s.%s", typeOf.Name(), field.Name)
 			builder.AddEnumField(jsonFieldName, field)
 		} else if fldOpts.TSType != "" { // Struct:
-			xlog.Logger.Debug(depth, "	- simple field %s.%s", typeOf.Name(), field.Name)
+			xlog.Logger.Debugf("	- simple field %s.%s", typeOf.Name(), field.Name)
 			err = builder.AddSimpleField(jsonFieldName, field, fldOpts)
 		} else if field.Type.Kind() == reflect.Struct { // Struct:
-			xlog.Logger.Debug(depth, "	- struct %s.%s (%s)", typeOf.Name(), field.Name, field.Type.String())
+			xlog.Logger.Debugf("	- struct %s.%s (%s)", typeOf.Name(), field.Name, field.Type.String())
 
 			// Anonymous structures is ignored
 			// It is possible to generate them but hard to generate correct name
 			if field.Type.Name() != "" {
 				typeScriptChunk, err := t.convertType(depth+1, field.Type, customCode)
 				if err != nil {
+
 					return "", err
 				}
 				if typeScriptChunk != "" {
@@ -662,7 +663,7 @@ func (t *TypeScriptify) convertType(depth int, typeOf reflect.Type, customCode m
 			// println(getStructFQN(field.Type.String()))
 			builder.AddStructField(jsonFieldName, field, !isKnownType)
 		} else if field.Type.Kind() == reflect.Map {
-			xlog.Logger.Debug(depth, "- map field %s.%s", typeOf.Name(), field.Name)
+			xlog.Logger.Debugf("- map field %s.%s", typeOf.Name(), field.Name)
 			// Also convert map key types if needed
 			var keyTypeToConvert reflect.Type
 			switch field.Type.Key().Kind() {
@@ -674,6 +675,7 @@ func (t *TypeScriptify) convertType(depth int, typeOf reflect.Type, customCode m
 			if keyTypeToConvert != nil {
 				typeScriptChunk, err := t.convertType(depth+1, keyTypeToConvert, customCode)
 				if err != nil {
+
 					return "", err
 				}
 				if typeScriptChunk != "" {
@@ -691,6 +693,7 @@ func (t *TypeScriptify) convertType(depth int, typeOf reflect.Type, customCode m
 			if valueTypeToConvert != nil {
 				typeScriptChunk, err := t.convertType(depth+1, valueTypeToConvert, customCode)
 				if err != nil {
+
 					return "", err
 				}
 				if typeScriptChunk != "" {
@@ -711,7 +714,7 @@ func (t *TypeScriptify) convertType(depth int, typeOf reflect.Type, customCode m
 			}
 
 			if field.Type.Elem().Kind() == reflect.Struct { // Slice of structs:
-				xlog.Logger.Debug(depth, "- struct slice %s.%s (%s)", typeOf.Name(), field.Name, field.Type.String())
+				xlog.Logger.Debugf("- struct slice %s.%s (%s)", typeOf.Name(), field.Name, field.Type.String())
 				typeScriptChunk, err := t.convertType(depth+1, field.Type.Elem(), customCode)
 				if err != nil {
 					return "", err
@@ -721,11 +724,11 @@ func (t *TypeScriptify) convertType(depth int, typeOf reflect.Type, customCode m
 				}
 				builder.AddArrayOfStructsField(jsonFieldName, field, arrayDepth)
 			} else { // Slice of simple fields:
-				xlog.Logger.Debug(depth, "- slice field %s.%s", typeOf.Name(), field.Name)
+				xlog.Logger.Debugf("- slice field %s.%s", typeOf.Name(), field.Name)
 				err = builder.AddSimpleArrayField(jsonFieldName, field, arrayDepth, fldOpts)
 			}
 		} else { // Simple field:
-			xlog.Logger.Debug(depth, "	- simple field %s.%s", typeOf.Name(), field.Name)
+			xlog.Logger.Debugf("	- simple field %s.%s", typeOf.Name(), field.Name)
 			err = builder.AddSimpleField(jsonFieldName, field, fldOpts)
 		}
 		if err != nil {
