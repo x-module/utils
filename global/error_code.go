@@ -19,6 +19,7 @@ const (
 // 系统功能
 const (
 	StartServerErr           ErrCode = 101000 + iota // 启动服务异常
+	ActionErr                                        // 操作异常
 	SystemErr                                        // 系统异常
 	SystemInitFail                                   // 系统初始化失败
 	listenConfigErr                                  // 配置文件监控失败

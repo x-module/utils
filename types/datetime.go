@@ -14,6 +14,7 @@ import (
 	"github.com/golang-module/carbon"
 	"gorm.io/gorm/schema"
 	"reflect"
+	"strings"
 	"time"
 )
 
@@ -22,47 +23,22 @@ type DateTime struct {
 }
 
 func (u *DateTime) UnmarshalJSON(data []byte) error {
+	timeStr := strings.ReplaceAll(string(data), "\"", "")
 	*u = DateTime{
-		//Time: carbon.Parse(string(data)).ToStdTime(),
-		Time: time.Now(),
+		Time: carbon.Parse(timeStr).ToStdTime(),
 	}
 	return nil
 }
 func (u *DateTime) MarshalJSON() ([]byte, error) {
 	dateTime := carbon.FromStdTime(u.Time).ToDateTimeString()
 	return json.Marshal(dateTime)
+	//return []byte(dateTime), nil
 }
 
 func (u *DateTime) Scan(ctx context.Context, field *schema.Field, dst reflect.Value, dbValue interface{}) (err error) {
 	*u = DateTime{
 		Time: dbValue.(time.Time),
 	}
-	//err = field.Set(ctx, dst, DateTime{
-	//	Time: carbon.FromStdTime(time.Now()).ToStdTime(),
-	//})
-	//carbon.FromStdTime(dbValue.(time.Time)).ToDateTimeString())
-	//
-	////
-	//fieldValue := reflect.New(field.FieldType)
-	//fmt.Println(dbValue)
-	//if dbValue != nil {
-	//	var bytes []byte
-	//	switch v := dbValue.(type) {
-	//	case []byte:
-	//		bytes = v
-	//	case string:
-	//		bytes = []byte(v)
-	//		fmt.Println("-----------string---------------")
-	//	case time.Time:
-	//		bytes = []byte(carbon.FromStdTime(dbValue.(time.Time)).ToDateTimeString())
-	//	default:
-	//		fmt.Println("===========::", dbValue.(DateTime).Time.String())
-	//		return fmt.Errorf("-----failed to unmarshal JSONB value: %#v", dbValue)
-	//	}
-	//	err = json.Unmarshal(bytes, fieldValue.Interface())
-	//}
-	//
-	//field.ReflectValueOf(ctx, dst).Set(fieldValue.Elem())
 	return
 }
 
