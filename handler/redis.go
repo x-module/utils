@@ -98,6 +98,10 @@ func (r *RedisClient) LPop(key string) *redis.StringCmd {
 	return r.Ring.LPop(r.ctx, key)
 }
 
+func (r *RedisClient) RPop(key string) *redis.StringCmd {
+	return r.Ring.RPop(r.ctx, key)
+}
+
 func (r *RedisClient) Keys(pattern string) *redis.StringSliceCmd {
 	return r.Ring.Keys(r.ctx, pattern)
 }

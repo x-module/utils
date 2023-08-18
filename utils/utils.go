@@ -129,6 +129,16 @@ func TransInterfaceToMap(params any) map[string]any {
 	return paramsMap
 }
 
+// TransStruct 转换struct
+func TransStruct[T any](source any, target T) (T, error) {
+	jsonData, err := json.Marshal(source)
+	if err != nil {
+		return target, err
+	}
+	err = json.Unmarshal(jsonData, target)
+	return target, err
+}
+
 func GetApiServer(url string) string {
 	if strings.Contains(url, "@") {
 		temps := strings.Split(url, "@")
