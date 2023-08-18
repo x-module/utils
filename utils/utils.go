@@ -130,13 +130,13 @@ func TransInterfaceToMap(params any) map[string]any {
 }
 
 // TransStruct 转换struct
-func TransStruct[T any](source any, target T) (T, error) {
+func TransStruct[T any](source any, target T) error {
 	jsonData, err := json.Marshal(source)
 	if err != nil {
-		return target, err
+		return err
 	}
 	err = json.Unmarshal(jsonData, target)
-	return target, err
+	return err
 }
 
 func GetApiServer(url string) string {
