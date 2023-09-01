@@ -37,7 +37,7 @@ type LinkParams struct {
 	Password    string
 	MaxOpenConn int
 	MaxIdleConn int
-	Mode        string
+	LogLevel    int
 }
 
 // InitializeDB 初始化管理后台数据库
@@ -47,10 +47,10 @@ func InitializeDB(params LinkParams) (*gorm.DB, error) {
 	newLogger := logger.New(
 		log.New(NewLogger(), "\r\n", log.LstdFlags), // io writer
 		logger.Config{
-			SlowThreshold:             time.Second, // Slow SQL threshold
-			LogLevel:                  logger.Info, // Log level
-			IgnoreRecordNotFoundError: true,        // Ignore ErrRecordNotFound error for logger
-			Colorful:                  false,       // Disable color
+			SlowThreshold:             time.Second,                      // Slow SQL threshold
+			LogLevel:                  logger.LogLevel(params.LogLevel), // Log level
+			IgnoreRecordNotFoundError: true,                             // Ignore ErrRecordNotFound error for logger
+			Colorful:                  false,                            // Disable color
 		},
 	)
 	db, err := gorm.Open(mysql.Open(dsn), &gorm.Config{
