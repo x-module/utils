@@ -119,6 +119,7 @@ func InitLogger(logFilePath, logFileName string, model string) *logrus.Logger {
 	Logger.AddHook(lfshook.NewHook(writeMap, &logrus.JSONFormatter{
 		TimestampFormat: "2006-01-02 15:04:05",
 	}))
-	Logger.SetReportCaller(true)
+	//是否显示文件位置
+	//Logger.SetReportCaller(true)
 	return Logger
 }
