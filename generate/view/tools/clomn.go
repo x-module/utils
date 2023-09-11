@@ -15,7 +15,7 @@ import (
 )
 
 const ColumnTemplate = "application/modules/generate/source/columns.ts"
-const OutDir = "frontend/src/element/columns"
+const OutDir = "frontend/src/element"
 
 func GenerateColumn(table Table, fields []Field) {
 	code, err := fileutil.ReadFileToString(ColumnTemplate)
