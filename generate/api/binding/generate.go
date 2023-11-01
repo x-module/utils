@@ -83,7 +83,7 @@ import request from '../../utils/request'
 
 					if route, exist := b.routeMap[sign]; exist {
 						jsoutput.WriteString("    return request({\n")
-						jsoutput.WriteString("        url: '/console/v1/" + route.Path + "',\n")
+						jsoutput.WriteString("        url: '/api/v1/" + route.Path + "',\n")
 						jsoutput.WriteString("        method: '" + route.Method + "',\n")
 						if argsString != "" {
 							if route.Method == "get" {
