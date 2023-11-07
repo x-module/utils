@@ -43,9 +43,9 @@ func GetConfig(path string, config any) error {
 // GetConfigFile 获取当前运行环境下的配置
 func GetConfigFile(configFile string) string {
 	mode := os.Getenv("ENVIRONMENT")
-	config := path.Join("config", configFile)
-	if mode != "" {
-		config = path.Join("config", mode, configFile)
+	if mode == "" {
+		mode = "dev"
 	}
+	config := path.Join("config", mode, configFile)
 	return config
 }
