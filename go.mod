@@ -42,7 +42,7 @@ require (
 	github.com/uber/jaeger-client-go v2.30.0+incompatible
 	github.com/wcharczuk/go-chart v2.0.1+incompatible
 	github.com/x-module/module v1.1.1
-	go-micro.dev/v4 v4.10.2
+	go-micro.dev/v4 v4.9.0
 	go.etcd.io/etcd/api/v3 v3.5.10
 	go.etcd.io/etcd/client/v3 v3.5.10
 	go.uber.org/zap v1.23.0
@@ -66,7 +66,6 @@ require (
 	github.com/beorn7/perks v1.0.1 // indirect
 	github.com/bitly/go-simplejson v0.5.0 // indirect
 	github.com/blend/go-sdk v1.20220411.3 // indirect
-	github.com/bmizerany/assert v0.0.0-20160611221934-b7ed37b82869 // indirect
 	github.com/buger/jsonparser v1.1.1 // indirect
 	github.com/cenkalti/backoff/v4 v4.1.1 // indirect
 	github.com/cespare/xxhash/v2 v2.2.0 // indirect
